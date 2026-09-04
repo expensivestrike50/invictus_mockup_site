@@ -1,61 +1,28 @@
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 import checkIcon from '@/assets/icons/check-icon.png';
 import cardIcon from '@/assets/icons/card-icon.png';
 
-export const pricingPlans = [
-  {
-    name: 'Starter',
-    description: 'For solo agents building a first roster and testing club requests.',
-    price: '$50',
-    period: '/mo',
-    features: [
-      'Up to 25 player profiles',
-      'Club request tracking',
-      'Basic match scoring',
-      'PDF agency reports',
-      'Shared club contacts',
-    ],
-    buttonText: 'Get Started',
-    buttonVariant: 'invofyOutline' as const,
-    featured: false,
-  },
-  {
-    name: 'Professional',
-    description: 'For established agents managing an active roster across several leagues.',
-    price: '$100',
-    period: '/mo',
-    features: [
-      'Everything in Starter',
-      'Unlimited player profiles',
-      'AI match explanations',
-      'Integrated match statistics',
-      'Branded report templates',
-      'Mobile app access',
-    ],
-    buttonText: 'Get Started',
-    buttonVariant: 'invofy' as const,
-    featured: true,
-  },
-  {
-    name: 'Agency',
-    description: 'For multi-agent agencies coordinating clubs, scouts, and deals at scale.',
-    price: '$500',
-    period: '/mo',
-    features: [
-      'Everything in Professional',
-      'Multi-agent workspaces',
-      'Deal pipeline & reminders',
-      'Custom scouting fields',
-      'Priority support',
-      'Mobile app access',
-    ],
-    buttonText: 'Get Started',
-    buttonVariant: 'invofyOutline' as const,
-    featured: false,
-  },
+const planMeta = [
+  { buttonVariant: 'invofyOutline' as const, featured: false },
+  { buttonVariant: 'invofy' as const, featured: true },
+  { buttonVariant: 'invofyOutline' as const, featured: false },
 ];
+
+export function usePricingPlans() {
+  const { t } = useTranslation();
+  return planMeta.map((meta, index) => ({
+    name: t(`pricing.plans.${index}.name`),
+    description: t(`pricing.plans.${index}.description`),
+    price: t(`pricing.plans.${index}.price`),
+    period: t(`pricing.plans.${index}.period`),
+    features: t(`pricing.plans.${index}.features`, { returnObjects: true }) as string[],
+    buttonText: t(`pricing.plans.${index}.button`),
+    ...meta,
+  }));
+}
 
 interface PricingCardsProps {
   className?: string;
@@ -63,6 +30,8 @@ interface PricingCardsProps {
 }
 
 const PricingCards = ({ className, showStagger = true }: PricingCardsProps) => {
+  const { t } = useTranslation();
+  const pricingPlans = usePricingPlans();
   return (
     <div className={cn('grid grid-cols-3 max-[991px]:grid-cols-1 gap-6 lg:items-start', className)}>
       {pricingPlans.map((plan, index) => (
@@ -97,7 +66,7 @@ const PricingCards = ({ className, showStagger = true }: PricingCardsProps) => {
               {plan.buttonText}
             </Button>
             
-            <h4 className="text-sm font-semibold mb-4">What You Get</h4>
+            <h4 className="text-sm font-semibold mb-4">{t('pricing.whatYouGet')}</h4>
             
             <ul className="flex flex-col gap-3">
               {plan.features.map((feature, featureIndex) => (
@@ -113,7 +82,7 @@ const PricingCards = ({ className, showStagger = true }: PricingCardsProps) => {
           <div className="px-6 pb-6 max-[479px]:px-5 max-[479px]:pb-5">
             <div className="flex items-center gap-2">
               <img src={cardIcon} alt="" width={20} height={20} loading="lazy" decoding="async" className="w-5 h-5" />
-              <span className="text-base text-muted-foreground">Pause or cancel anytime</span>
+              <span className="text-base text-muted-foreground">{t('pricing.cancelAnytime')}</span>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { LogoMark } from '@/components/base/logo';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,24 +12,25 @@ import {
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/contexts/AuthContext';
+import { LanguageSwitcher } from '@/components/base/language-switcher';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Contact', href: '/contact' },
+  { key: 'nav.home', href: '/' },
+  { key: 'nav.about', href: '/about' },
+  { key: 'nav.pricing', href: '/pricing' },
+  { key: 'nav.contact', href: '/contact' },
 ];
 
 const accountLinks = [
-  { label: 'Sign In', href: '/signin' },
-  { label: 'Sign Up', href: '/signup' },
-  { label: 'Reset Password', href: '/reset-password' },
+  { key: 'nav.signIn', href: '/signin' },
+  { key: 'nav.signUp', href: '/signup' },
+  { key: 'nav.resetPassword', href: '/reset-password' },
 ];
 
 const authenticatedLinks = [
-  { label: 'Dashboard', href: '/dashboard' },
-  { label: 'Clubs', href: '/clubs' },
-  { label: 'Reports', href: '/reports' },
+  { key: 'nav.dashboard', href: '/dashboard' },
+  { key: 'nav.clubs', href: '/clubs' },
+  { key: 'nav.reports', href: '/reports' },
 ];
 
 const prefetchAbout = () => {
@@ -42,6 +44,7 @@ const prefetchContact = () => {
 };
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -84,7 +87,7 @@ const Navbar = () => {
               <div className="flex items-center gap-6">
                 {navLinks.map((link) => (
                   <Link
-                    key={link.label}
+                    key={link.href}
                     to={link.href}
                     onMouseEnter={
                       link.href === '/about'
@@ -100,10 +103,10 @@ const Navbar = () => {
                     <div className="relative h-5 overflow-hidden">
                       <div className="flex flex-col">
                         <span className="text-foreground text-base font-semibold leading-5 transition-transform duration-300 group-hover:-translate-y-5">
-                          {link.label}
+                          {t(link.key)}
                         </span>
                         <span className="text-foreground text-base leading-5 transition-transform duration-300 group-hover:-translate-y-5 font-semibold">
-                          {link.label}
+                          {t(link.key)}
                         </span>
                       </div>
                     </div>
@@ -120,7 +123,7 @@ const Navbar = () => {
                     <DropdownMenuTrigger asChild>
                       <button className="no-underline flex items-center gap-1 cursor-pointer bg-transparent border-none outline-none">
                         <span className="text-foreground text-base font-semibold leading-5">
-                          {user ? (isAnonymous ? 'Demo' : 'Account') : 'Account'}
+                          {user ? (isAnonymous ? t('nav.demo') : t('nav.account')) : t('nav.account')}
                         </span>
                         <ChevronDown
                           className={`w-4 h-4 text-foreground transition-transform duration-300 ${
@@ -137,7 +140,7 @@ const Navbar = () => {
                     >
                       {currentAccountLinks.map((link) => (
                         <DropdownMenuItem
-                          key={link.label}
+                          key={link.href}
                           asChild
                           className="p-0 focus:bg-transparent"
                         >
@@ -145,10 +148,10 @@ const Navbar = () => {
                             <div className="relative h-5 overflow-hidden">
                               <div className="flex flex-col">
                                 <span className="text-foreground text-base font-semibold leading-5 transition-transform duration-300 group-hover/item:-translate-y-5">
-                                  {link.label}
+                                  {t(link.key)}
                                 </span>
                                 <span className="text-foreground text-base leading-5 transition-transform duration-300 group-hover/item:-translate-y-5 font-semibold">
-                                  {link.label}
+                                  {t(link.key)}
                                 </span>
                               </div>
                             </div>
@@ -162,7 +165,7 @@ const Navbar = () => {
                         >
                           <div className="flex items-center gap-2 text-foreground text-base font-semibold">
                             <LogOut className="w-4 h-4" />
-                            Sign Out
+                            {t('nav.signOut')}
                           </div>
                         </DropdownMenuItem>
                       )}
@@ -171,10 +174,12 @@ const Navbar = () => {
                 </div>
               </div>
 
+              <LanguageSwitcher />
+
               {/* Get Started Button */}
               <Button variant="invofy" size="invofy" asChild>
                 <Link to={user ? '/dashboard' : '/reports'}>
-                  {user ? 'Dashboard' : 'Get Started'}
+                  {user ? t('nav.dashboard') : t('nav.getStarted')}
                 </Link>
               </Button>
             </div>
@@ -223,7 +228,7 @@ const Navbar = () => {
             >
               {navLinks.map((link, index) => (
                 <motion.div
-                  key={link.label}
+                  key={link.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.15 + index * 0.05 }}
@@ -243,7 +248,7 @@ const Navbar = () => {
                     className="no-underline group"
                   >
                     <span className="text-foreground text-5xl max-md:text-[2.5rem] max-xs:text-[2.25rem] font-semibold font-display leading-tight">
-                      {link.label}
+                      {t(link.key)}
                     </span>
                   </Link>
                 </motion.div>
@@ -281,7 +286,7 @@ const Navbar = () => {
                     >
                       {currentAccountLinks.map((link, index) => (
                         <motion.div
-                          key={link.label}
+                          key={link.href}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.2, delay: index * 0.05 }}
@@ -292,7 +297,7 @@ const Navbar = () => {
                             className="no-underline"
                           >
                             <span className="text-foreground/80 text-3xl max-md:text-2xl max-xs:text-xl font-medium font-display leading-tight hover:text-foreground transition-colors">
-                              {link.label}
+                              {t(link.key)}
                             </span>
                           </Link>
                         </motion.div>
@@ -308,13 +313,22 @@ const Navbar = () => {
                             className="flex items-center gap-2 text-foreground/80 text-3xl max-md:text-2xl max-xs:text-xl font-medium font-display leading-tight hover:text-foreground transition-colors bg-transparent border-none cursor-pointer"
                           >
                             <LogOut className="w-6 h-6 max-md:w-5 max-md:h-5" />
-                            Sign Out
+                            {t('nav.signOut')}
                           </button>
                         </motion.div>
                       )}
                     </motion.div>
                   )}
                 </AnimatePresence>
+              </motion.div>
+
+              {/* Mobile Language Switcher */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                <LanguageSwitcher triggerClassName="text-xl" />
               </motion.div>
 
               {/* Mobile Get Started Button */}
@@ -325,7 +339,7 @@ const Navbar = () => {
               >
                 <Button variant="invofy" size="invofy" asChild onClick={() => setIsMenuOpen(false)}>
                   <Link to={user ? '/dashboard' : '/reports'}>
-                    {user ? 'Dashboard' : 'Get Started'}
+                    {user ? t('nav.dashboard') : t('nav.getStarted')}
                   </Link>
                 </Button>
               </motion.div>

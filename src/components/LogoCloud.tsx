@@ -1,4 +1,5 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import caaSports from "@/assets/partners/Image_5.png";
 import invictusLogo from "@/assets/partners/Image_6.png";
@@ -31,6 +32,7 @@ const logos = [
 interface LogoCloudProps extends React.ComponentProps<"section"> {}
 
 export function LogoCloud({ className, ...props }: LogoCloudProps) {
+  const { t } = useTranslation();
   return (
     <section
       className={cn(
@@ -41,7 +43,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
     >
       <div className="max-w-[1040px] mx-auto px-4 max-lg:max-w-full">
         <p className="text-center text-muted-foreground font-medium mb-12 max-md:mb-8 text-base font-sans">
-          Trusted by Agencies and Clubs Worldwide
+          {t('logoCloud.trustedBy')}
         </p>
 
         <div className="relative">

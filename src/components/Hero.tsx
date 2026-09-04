@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
 import { Loader2 } from 'lucide-react';
@@ -17,6 +18,7 @@ const heroImages = [
 ];
 
 const Hero = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const { signInAnonymously } = useAuth();
@@ -68,16 +70,16 @@ const Hero = () => {
               {/* Hero Content */}
               <div className="col-span-3 row-start-2 self-center flex flex-col items-center w-full max-w-[60rem] mx-auto max-lg:relative max-lg:-mt-16 max-md:-mt-10 my-[80px] gap-4 pb-10">
                 <span className="text-center text-xs tracking-[1px] uppercase font-semibold">
-                  FOOTBALL AGENCY CRM
+                  {t('hero.eyebrow')}
                 </span>
 
                 <h1 className="text-center text-[5rem] 2xl:text-[5.25rem] max-lg:text-[8vw] max-xs:text-[9vw] leading-[1.2] font-bold font-display">
-                  The Right Talent for the Right Club
+                  {t('hero.title')}
                 </h1>
 
                 <div className="w-full max-w-[30rem] mx-auto">
                   <p className="text-muted-foreground text-center text-lg leading-[1.4] font-normal">
-                    Invictus replaces endless WhatsApp threads and email chains with one AI-powered CRM for agents, players, clubs, and sporting directors.
+                    {t('hero.description')}
                   </p>
                 </div>
 
@@ -91,14 +93,14 @@ const Hero = () => {
                     {isDemoLoading ? (
                       <>
                         <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                        Starting Demo...
+                        {t('hero.startingDemo', { defaultValue: 'Starting Demo...' })}
                       </>
                     ) : (
-                      'Try Demo Mode'
+                      t('hero.tryDemo')
                     )}
                   </Button>
                   <Button variant="invofyOutline" size="invofy" asChild>
-                    <Link to="/pricing">View Pricing</Link>
+                    <Link to="/pricing">{t('hero.viewPricing')}</Link>
                   </Button>
                 </div>
               </div>

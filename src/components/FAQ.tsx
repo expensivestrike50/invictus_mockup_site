@@ -1,30 +1,12 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { useTranslation } from 'react-i18next';
 import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 import foregroundImage from '@/assets/image-06.jpg';
-
-const faqData = [
-  {
-    question: 'How does the AI decide a player fits a club?',
-    answer: 'The AI weighs the club brief against integrated performance data on your players, factoring in position, playing style, age, minutes and budget, then explains the reasoning behind each score.',
-  },
-  {
-    question: 'Can I export an agency report as a PDF?',
-    answer: 'Yes. Every match generates a branded, club-ready PDF setting out why the talent answers that specific request, with the supporting statistics included.',
-  },
-  {
-    question: 'Does it really replace WhatsApp and email?',
-    answer: 'Conversations with sporting directors, clubs, and players live on the player and club records, so nothing is lost in a group chat or a forwarded thread.',
-  },
-  {
-    question: 'Where do the player statistics come from?',
-    answer: 'Invictus pulls integrated match and performance data into each profile, and you can add your own scouting notes and video links alongside it.',
-  },
-];
 
 interface FAQItemProps {
   question: string;
@@ -60,6 +42,11 @@ const FAQItem = ({ question, answer, value }: FAQItemProps) => (
 interface FAQProps extends React.ComponentProps<'section'> {}
 
 const FAQ = ({ className, ...props }: FAQProps) => {
+  const { t } = useTranslation();
+  const faqData = [0, 1, 2, 3].map((index) => ({
+    question: t(`faq.items.${index}.question`),
+    answer: t(`faq.items.${index}.answer`),
+  }));
   const accordionRef = React.useRef<HTMLDivElement>(null);
   const [accordionHeight, setAccordionHeight] = React.useState<number | null>(null);
 
@@ -86,14 +73,14 @@ const FAQ = ({ className, ...props }: FAQProps) => {
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center mb-16 max-md:mb-12">
           <span className="text-xs tracking-[1px] uppercase font-semibold">
-            Frequently Asked Questions
+            {t('faq.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-lg:text-[3rem] max-md:text-[2rem] leading-[1.2] font-bold font-display">
-            Questions & Answers
+            {t('faq.title')}
           </h2>
           <div className="w-full">
             <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-              Clear answers on how Invictus matches talent to clubs, what the AI does, and how agencies get started.
+              {t('faq.description')}
             </p>
           </div>
         </div>
@@ -136,7 +123,7 @@ const FAQ = ({ className, ...props }: FAQProps) => {
 
               <div className="flex justify-end">
                 <Button variant="invofy" size="invofy" asChild>
-                  <Link to="/contact">Ask a question</Link>
+                  <Link to="/contact">{t('faq.askAQuestion')}</Link>
                 </Button>
               </div>
             </div>

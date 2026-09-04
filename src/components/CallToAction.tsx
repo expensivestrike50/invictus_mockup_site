@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import ctaBg from '@/assets/cta-bg.png';
 
@@ -21,6 +22,7 @@ const ctaImages = [
 ];
 
 const CallToAction = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -110,15 +112,15 @@ const CallToAction = () => {
             className="relative z-10 flex flex-col items-center text-center px-5 max-w-[40rem] mt-12"
           >
             <span className="text-xs tracking-[1px] uppercase font-semibold mb-4">
-              Get Started Now
+              {t('callToAction.eyebrow')}
             </span>
 
             <h2 className="text-[2rem] md:text-[3rem] lg:text-[4rem] leading-[1.2] font-bold font-display mb-6">
-              Run Your Agency From One Place
+              {t('callToAction.title')}
             </h2>
 
             <Button variant="invofy" size="invofy" asChild>
-              <Link to="/pricing">Start Now</Link>
+              <Link to="/pricing">{t('callToAction.button')}</Link>
             </Button>
           </motion.div>
         </div>

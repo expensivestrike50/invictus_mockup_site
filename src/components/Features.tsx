@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import waveBg from '@/assets/wave-bg.png';
@@ -9,37 +10,18 @@ import featureIcon03 from '@/assets/icons/feature-icon-03.png';
 import featureIcon04 from '@/assets/icons/feature-icon-04.png';
 import featureIcon05 from '@/assets/icons/feature-icon-05.png';
 
-const featuresData = [
-  {
-    icon: featureIcon01,
-    title: 'AI Match Scoring',
-    description: 'Embedded AI ranks your players against each club request and explains why.',
-  },
-  {
-    icon: featureIcon02,
-    title: 'Agency Reports',
-    description: 'Export a polished PDF arguing why a talent fits a specific club brief.',
-  },
-  {
-    icon: featureIcon03,
-    title: 'Live Player Data',
-    description: 'Integrated match and performance statistics on every profile you manage.',
-  },
-  {
-    icon: featureIcon04,
-    title: 'Shortlists & Pipeline',
-    description: 'Update your roster, build shortlists, and track every deal to signature.',
-  },
-  {
-    icon: featureIcon05,
-    title: 'Club Relationships',
-    description: 'Move sporting directors, scouts, and clubs out of WhatsApp and into one shared thread.',
-  },
-];
+const featureIcons = [featureIcon01, featureIcon02, featureIcon03, featureIcon04, featureIcon05];
 
 interface FeaturesProps extends React.ComponentProps<'section'> {}
 
 const Features = ({ className, ...props }: FeaturesProps) => {
+  const { t } = useTranslation();
+  const featuresData = featureIcons.map((icon, index) => ({
+    icon,
+    title: t(`features.items.${index}.title`),
+    description: t(`features.items.${index}.description`),
+  }));
+
   return (
     <section className={cn('px-5 md:px-10 max-xs:px-5', className)} {...props}>
       <div className="max-w-[100rem] mx-auto">
@@ -58,14 +40,14 @@ const Features = ({ className, ...props }: FeaturesProps) => {
             <div className="flex flex-col gap-8 px-12 max-lg:px-10 max-md:px-8 max-xs:px-4">
               <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center">
                 <span className="text-xs tracking-[1px] uppercase font-semibold">
-                  Complete Control
+                  {t('features.eyebrow')}
                 </span>
                 <h2 className="text-[4.5rem] max-lg:text-[3rem] max-md:text-[2rem] leading-[1.2] font-bold font-display">
-                  Everything Your Agency Runs On
+                  {t('features.title')}
                 </h2>
                 <div className="w-full">
                   <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-                    From AI match scoring to statistical profiles and exportable agency reports, Invictus gives you full control over every player, club, and conversation.
+                    {t('features.description')}
                   </p>
                 </div>
               </div>
@@ -94,14 +76,14 @@ const Features = ({ className, ...props }: FeaturesProps) => {
                   }}
                 >
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-2xl leading-[1.4] font-bold">Start Matching</h3>
+                    <h3 className="text-2xl leading-[1.4] font-bold">{t('features.startMatching.title')}</h3>
                     <p className="text-lg leading-[1.4] w-[90%] font-normal">
-                      Build your first shortlist and send a club-ready report in minutes.
+                      {t('features.startMatching.description')}
                     </p>
                   </div>
                   <div>
                     <Button variant="invofy" size="invofy" asChild>
-                      <Link to="/reports">Get Started</Link>
+                      <Link to="/reports">{t('features.startMatching.cta')}</Link>
                     </Button>
                   </div>
                 </div>

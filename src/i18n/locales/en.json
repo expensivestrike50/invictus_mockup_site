@@ -1,0 +1,266 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "resetPassword": "Reset Password",
+    "dashboard": "Dashboard",
+    "clubs": "Clubs",
+    "reports": "Reports",
+    "demo": "Demo",
+    "account": "Account",
+    "signOut": "Sign Out",
+    "getStarted": "Get Started",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Football Agency CRM",
+    "title": "The Right Talent for the Right Club",
+    "description": "Invictus replaces endless WhatsApp threads and email chains with one AI-powered CRM for agents, players, clubs, and sporting directors.",
+    "tryDemo": "Try Demo Mode",
+    "viewPricing": "View Pricing",
+    "startingDemo": "Starting Demo..."
+  },
+  "logoCloud": {
+    "trustedBy": "Trusted by Agencies and Clubs Worldwide"
+  },
+  "features": {
+    "eyebrow": "Complete Control",
+    "title": "Everything Your Agency Runs On",
+    "description": "From AI match scoring to statistical profiles and exportable agency reports, Invictus gives you full control over every player, club, and conversation.",
+    "items": [
+      {
+        "title": "AI Match Scoring",
+        "description": "Embedded AI ranks your players against each club request and explains why."
+      },
+      {
+        "title": "Agency Reports",
+        "description": "Export a polished PDF arguing why a talent fits a specific club brief."
+      },
+      {
+        "title": "Live Player Data",
+        "description": "Integrated match and performance statistics on every profile you manage."
+      },
+      {
+        "title": "Shortlists & Pipeline",
+        "description": "Update your roster, build shortlists, and track every deal to signature."
+      },
+      {
+        "title": "Club Relationships",
+        "description": "Move sporting directors, scouts, and clubs out of WhatsApp and into one shared thread."
+      }
+    ],
+    "startMatching": {
+      "title": "Start Matching",
+      "description": "Build your first shortlist and send a club-ready report in minutes.",
+      "cta": "Get Started"
+    }
+  },
+  "caseStudies": {
+    "eyebrow": "Proven Results",
+    "title": "Built for How Agencies Actually Work",
+    "description": "See how agents use Invictus to shortlist talent, prove the fit with data, and close deals with sporting directors faster.",
+    "items": [
+      {
+        "name": "Player Shortlists",
+        "alt": "CRM dashboard showing a shortlist of football players"
+      },
+      {
+        "name": "AI Match Scores",
+        "alt": "AI panel scoring how well a player fits a club request"
+      },
+      {
+        "name": "Agency Reports",
+        "alt": "PDF agency report explaining a player-to-club match"
+      },
+      {
+        "name": "Club Pipeline",
+        "alt": "Pipeline board of clubs and sporting director contacts"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How It Works",
+    "title": "From Request to Signature",
+    "description": "Three steps replace the scattered calls, voice notes, and email chains between agents, players, and sporting directors.",
+    "steps": [
+      {
+        "title": "Log the Club Request",
+        "description": "Capture what a sporting director needs in one place, from position and profile to budget and timeline."
+      },
+      {
+        "title": "Let AI Automate Decisions",
+        "description": "Invictus automates the scoring, ranking, and next move using your integrated performance data."
+      },
+      {
+        "title": "Send the Agency Report",
+        "description": "Export a club-ready PDF explaining why the talent is the right match, and track the reply."
+      }
+    ],
+    "viewPricing": "View Pricing"
+  },
+  "pricing": {
+    "eyebrow": "Flexible Options",
+    "title": "Start free, upgrade anytime",
+    "description": "Choose a plan that fits your workflow. Whether you're just getting started or scaling fast, Invictus grows with you.",
+    "whatYouGet": "What You Get",
+    "cancelAnytime": "Pause or cancel anytime",
+    "plans": [
+      {
+        "name": "Starter",
+        "description": "For solo agents building a first roster and testing club requests.",
+        "price": "$50",
+        "period": "/mo",
+        "features": [
+          "Up to 25 player profiles",
+          "Club request tracking",
+          "Basic match scoring",
+          "PDF agency reports",
+          "Shared club contacts"
+        ],
+        "button": "Get Started"
+      },
+      {
+        "name": "Professional",
+        "description": "For established agents managing an active roster across several leagues.",
+        "price": "$100",
+        "period": "/mo",
+        "features": [
+          "Everything in Starter",
+          "Unlimited player profiles",
+          "AI match explanations",
+          "Integrated match statistics",
+          "Branded report templates",
+          "Mobile app access"
+        ],
+        "button": "Get Started"
+      },
+      {
+        "name": "Agency",
+        "description": "For multi-agent agencies coordinating clubs, scouts, and deals at scale.",
+        "price": "$500",
+        "period": "/mo",
+        "features": [
+          "Everything in Professional",
+          "Multi-agent workspaces",
+          "Deal pipeline & reminders",
+          "Custom scouting fields",
+          "Priority support",
+          "Mobile app access"
+        ],
+        "button": "Get Started"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Real User Feedback",
+    "description": "See how agents and agencies use Invictus to close deals faster and work with confidence.",
+    "items": [
+      {
+        "name": "Emily Watson",
+        "role": "Football Agent",
+        "quote": "My shortlists used to live in a notes app and three WhatsApp groups. Now every player, club request, and conversation sits in one place I can actually search."
+      },
+      {
+        "name": "James Carter",
+        "role": "Agency Director",
+        "quote": "The AI match scores changed how we pitch. We send a sporting director a report that argues the fit with real data instead of a paragraph and a highlight reel."
+      },
+      {
+        "name": "Olivia Turner",
+        "role": "Sporting Director",
+        "quote": "When an agency sends us an Invictus report, we know the profile has been checked against our brief. It saves us a week of back-and-forth on every window."
+      },
+      {
+        "name": "Sophia Martinez",
+        "role": "Talent Scout",
+        "quote": "Integrated statistics on every profile mean I can compare two players in seconds instead of rebuilding a spreadsheet after each match round."
+      },
+      {
+        "name": "Liam Anderson",
+        "role": "Player Representative",
+        "quote": "Tracking my players — minutes, contract dates, club interest — used to be manual. Invictus keeps the whole roster current without me chasing anyone."
+      },
+      {
+        "name": "Marcus Thompson",
+        "role": "Head of Recruitment",
+        "quote": "The PDF exports are the part clubs love. Clear, branded, and they answer the exact request we sent — no more digging through email threads."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Frequently Asked Questions",
+    "title": "Questions & Answers",
+    "description": "Clear answers on how Invictus matches talent to clubs, what the AI does, and how agencies get started.",
+    "items": [
+      {
+        "question": "How does the AI decide a player fits a club?",
+        "answer": "The AI weighs the club brief against integrated performance data on your players, factoring in position, playing style, age, minutes and budget, then explains the reasoning behind each score."
+      },
+      {
+        "question": "Can I export an agency report as a PDF?",
+        "answer": "Yes. Every match generates a branded, club-ready PDF setting out why the talent answers that specific request, with the supporting statistics included."
+      },
+      {
+        "question": "Does it really replace WhatsApp and email?",
+        "answer": "Conversations with sporting directors, clubs, and players live on the player and club records, so nothing is lost in a group chat or a forwarded thread."
+      },
+      {
+        "question": "Where do the player statistics come from?",
+        "answer": "Invictus pulls integrated match and performance data into each profile, and you can add your own scouting notes and video links alongside it."
+      }
+    ],
+    "askAQuestion": "Ask a question"
+  },
+  "callToAction": {
+    "eyebrow": "Get Started Now",
+    "title": "Run Your Agency From One Place",
+    "button": "Start Now"
+  },
+  "footer": {
+    "description": "The AI powered CRM for football agencies. Match talent to club requests, track your players, and keep sporting directors in the loop.",
+    "pages": "Pages",
+    "getStarted": "Get Started"
+  },
+  "pricingComparison": {
+    "eyebrow": "Detailed Breakdown",
+    "title": "Compare Plans Side by Side",
+    "description": "See exactly what's included in each plan. Whether you're a solo agent or running a multi-agent agency, find the features that match your roster.",
+    "popular": "Popular",
+    "featuresColumn": "Features",
+    "categories": [
+      {
+        "name": "Talent & Clubs",
+        "features": [
+          "Player profiles",
+          "Club request tracking",
+          "Shortlists",
+          "Unlimited player profiles",
+          "Deal pipeline & reminders",
+          "Multi-agent workspaces"
+        ]
+      },
+      {
+        "name": "AI & Data",
+        "features": [
+          "Basic match scoring",
+          "AI match explanations",
+          "Integrated match statistics",
+          "Custom scouting fields"
+        ]
+      },
+      {
+        "name": "Reports & Output",
+        "features": [
+          "PDF agency reports",
+          "Branded report templates",
+          "Priority support"
+        ]
+      }
+    ]
+  }
+}

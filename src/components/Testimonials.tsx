@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import waveBg from '@/assets/testimonials/wave-bg-03.png';
 import quoteIcon from '@/assets/testimonials/quote-icon.png';
@@ -8,44 +9,7 @@ import client04 from '@/assets/testimonials/client-04.jpg';
 import client05 from '@/assets/testimonials/client-05.jpg';
 import client06 from '@/assets/testimonials/client-06.jpg';
 
-const testimonialsData = [
-  {
-    avatar: client01,
-    name: 'Emily Watson',
-    role: 'Football Agent',
-    quote: 'My shortlists used to live in a notes app and three WhatsApp groups. Now every player, club request, and conversation sits in one place I can actually search.',
-  },
-  {
-    avatar: client02,
-    name: 'James Carter',
-    role: 'Agency Director',
-    quote: "The AI match scores changed how we pitch. We send a sporting director a report that argues the fit with real data instead of a paragraph and a highlight reel.",
-  },
-  {
-    avatar: client03,
-    name: 'Olivia Turner',
-    role: 'Sporting Director',
-    quote: "When an agency sends us a Invictus report, we know the profile has been checked against our brief. It saves us a week of back-and-forth on every window.",
-  },
-  {
-    avatar: client04,
-    name: 'Sophia Martinez',
-    role: 'Talent Scout',
-    quote: "Integrated statistics on every profile mean I can compare two players in seconds instead of rebuilding a spreadsheet after each match round.",
-  },
-  {
-    avatar: client05,
-    name: 'Liam Anderson',
-    role: 'Player Representative',
-    quote: "Tracking my players — minutes, contract dates, club interest — used to be manual. Invictus keeps the whole roster current without me chasing anyone.",
-  },
-  {
-    avatar: client06,
-    name: 'Marcus Thompson',
-    role: 'Head of Recruitment',
-    quote: "The PDF exports are the part clubs love. Clear, branded, and they answer the exact request we sent — no more digging through email threads.",
-  },
-];
+const testimonialAvatars = [client01, client02, client03, client04, client05, client06];
 
 interface TestimonialCardProps {
   avatar: string;
@@ -133,6 +97,14 @@ const TestimonialSlider = ({ testimonials, direction = 'left' }: TestimonialSlid
 interface TestimonialsProps extends React.ComponentProps<'section'> {}
 
 const Testimonials = ({ className, ...props }: TestimonialsProps) => {
+  const { t } = useTranslation();
+  const testimonialsData = testimonialAvatars.map((avatar, index) => ({
+    avatar,
+    name: t(`testimonials.items.${index}.name`),
+    role: t(`testimonials.items.${index}.role`),
+    quote: t(`testimonials.items.${index}.quote`),
+  }));
+
   return (
     <section
       className={cn(
@@ -157,14 +129,14 @@ const Testimonials = ({ className, ...props }: TestimonialsProps) => {
             <div className="flex flex-col gap-12 max-md:gap-8">
               <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center px-12 max-lg:px-10 max-md:px-8 max-xs:px-4">
                 <span className="text-xs tracking-[1px] uppercase font-semibold">
-                  Testimonials
+                  {t('testimonials.eyebrow')}
                 </span>
                 <h2 className="text-[4.5rem] max-lg:text-[3rem] max-md:text-[2rem] leading-[1.2] font-bold font-display">
-                  Real User Feedback
+                  {t('testimonials.title')}
                 </h2>
                 <div className="w-full">
                   <p className="text-muted-foreground text-lg leading-[1.4] font-sans font-normal">
-                    See how freelancers and small business owners use the platform to simplify their workflow and work with confidence.
+                    {t('testimonials.description')}
                   </p>
                 </div>
               </div>

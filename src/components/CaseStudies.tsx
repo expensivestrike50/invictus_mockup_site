@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import caseImage01 from '@/assets/case-studies/case-01.jpg';
@@ -7,45 +8,31 @@ import caseImage02 from '@/assets/case-studies/case-02.jpg';
 import caseImage03 from '@/assets/case-studies/case-03.jpg';
 import caseImage04 from '@/assets/case-studies/case-04.jpg';
 
-const caseStudies = [
-  {
-    name: 'Player Shortlists',
-    image: caseImage01,
-    alt: 'CRM dashboard showing a shortlist of football players',
-  },
-  {
-    name: 'AI Match Scores',
-    image: caseImage02,
-    alt: 'AI panel scoring how well a player fits a club request',
-  },
-  {
-    name: 'Agency Reports',
-    image: caseImage03,
-    alt: 'PDF agency report explaining a player-to-club match',
-  },
-  {
-    name: 'Club Pipeline',
-    image: caseImage04,
-    alt: 'Pipeline board of clubs and sporting director contacts',
-  },
-];
+const caseStudyImages = [caseImage01, caseImage02, caseImage03, caseImage04];
 
 interface CaseStudiesProps extends React.ComponentProps<'section'> {}
 
 const CaseStudies = ({ className, ...props }: CaseStudiesProps) => {
+  const { t } = useTranslation();
+  const caseStudies = caseStudyImages.map((image, index) => ({
+    name: t(`caseStudies.items.${index}.name`),
+    image,
+    alt: t(`caseStudies.items.${index}.alt`),
+  }));
+
   return (
     <section className={cn('px-5 md:px-10 max-xs:px-5 py-32 max-lg:py-24 max-xs:py-20', className)} {...props}>
       <div className="max-w-[100rem] mx-auto flex flex-col gap-16 max-lg:gap-12">
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center">
           <span className="text-xs tracking-[1px] uppercase font-semibold">
-            Proven Results
+            {t('caseStudies.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-lg:text-[3rem] max-md:text-[2rem] leading-[1.2] font-bold font-display">
-            Built for How Agencies Actually Work
+            {t('caseStudies.title')}
           </h2>
           <div className="w-full max-w-[36rem] mx-auto">
             <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-              See how agents use Invictus to shortlist talent, prove the fit with data, and close deals with sporting directors faster.
+              {t('caseStudies.description')}
             </p>
           </div>
         </div>

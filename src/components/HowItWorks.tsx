@@ -1,34 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 import demoVideo from '@/assets/demo-video.mp4';
 import demoVideoPoster from '@/assets/demo-video-poster.jpg';
 
-const stepsData = [
-  {
-    number: '01',
-    title: 'Log the Club Request',
-    description: 'Capture what a sporting director needs in one place, from position and profile to budget and timeline.',
-  },
-  {
-    number: '02',
-    title: 'Let AI Automate Decisions',
-    description: 'Invictus automates the scoring, ranking, and next move using your integrated performance data.',
-  },
-  {
-    number: '03',
-    title: 'Send the Agency Report',
-    description: 'Export a club-ready PDF explaining why the talent is the right match, and track the reply.',
-  },
-];
+const stepNumbers = ['01', '02', '03'];
 
 interface HowItWorksProps extends React.ComponentProps<'section'> {}
 
 const HowItWorks = ({ className, ...props }: HowItWorksProps) => {
+  const { t } = useTranslation();
   const cardsStackRef = useRef<HTMLDivElement>(null);
   const [cardsHeight, setCardsHeight] = useState<number | null>(null);
+  const stepsData = stepNumbers.map((number, index) => ({
+    number,
+    title: t(`howItWorks.steps.${index}.title`),
+    description: t(`howItWorks.steps.${index}.description`),
+  }));
 
   useEffect(() => {
     const el = cardsStackRef.current;
@@ -53,14 +44,14 @@ const HowItWorks = ({ className, ...props }: HowItWorksProps) => {
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center mb-16 max-md:mb-12">
           <span className="text-xs tracking-[1px] uppercase font-semibold">
-            How It Works
+            {t('howItWorks.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-lg:text-[3rem] max-md:text-[2rem] leading-[1.2] font-bold font-display">
-            From Request to Signature
+            {t('howItWorks.title')}
           </h2>
           <div className="w-full">
             <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-              Three steps replace the scattered calls, voice notes, and email chains between agents, players, and sporting directors.
+              {t('howItWorks.description')}
             </p>
           </div>
         </div>
@@ -109,7 +100,7 @@ const HowItWorks = ({ className, ...props }: HowItWorksProps) => {
               </div>
 
               <Button variant="invofy" size="invofy" asChild>
-                <Link to="/pricing">View Pricing</Link>
+                <Link to="/pricing">{t('howItWorks.viewPricing')}</Link>
               </Button>
             </div>
           </div>

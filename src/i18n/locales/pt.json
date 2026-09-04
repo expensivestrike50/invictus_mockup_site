@@ -1,0 +1,266 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "pricing": "Preços",
+    "contact": "Contato",
+    "signIn": "Entrar",
+    "signUp": "Cadastrar",
+    "resetPassword": "Redefinir senha",
+    "dashboard": "Painel",
+    "clubs": "Clubes",
+    "reports": "Relatórios",
+    "demo": "Demo",
+    "account": "Conta",
+    "signOut": "Sair",
+    "getStarted": "Começar",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "CRM para agências de futebol",
+    "title": "O Talento Certo para o Clube Certo",
+    "description": "O Invictus substitui intermináveis conversas no WhatsApp e correntes de e-mail por um único CRM com IA para agentes, jogadores, clubes e diretores esportivos.",
+    "tryDemo": "Experimentar modo demo",
+    "viewPricing": "Ver preços",
+    "startingDemo": "Iniciando demo..."
+  },
+  "logoCloud": {
+    "trustedBy": "A confiança de agências e clubes em todo o mundo"
+  },
+  "features": {
+    "eyebrow": "Controle total",
+    "title": "Tudo o que Move a sua Agência",
+    "description": "Da pontuação de compatibilidade por IA a perfis estatísticos e relatórios de agência exportáveis, o Invictus dá a você controle total sobre cada jogador, clube e conversa.",
+    "items": [
+      {
+        "title": "Pontuação de compatibilidade por IA",
+        "description": "A IA integrada classifica seus jogadores de acordo com cada solicitação de clube e explica o porquê."
+      },
+      {
+        "title": "Relatórios de agência",
+        "description": "Exporte um PDF caprichado que argumenta por que um talento se encaixa em um clube específico."
+      },
+      {
+        "title": "Dados de jogadores em tempo real",
+        "description": "Estatísticas de partidas e desempenho integradas em cada perfil que você gerencia."
+      },
+      {
+        "title": "Listas curtas e pipeline",
+        "description": "Atualize seu elenco, crie listas curtas e acompanhe cada negociação até a assinatura."
+      },
+      {
+        "title": "Relacionamento com clubes",
+        "description": "Tire diretores esportivos, olheiros e clubes do WhatsApp e reúna-os em uma única conversa compartilhada."
+      }
+    ],
+    "startMatching": {
+      "title": "Comece a Combinar",
+      "description": "Crie sua primeira lista curta e envie um relatório pronto para o clube em minutos.",
+      "cta": "Começar"
+    }
+  },
+  "caseStudies": {
+    "eyebrow": "Resultados comprovados",
+    "title": "Feito para Como as Agências Realmente Trabalham",
+    "description": "Veja como os agentes usam o Invictus para pré-selecionar talentos, comprovar o encaixe com dados e fechar negócios com diretores esportivos mais rápido.",
+    "items": [
+      {
+        "name": "Listas curtas de jogadores",
+        "alt": "Painel do CRM mostrando uma lista curta de jogadores de futebol"
+      },
+      {
+        "name": "Pontuações de compatibilidade IA",
+        "alt": "Painel de IA pontuando o quanto um jogador se encaixa em uma solicitação de clube"
+      },
+      {
+        "name": "Relatórios de agência",
+        "alt": "Relatório de agência em PDF explicando uma combinação entre jogador e clube"
+      },
+      {
+        "name": "Pipeline de clubes",
+        "alt": "Quadro de pipeline de clubes e contatos de diretores esportivos"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Como Funciona",
+    "title": "Da Solicitação à Assinatura",
+    "description": "Três passos substituem as ligações dispersas, notas de voz e correntes de e-mail entre agentes, jogadores e diretores esportivos.",
+    "steps": [
+      {
+        "title": "Registre a Solicitação do Clube",
+        "description": "Reúna em um só lugar o que um diretor esportivo precisa, da posição e perfil ao orçamento e prazos."
+      },
+      {
+        "title": "Deixe a IA Automatizar as Decisões",
+        "description": "O Invictus automatiza a pontuação, a classificação e o próximo passo usando seus dados de desempenho integrados."
+      },
+      {
+        "title": "Envie o Relatório de Agência",
+        "description": "Exporte um PDF pronto para o clube explicando por que o talento é a combinação certa, e acompanhe a resposta."
+      }
+    ],
+    "viewPricing": "Ver preços"
+  },
+  "pricing": {
+    "eyebrow": "Opções flexíveis",
+    "title": "Comece grátis, faça upgrade quando quiser",
+    "description": "Escolha um plano que se encaixe no seu fluxo de trabalho. Esteja você começando agora ou crescendo rápido, o Invictus cresce com você.",
+    "whatYouGet": "O que Você Recebe",
+    "cancelAnytime": "Pause ou cancele quando quiser",
+    "plans": [
+      {
+        "name": "Inicial",
+        "description": "Para agentes independentes construindo seu primeiro elenco e testando solicitações de clubes.",
+        "price": "$50",
+        "period": "/mês",
+        "features": [
+          "Até 25 perfis de jogadores",
+          "Acompanhamento de solicitações de clubes",
+          "Pontuação de compatibilidade básica",
+          "Relatórios de agência em PDF",
+          "Contatos de clubes compartilhados"
+        ],
+        "button": "Começar"
+      },
+      {
+        "name": "Profissional",
+        "description": "Para agentes estabelecidos gerenciando um elenco ativo em várias ligas.",
+        "price": "$100",
+        "period": "/mês",
+        "features": [
+          "Tudo do plano Inicial",
+          "Perfis de jogadores ilimitados",
+          "Explicações de compatibilidade por IA",
+          "Estatísticas de partidas integradas",
+          "Modelos de relatório personalizados",
+          "Acesso ao aplicativo móvel"
+        ],
+        "button": "Começar"
+      },
+      {
+        "name": "Agência",
+        "description": "Para agências com vários agentes coordenando clubes, olheiros e negociações em grande escala.",
+        "price": "$500",
+        "period": "/mês",
+        "features": [
+          "Tudo do plano Profissional",
+          "Espaços de trabalho multiagente",
+          "Pipeline de negociações e lembretes",
+          "Campos de scouting personalizados",
+          "Suporte prioritário",
+          "Acesso ao aplicativo móvel"
+        ],
+        "button": "Começar"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Depoimentos",
+    "title": "Opiniões Reais de Usuários",
+    "description": "Veja como agentes e agências usam o Invictus para fechar negócios mais rápido e trabalhar com confiança.",
+    "items": [
+      {
+        "name": "Emily Watson",
+        "role": "Agente de futebol",
+        "quote": "Minhas listas curtas costumavam viver em um app de notas e três grupos de WhatsApp. Agora cada jogador, solicitação de clube e conversa ficam em um só lugar que eu realmente consigo pesquisar."
+      },
+      {
+        "name": "James Carter",
+        "role": "Diretor de agência",
+        "quote": "As pontuações de compatibilidade por IA mudaram nossa forma de apresentar. Enviamos a um diretor esportivo um relatório que argumenta o encaixe com dados reais em vez de um parágrafo e um vídeo de destaques."
+      },
+      {
+        "name": "Olivia Turner",
+        "role": "Diretora esportiva",
+        "quote": "Quando uma agência nos envia um relatório do Invictus, sabemos que o perfil foi verificado em relação à nossa solicitação. Isso nos poupa uma semana de idas e vindas em cada janela."
+      },
+      {
+        "name": "Sophia Martinez",
+        "role": "Olheira de talentos",
+        "quote": "Estatísticas integradas em cada perfil significam que posso comparar dois jogadores em segundos em vez de refazer uma planilha depois de cada rodada."
+      },
+      {
+        "name": "Liam Anderson",
+        "role": "Representante de jogadores",
+        "quote": "Acompanhar meus jogadores — minutos, datas de contrato, interesse de clubes — costumava ser manual. O Invictus mantém todo o elenco atualizado sem que eu precise correr atrás de ninguém."
+      },
+      {
+        "name": "Marcus Thompson",
+        "role": "Chefe de recrutamento",
+        "quote": "As exportações em PDF são a parte que os clubes mais gostam. Claras, com nossa marca, e respondem exatamente à solicitação que enviamos — sem mais garimpar em e-mails."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Perguntas Frequentes",
+    "title": "Perguntas e Respostas",
+    "description": "Respostas claras sobre como o Invictus combina talentos com clubes, o que a IA faz e como as agências começam.",
+    "items": [
+      {
+        "question": "Como a IA decide se um jogador se encaixa em um clube?",
+        "answer": "A IA compara a solicitação do clube com os dados de desempenho integrados dos seus jogadores, considerando posição, estilo de jogo, idade, minutos e orçamento, e depois explica o raciocínio por trás de cada pontuação."
+      },
+      {
+        "question": "Posso exportar um relatório de agência em PDF?",
+        "answer": "Sim. Cada combinação gera um PDF com sua marca, pronto para o clube, expondo por que o talento atende àquela solicitação específica, com as estatísticas de apoio incluídas."
+      },
+      {
+        "question": "Ele realmente substitui o WhatsApp e o e-mail?",
+        "answer": "As conversas com diretores esportivos, clubes e jogadores ficam nos registros do jogador e do clube, então nada se perde em um grupo de chat ou em um e-mail encaminhado."
+      },
+      {
+        "question": "De onde vêm as estatísticas dos jogadores?",
+        "answer": "O Invictus traz dados integrados de partidas e desempenho para cada perfil, e você pode adicionar suas próprias notas de scouting e links de vídeo junto."
+      }
+    ],
+    "askAQuestion": "Fazer uma pergunta"
+  },
+  "callToAction": {
+    "eyebrow": "Comece Agora",
+    "title": "Gerencie sua Agência em Um Só Lugar",
+    "button": "Começar agora"
+  },
+  "footer": {
+    "description": "O CRM com IA para agências de futebol. Combine talentos com solicitações de clubes, acompanhe seus jogadores e mantenha os diretores esportivos informados.",
+    "pages": "Páginas",
+    "getStarted": "Começar"
+  },
+  "pricingComparison": {
+    "eyebrow": "Detalhamento completo",
+    "title": "Compare os Planos Lado a Lado",
+    "description": "Veja exatamente o que está incluído em cada plano. Seja você um agente independente ou à frente de uma agência com vários agentes, encontre os recursos certos para o seu elenco.",
+    "popular": "Popular",
+    "featuresColumn": "Recursos",
+    "categories": [
+      {
+        "name": "Talentos e clubes",
+        "features": [
+          "Perfis de jogadores",
+          "Acompanhamento de solicitações de clubes",
+          "Listas curtas",
+          "Perfis de jogadores ilimitados",
+          "Pipeline de negociações e lembretes",
+          "Espaços de trabalho multiagente"
+        ]
+      },
+      {
+        "name": "IA e dados",
+        "features": [
+          "Pontuação de compatibilidade básica",
+          "Explicações de compatibilidade por IA",
+          "Estatísticas de partidas integradas",
+          "Campos de scouting personalizados"
+        ]
+      },
+      {
+        "name": "Relatórios e resultados",
+        "features": [
+          "Relatórios de agência em PDF",
+          "Modelos de relatório personalizados",
+          "Suporte prioritário"
+        ]
+      }
+    ]
+  }
+}

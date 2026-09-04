@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Logo from '@/components/base/logo';
 import xIcon from '@/assets/icons/x-icon.png';
@@ -7,10 +8,10 @@ import linkedinIcon from '@/assets/icons/linkedin-icon.png';
 import facebookIcon from '@/assets/icons/facebook-icon.png';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Contact', href: '/contact' },
+  { key: 'nav.home', href: '/' },
+  { key: 'nav.about', href: '/about' },
+  { key: 'nav.pricing', href: '/pricing' },
+  { key: 'nav.contact', href: '/contact' },
 ];
 
 const socialLinks = [
@@ -21,6 +22,7 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="w-full border-t border-border/40 bg-background">
       <div className="max-w-[100rem] mx-auto px-10 max-md:px-6 max-xs:px-5 py-16">
@@ -29,7 +31,7 @@ const Footer = () => {
           <div className="lg:col-span-5 flex flex-col gap-6">
             <Logo />
             <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-              The AI powered CRM for football agencies. Match talent to club requests, track your players, and keep sporting directors in the loop.
+              {t('footer.description')}
             </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
@@ -49,22 +51,22 @@ const Footer = () => {
           {/* Pages column */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             <h3 className="text-foreground text-sm font-bold uppercase tracking-wider">
-              Pages
+              {t('footer.pages')}
             </h3>
             <nav className="grid grid-cols-2 gap-x-8 gap-y-4">
               {navLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   to={link.href}
                   className="no-underline group"
                 >
                   <div className="relative h-6 overflow-hidden">
                     <div className="flex flex-col">
                       <span className="text-foreground text-lg font-semibold leading-6 transition-transform duration-300 group-hover:-translate-y-6">
-                        {link.label}
+                        {t(link.key)}
                       </span>
                       <span className="text-foreground text-lg font-semibold leading-6 transition-transform duration-300 group-hover:-translate-y-6">
-                        {link.label}
+                        {t(link.key)}
                       </span>
                     </div>
                   </div>
@@ -76,13 +78,13 @@ const Footer = () => {
           {/* CTA column */}
           <div className="lg:col-span-3 flex flex-col gap-6 lg:pl-8 xl:pl-12">
             <h3 className="text-foreground text-sm font-bold uppercase tracking-wider">
-              Get Started
+              {t('footer.getStarted')}
             </h3>
             <Link
               to="/reports"
               className="inline-flex items-center justify-center w-fit px-6 py-3 rounded-full bg-primary text-primary-foreground text-base font-semibold hover:bg-primary/90 transition-colors no-underline"
             >
-              Get Started
+              {t('footer.getStarted')}
             </Link>
           </div>
         </div>

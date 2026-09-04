@@ -1,6 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { pricingPlans } from '@/components/PricingCards';
+import { usePricingPlans } from '@/components/PricingCards';
 import checkIcon from '@/assets/icons/check-icon.png';
 
 interface ComparisonFeature {
@@ -15,36 +16,45 @@ interface FeatureCategory {
   features: ComparisonFeature[];
 }
 
-const comparisonData: FeatureCategory[] = [
-  {
-    category: 'Talent & Clubs',
-    features: [
-      { name: 'Player profiles', starter: true, professional: true, business: true },
-      { name: 'Club request tracking', starter: true, professional: true, business: true },
-      { name: 'Shortlists', starter: true, professional: true, business: true },
-      { name: 'Unlimited player profiles', starter: false, professional: true, business: true },
-      { name: 'Deal pipeline & reminders', starter: false, professional: false, business: true },
-      { name: 'Multi-agent workspaces', starter: false, professional: false, business: true },
-    ],
-  },
-  {
-    category: 'AI & Data',
-    features: [
-      { name: 'Basic match scoring', starter: true, professional: true, business: true },
-      { name: 'AI match explanations', starter: false, professional: true, business: true },
-      { name: 'Integrated match statistics', starter: false, professional: true, business: true },
-      { name: 'Custom scouting fields', starter: false, professional: false, business: true },
-    ],
-  },
-  {
-    category: 'Reports & Output',
-    features: [
-      { name: 'PDF agency reports', starter: true, professional: true, business: true },
-      { name: 'Branded report templates', starter: false, professional: true, business: true },
-      { name: 'Priority support', starter: false, professional: false, business: true },
-    ],
-  },
+// Which plans include each feature — kept separate from the translated
+// copy since inclusion doesn't vary by language.
+const inclusionMatrix: { starter: boolean; professional: boolean; business: boolean }[][] = [
+  [
+    { starter: true, professional: true, business: true },
+    { starter: true, professional: true, business: true },
+    { starter: true, professional: true, business: true },
+    { starter: false, professional: true, business: true },
+    { starter: false, professional: false, business: true },
+    { starter: false, professional: false, business: true },
+  ],
+  [
+    { starter: true, professional: true, business: true },
+    { starter: false, professional: true, business: true },
+    { starter: false, professional: true, business: true },
+    { starter: false, professional: false, business: true },
+  ],
+  [
+    { starter: true, professional: true, business: true },
+    { starter: false, professional: true, business: true },
+    { starter: false, professional: false, business: true },
+  ],
 ];
+
+function useComparisonData(): FeatureCategory[] {
+  const { t } = useTranslation();
+  const categories = t('pricingComparison.categories', { returnObjects: true }) as {
+    name: string;
+    features: string[];
+  }[];
+
+  return categories.map((category, categoryIndex) => ({
+    category: category.name,
+    features: category.features.map((name, featureIndex) => ({
+      name,
+      ...inclusionMatrix[categoryIndex][featureIndex],
+    })),
+  }));
+}
 
 const FeatureCell = ({ value }: { value: boolean | string }) => {
   if (typeof value === 'string') {
@@ -56,14 +66,17 @@ const FeatureCell = ({ value }: { value: boolean | string }) => {
   return <span className="text-muted-foreground text-lg">—</span>;
 };
 
+type PricingPlan = ReturnType<typeof usePricingPlans>[number];
+
 // Mobile/Tablet Card Component
-const MobileComparisonCard = ({ 
-  plan, 
-  planKey 
-}: { 
-  plan: typeof pricingPlans[0]; 
+const MobileComparisonCard = ({
+  plan,
+  planKey
+}: {
+  plan: PricingPlan;
   planKey: 'starter' | 'professional' | 'business';
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={cn(
       'bg-card rounded-[30px] border border-border shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden',
@@ -78,7 +91,7 @@ const MobileComparisonCard = ({
           <span className="text-lg font-bold">{plan.name}</span>
           {planKey === 'professional' && (
             <span className="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-2 py-1 rounded-full">
-              Popular
+              {t('pricingComparison.popular')}
             </span>
           )}
         </div>
@@ -140,6 +153,9 @@ interface PricingComparisonProps {
 }
 
 const PricingComparison = ({ className }: PricingComparisonProps) => {
+  const { t } = useTranslation();
+  const pricingPlans = usePricingPlans();
+  const comparisonData = useComparisonData();
   const planKeys: ('starter' | 'professional' | 'business')[] = ['starter', 'professional', 'business'];
 
   return (
@@ -153,13 +169,13 @@ const PricingComparison = ({ className }: PricingComparisonProps) => {
               {/* Header */}
               <div className="text-center mb-16 max-[767px]:mb-12">
                 <span className="inline-block text-xs tracking-[1px] uppercase font-semibold text-muted-foreground mb-4">
-                  DETAILED BREAKDOWN
+                  {t('pricingComparison.eyebrow')}
                 </span>
                 <h2 className="text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2rem] font-bold leading-[1.1] mb-6">
-                  Compare Plans Side by Side
+                  {t('pricingComparison.title')}
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-[40rem] mx-auto">
-                  See exactly what's included in each plan. Whether you're a solo agent or running a multi-agent agency, find the features that match your roster.
+                  {t('pricingComparison.description')}
                 </p>
               </div>
 
@@ -186,7 +202,7 @@ const PricingComparison = ({ className }: PricingComparisonProps) => {
                         <tr className="border-b border-border">
                           <th className="text-left p-6 w-[40%]">
                             <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                              Features
+                              {t('pricingComparison.featuresColumn')}
                             </span>
                           </th>
                           {pricingPlans.map((plan, index) => (
