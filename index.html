@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect to font origins for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load Google Fonts via link tags instead of CSS @import (removes render blocking) -->
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+    
+    <!-- Preload critical LCP image with high priority -->
+    <link rel="preload" as="image" href="/src/assets/hero-background.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/src/assets/about/about-bg.jpg" />
+    <link rel="preload" as="image" href="/src/assets/pricing/pricing-header-bg.jpg" />
+    <link rel="preload" as="image" href="/src/assets/contact/contact-header-bg.jpg" />
+    
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Invictus — Football Agency CRM for Agents &amp; Clubs</title>
+    <meta name="description" content="Invictus is the AI-powered CRM for football agencies: match players to club requests, track talent and stats, and export agency reports — without endless WhatsApp threads." />
+    <meta name="author" content="Lovable" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Invictus — Football Agency CRM for Agents &amp; Clubs" />
+    <meta property="og:description" content="AI-powered CRM for football agents: shortlist players, match them to club requests, track stats, and export agency reports in one place." />
+    <meta property="og:site_name" content="Invictus" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:title" content="Invictus — Football Agency CRM for Agents &amp; Clubs" />
+    <meta name="twitter:description" content="AI-powered CRM for football agents: shortlist players, match them to club requests, track stats, and export agency reports in one place." />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

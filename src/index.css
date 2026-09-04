@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts are now loaded via link tags in index.html for non-blocking render */
+
+/* Invofy Design System – custom Tailwind-based design system */
+
+@layer base {
+  :root {
+    /* LagrangeSport brand colors */
+    --invofy-dark: 221 44% 7%;
+    --invofy-gray: 0 0% 35%;
+    --invofy-border: 31 29% 79%;
+
+    --brand-blue: 221 83% 53%;
+    --brand-blue-deep: 224 76% 48%;
+    --brand-blue-mid: 213 94% 68%;
+    --brand-blue-light: 212 96% 78%;
+    --brand-ink: 221 44% 7%;
+    --brand-beige-light: 34 44% 94%;
+    --brand-beige: 36 37% 89%;
+    --brand-beige-deep: 31 29% 79%;
+    --brand-muted-ink: 0 0% 35%;
+
+    --signal-cyan: 187 85% 53%;
+    --signal-green: 160 64% 52%;
+    --signal-amber: 38 92% 50%;
+    --signal-coral: 351 95% 71%;
+
+    --background: 34 44% 94%;
+    --foreground: 221 44% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 221 44% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 44% 7%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 37% 89%;
+    --secondary-foreground: 221 44% 7%;
+
+    --muted: 36 37% 89%;
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 212 96% 78%;
+    --accent-foreground: 221 44% 7%;
+
+    --destructive: 351 95% 61%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 31 29% 79%;
+    --input: 31 29% 79%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 34 44% 94%;
+    --sidebar-foreground: 221 44% 7%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 37% 89%;
+    --sidebar-accent-foreground: 221 44% 7%;
+    --sidebar-border: 31 29% 79%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+
+  .dark {
+    --background: 221 44% 7%;
+    --foreground: 34 44% 94%;
+
+    --card: 221 40% 10%;
+    --card-foreground: 34 44% 94%;
+
+    --popover: 221 40% 10%;
+    --popover-foreground: 34 44% 94%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 221 30% 16%;
+    --secondary-foreground: 34 44% 94%;
+
+    --muted: 221 30% 16%;
+    --muted-foreground: 31 20% 72%;
+
+    --accent: 213 94% 68%;
+    --accent-foreground: 221 44% 7%;
+
+    --destructive: 351 95% 61%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 221 30% 18%;
+    --input: 221 30% 18%;
+    --ring: 221 83% 53%;
+    --sidebar-background: 221 44% 7%;
+    --sidebar-foreground: 34 44% 94%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 221 30% 16%;
+    --sidebar-accent-foreground: 34 44% 94%;
+    --sidebar-border: 221 30% 18%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+}
+
+/* Ensure invoice preview respects selected font:
+   - container uses inline style (templateStyles.fontFamily)
+   - children are forced to inherit from the container
+*/
+.invoice-preview * {
+  font-family: inherit !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter Tight', sans-serif;
+  }
+}
