@@ -13,17 +13,7 @@ import xIcon from '@/assets/icons/x-icon.png';
 import instagramIcon from '@/assets/icons/instagram-icon.png';
 import linkedinIcon from '@/assets/icons/linkedin-icon.png';
 import facebookIcon from '@/assets/icons/facebook-icon.png';
-
-const LogoIcon = () => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className="w-6 h-6 text-foreground"
-  >
-    <path d="M18.5293 15.3193C18.7059 14.8935 19.2943 14.8935 19.4707 15.3193L19.7236 15.9307C20.1556 16.9735 20.9615 17.8062 21.9746 18.2568L22.6924 18.5762C23.1026 18.759 23.1026 19.3562 22.6924 19.5391L21.9326 19.877C20.9449 20.3162 20.1534 21.1194 19.7139 22.1279L19.4668 22.6934C19.2864 23.1075 18.7137 23.1075 18.5332 22.6934L18.2871 22.1279C17.8476 21.1193 17.0552 20.3163 16.0674 19.877L15.3076 19.5391C14.8974 19.3562 14.8974 18.759 15.3076 18.5762L16.0254 18.2568C17.0385 17.8062 17.8445 16.9735 18.2764 15.9307L18.5293 15.3193ZM20.002 2C20.5532 2.00012 21 2.45576 21 2.99219V13.3418C20.3744 13.1207 19.7013 13 19 13C15.6863 13 13 15.6863 13 19C13 20.0932 13.2939 21.1173 13.8047 22H3.99316C3.44463 21.9999 3 21.5507 3 20.9922V9H9C9.55228 9 10 8.55228 10 8V2H20.002ZM8 7H3L8 2.00293V7Z"></path>
-  </svg>
-);
+import { LogoMark } from '@/components/base/logo';
 
 const socialLinks = [
   { icon: xIcon, href: 'https://www.x.com/', alt: 'X' },
@@ -110,7 +100,7 @@ const SignIn = () => {
     
     toast({
       title: "Sign in successful!",
-      description: "Welcome back to Invofy.",
+      description: "Welcome back to Invictus.",
     });
     
     navigate('/dashboard');
@@ -133,7 +123,7 @@ const SignIn = () => {
     
     toast({
       title: "Welcome to Demo Mode!",
-      description: "Explore Invofy with sample data.",
+      description: "Explore Invictus with sample data.",
     });
     
     navigate('/dashboard');
@@ -152,9 +142,9 @@ const SignIn = () => {
       {/* Header with centered logo */}
       <header className="pt-8 max-[479px]:pt-6 flex justify-center">
         <Link to="/" className="flex items-center gap-2 no-underline">
-          <LogoIcon />
+          <LogoMark className="h-6 w-auto text-foreground" />
           <span className="text-foreground text-[1.675rem] max-[479px]:text-[1.5rem] font-bold font-display leading-[1.2]">
-            Invofy
+            Invictus
           </span>
         </Link>
       </header>
@@ -302,9 +292,9 @@ const SignIn = () => {
        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 no-underline">
-            <LogoIcon />
+            <LogoMark className="h-5 w-auto text-foreground" />
             <span className="text-foreground text-xl max-[479px]:text-lg font-bold font-display leading-[1.2]">
-              Invofy
+              Invictus
             </span>
           </Link>
           
