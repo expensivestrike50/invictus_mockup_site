@@ -1,29 +1,29 @@
-import caaSports from '@/assets/partners/Image_5.png.asset.json';
-import invictusLogo from '@/assets/partners/Image_6.png.asset.json';
-import nikeLogo from '@/assets/partners/Image_8.png.asset.json';
-import adidasLogo from '@/assets/partners/Image_9.png.asset.json';
-import sparkLogo from '@/assets/partners/Image_10.png.asset.json';
-import nvidiaLogo from '@/assets/partners/Image_11.png.asset.json';
-import mikvonStars from '@/assets/partners/Image_12.png.asset.json';
-import talentFirst from '@/assets/partners/Image_13.png.asset.json';
-import soccerPro from '@/assets/partners/Image_14.png.asset.json';
-import theFootballAgents from '@/assets/partners/Image_15.png.asset.json';
-import caseWesternReserve from '@/assets/partners/Image_16.png.asset.json';
-import proFootballAgency from '@/assets/partners/Image_17.png.asset.json';
+import caaSports from '@/assets/partners/Image_5.png';
+import invictusLogo from '@/assets/partners/Image_6.png';
+import nikeLogo from '@/assets/partners/Image_8.png';
+import adidasLogo from '@/assets/partners/Image_9.png';
+import sparkLogo from '@/assets/partners/Image_10.png';
+import nvidiaLogo from '@/assets/partners/Image_11.png';
+import mikvonStars from '@/assets/partners/Image_12.png';
+import talentFirst from '@/assets/partners/Image_13.png';
+import soccerPro from '@/assets/partners/Image_14.png';
+import theFootballAgents from '@/assets/partners/Image_15.png';
+import caseWesternReserve from '@/assets/partners/Image_16.png';
+import proFootballAgency from '@/assets/partners/Image_17.png';
 
 const partners = [
-  { src: caaSports.url, alt: 'CAA Sports' },
-  { src: invictusLogo.url, alt: 'Invictus' },
-  { src: nikeLogo.url, alt: 'Nike' },
-  { src: adidasLogo.url, alt: 'Adidas' },
-  { src: sparkLogo.url, alt: 'Spark' },
-  { src: nvidiaLogo.url, alt: 'NVIDIA' },
-  { src: mikvonStars.url, alt: 'Mikvon Stars Agency' },
-  { src: talentFirst.url, alt: 'Talent First Agency' },
-  { src: soccerPro.url, alt: 'Soccer Pro Agency' },
-  { src: theFootballAgents.url, alt: 'The Football Agents' },
-  { src: caseWesternReserve.url, alt: 'Case Western Reserve University' },
-  { src: proFootballAgency.url, alt: 'Pro Football Agency' },
+  { src: caaSports, alt: 'CAA Sports' },
+  { src: invictusLogo, alt: 'Invictus' },
+  { src: nikeLogo, alt: 'Nike' },
+  { src: adidasLogo, alt: 'Adidas' },
+  { src: sparkLogo, alt: 'Spark' },
+  { src: nvidiaLogo, alt: 'NVIDIA' },
+  { src: mikvonStars, alt: 'Mikvon Stars Agency' },
+  { src: talentFirst, alt: 'Talent First Agency' },
+  { src: soccerPro, alt: 'Soccer Pro Agency' },
+  { src: theFootballAgents, alt: 'The Football Agents' },
+  { src: caseWesternReserve, alt: 'Case Western Reserve University' },
+  { src: proFootballAgency, alt: 'Pro Football Agency' },
 ];
 
 const AboutPartners = () => {

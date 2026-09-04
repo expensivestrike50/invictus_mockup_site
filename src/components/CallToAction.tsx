@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import ctaBg from '@/assets/cta-bg.png';
 
-import ctaImage01Asset from '@/assets/cta/cta-image-01.jpg.asset.json';
+import ctaImage01Asset from '@/assets/cta/cta-image-01.jpg';
 import ctaImage02 from '@/assets/cta/cta-image-02.jpg';
 import ctaImage03 from '@/assets/cta/cta-image-03.jpg';
 import ctaImage04 from '@/assets/cta/cta-image-04.jpg';
@@ -12,7 +12,7 @@ import ctaImage05 from '@/assets/cta/cta-image-05.jpg';
 import ctaImage06 from '@/assets/cta/cta-image-06.jpg';
 
 const ctaImages = [
-  { src: ctaImage01Asset.url, alt: 'Analyst monitoring live match data and player statistics from a stadium control room', bgColor: '#DBEAFE', endX: '-30vw', endY: '-28vh', endScale: 0.8 },
+  { src: ctaImage01Asset, alt: 'Analyst monitoring live match data and player statistics from a stadium control room', bgColor: '#DBEAFE', endX: '-30vw', endY: '-28vh', endScale: 0.8 },
   { src: ctaImage02, alt: 'Agent and sporting director shaking hands', bgColor: '#EEE6DA', endX: '35vw', endY: '20vh', endScale: 1.1 },
   { src: ctaImage03, alt: 'Football stadium at golden hour', bgColor: '#93C5FD', endX: '30vw', endY: '-30vh', endScale: 0.9 },
   { src: ctaImage04, alt: 'Agent reviewing player data on a laptop', bgColor: '#D8C9B9', endX: '-30vw', endY: '30vh', endScale: 0.95 },

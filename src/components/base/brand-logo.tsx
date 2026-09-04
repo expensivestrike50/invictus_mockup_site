@@ -1,4 +1,4 @@
-import invictusLogo from '@/assets/invictus-logo.png.asset.json';
+import invictusLogo from '@/assets/invictus-logo.png';
 import { cn } from '@/lib/utils';
 
 /**
@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
  */
 export const BrandLogo = ({ className }: { className?: string }) => (
   <img
-    src={invictusLogo.url}
+    src={invictusLogo}
     alt="Invictus logo"
     width={344}
     height={139}

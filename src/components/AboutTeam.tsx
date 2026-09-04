@@ -2,7 +2,7 @@ import dylanDewey from '@/assets/about/dylan-dewey.png';
 import teamMember02 from '@/assets/about/avatar-02.png';
 import teamMember03 from '@/assets/about/avatar-03.png';
 import teamMember04 from '@/assets/about/avatar-04.png';
-import thomasTawiahBaah from '@/assets/about/thomas-tawiah-baah.png.asset.json';
+import thomasTawiahBaah from '@/assets/about/thomas-tawiah-baah.png';
 
 const teamMembers = [
   {
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: 'Thomas Baah',
     role: 'TBD',
-    image: thomasTawiahBaah.url,
+    image: thomasTawiahBaah,
     bgColor: '#EEE6DA',
   },
   {
