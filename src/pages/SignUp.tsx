@@ -8,7 +8,6 @@ import { useAuth } from '@/contexts/AuthContext';
 import { SocialAuthButtons } from '@/components/base/social-auth-buttons';
 import { z } from 'zod';
 import { Loader2 } from 'lucide-react';
-import signinBg from '@/assets/auth/signin-bg.jpg';
 import xIcon from '@/assets/icons/x-icon.png';
 import instagramIcon from '@/assets/icons/instagram-icon.png';
 import linkedinIcon from '@/assets/icons/linkedin-icon.png';
@@ -167,10 +166,7 @@ const SignUp = () => {
         {/* Outer container with background */}
        <div className="w-full max-w-[1440px] rounded-[48px] md:rounded-[64px] overflow-hidden">
           {/* Background image container */}
-          <div 
-           className="w-full p-6 sm:p-10 md:p-20 lg:p-24 bg-cover bg-center"
-            style={{ backgroundImage: `url(${signinBg})` }}
-          >
+          <div className="w-full p-6 sm:p-10 md:p-20 lg:p-24 bg-gradient-to-br from-brand-beige-light via-brand-blue-light to-brand-blue">
             {/* White form card */}
            <div className="bg-card rounded-[30px] p-6 sm:p-8 md:p-10 lg:p-12 w-full max-w-[450px] md:max-w-[500px] lg:max-w-[560px] mx-auto shadow-xl">
               {/* Heading */}
