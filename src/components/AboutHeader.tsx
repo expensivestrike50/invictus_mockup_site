@@ -42,7 +42,7 @@ const AboutHeader = () => {
               
               {/* Description */}
               <p className="text-foreground/80 text-lg max-[479px]:text-base leading-relaxed mb-10 max-[479px]:mb-8 max-w-[32rem]">
-                We build a CRM made for football that helps agents match players to club requests, prove it with data, and keep every conversation in one place.
+                Invictus is the platform built for football, helping agents match players to club requests, prove it with data, and keep every conversation in one place.
               </p>
               
               {/* Buttons */}
