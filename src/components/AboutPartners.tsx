@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import caaSports from '@/assets/partners/Image_5.png';
 import invictusLogo from '@/assets/partners/Image_6.png';
 import nikeLogo from '@/assets/partners/Image_8.png';
@@ -27,19 +28,20 @@ const partners = [
 ];
 
 const AboutPartners = () => {
+  const { t } = useTranslation();
   return (
     <section className="px-10 max-[767px]:px-6 max-[479px]:px-5 pb-32 max-[991px]:pb-24 max-[479px]:pb-20">
       <div className="max-w-[100rem] mx-auto">
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center mb-16">
           <span className="text-xs tracking-[0.15em] uppercase font-semibold">
-            PARTNERS AND COLLABORATORS
+            {t('aboutPartners.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2rem] leading-[1.2] font-bold font-display">
-            Trusted Across the Game
+            {t('aboutPartners.title')}
           </h2>
           <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-            We work alongside agencies, brands, and football organisations that share our belief in better, data backed representation.
+            {t('aboutPartners.description')}
           </p>
         </div>
 

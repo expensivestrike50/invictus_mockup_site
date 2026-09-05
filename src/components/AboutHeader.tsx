@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import aboutBg from '@/assets/about/about-bg.jpg';
 
-const stats = [
-  { value: '80K+', label: 'Players Tracked' },
-  { value: '2.5K+', label: 'Agencies & Clubs' },
-  { value: '120+', label: 'Countries Reached' },
-];
-
 const AboutHeader = () => {
+  const { t } = useTranslation();
+  const stats = t('aboutHeader.stats', { returnObjects: true }) as { value: string; label: string }[];
   return (
     <section
       className="relative w-full overflow-hidden rounded-b-[4rem] max-[479px]:rounded-b-[3rem] min-h-screen max-[991px]:min-h-fit flex flex-col"
@@ -32,26 +29,26 @@ const AboutHeader = () => {
             <div className="relative z-10 flex flex-col items-center text-center max-w-[42rem] mx-auto">
               {/* Label */}
               <span className="text-foreground text-sm font-semibold uppercase tracking-[0.2em] mb-6 max-[479px]:text-xs max-[479px]:mb-4">
-                About Us
+                {t('aboutHeader.label')}
               </span>
-              
+
               {/* Heading */}
               <h1 className="text-foreground text-[4.5rem] max-[991px]:text-[3.5rem] max-[767px]:text-[3rem] max-[479px]:text-[2.25rem] font-bold font-display leading-[1.1] mb-6 max-[479px]:mb-4">
-                We Help Agents Place the Right Talent.
+                {t('aboutHeader.title')}
               </h1>
-              
+
               {/* Description */}
               <p className="text-foreground/80 text-lg max-[479px]:text-base leading-relaxed mb-10 max-[479px]:mb-8 max-w-[32rem]">
-                Invictus is the platform built for football, helping agents match players to club requests, prove it with data, and keep every conversation in one place.
+                {t('aboutHeader.description')}
               </p>
-              
+
               {/* Buttons */}
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="invofy" size="invofy" asChild>
-                  <Link to="/contact">Get in Touch</Link>
+                  <Link to="/contact">{t('aboutHeader.getInTouch')}</Link>
                 </Button>
                 <Button variant="invofyOutline" size="invofy" asChild>
-                  <Link to="/pricing">View Pricing</Link>
+                  <Link to="/pricing">{t('aboutHeader.viewPricing')}</Link>
                 </Button>
               </div>
             </div>

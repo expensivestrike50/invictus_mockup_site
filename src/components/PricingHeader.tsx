@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import PricingCards from '@/components/PricingCards';
 
@@ -5,6 +6,7 @@ import PricingCards from '@/components/PricingCards';
 interface PricingHeaderProps extends React.ComponentProps<'section'> {}
 
 const PricingHeader = ({ className, ...props }: PricingHeaderProps) => {
+  const { t } = useTranslation();
   return (
     <section 
       className={cn(
@@ -29,17 +31,17 @@ const PricingHeader = ({ className, ...props }: PricingHeaderProps) => {
           <div className="flex flex-col items-center text-center pt-48 max-[991px]:pt-40 max-[767px]:pt-36 max-[479px]:pt-32 pb-16 max-[767px]:pb-12 max-[479px]:pb-10">
             {/* Label */}
             <span className="text-foreground text-xs tracking-[1px] uppercase font-semibold mb-4">
-              Straightforward Plans
+              {t('pricingHeader.eyebrow')}
             </span>
-            
+
             {/* Heading */}
             <h1 className="text-foreground text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2.5rem] max-[479px]:text-[2rem] font-bold font-display leading-[1.2] mb-4 max-w-[48rem]">
-              Flexible Plans for Agencies
+              {t('pricingHeader.title')}
             </h1>
-            
+
             {/* Description */}
             <p className="text-muted-foreground text-lg max-[479px]:text-base leading-[1.4] font-normal max-w-[40rem]">
-              Choose a plan that matches your roster and start matching talent to club requests with AI, live statistics, and club-ready reports.
+              {t('pricingHeader.description')}
             </p>
           </div>
           

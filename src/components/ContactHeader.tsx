@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -50,6 +51,7 @@ const SocialIcon = ({ icon, href, alt }: { icon: string; href: string; alt: stri
 
 
 const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
+  const { t } = useTranslation();
   const { toast } = useToast();
 
   const [formData, setFormData] = useState<ContactFormData>({
@@ -93,8 +95,8 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
+      title: t('contactHeader.toast.title'),
+      description: t('contactHeader.toast.description'),
     });
     
     // Reset form
@@ -130,17 +132,17 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
           <div className="flex flex-col items-center text-center pt-48 max-[991px]:pt-40 max-[767px]:pt-36 max-[479px]:pt-32 pb-16 max-[767px]:pb-12 max-[479px]:pb-10">
             {/* Label */}
             <span className="text-foreground text-xs tracking-[1px] uppercase font-semibold mb-4">
-              Get in Touch
+              {t('contactHeader.label')}
             </span>
-            
+
             {/* Heading */}
             <h1 className="text-foreground text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2.5rem] max-[479px]:text-[2rem] font-bold font-display leading-[1.2] mb-4 max-w-[48rem]">
-              Talk to Our Team
+              {t('contactHeader.title')}
             </h1>
-            
+
             {/* Description */}
             <p className="text-muted-foreground text-lg max-[479px]:text-base leading-[1.4] font-normal max-w-[40rem]">
-              Whether you are an agent, a sporting director, or a club, send us a message and we will get back to you as soon as possible.
+              {t('contactHeader.description')}
             </p>
           </div>
           
@@ -152,12 +154,12 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
                 <div className="grid grid-cols-2 gap-4 max-[767px]:grid-cols-1">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-foreground px-1">
-                      Full name
+                      {t('contactHeader.form.fullName')}
                     </label>
                     <Input
                       type="text"
                       name="fullName"
-                      placeholder="Enter your full name"
+                      placeholder={t('contactHeader.form.fullNamePlaceholder')}
                       value={formData.fullName}
                       onChange={handleChange}
                       className={cn(
@@ -171,12 +173,12 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-foreground px-1">
-                      Email address
+                      {t('contactHeader.form.emailAddress')}
                     </label>
                     <Input
                       type="email"
                       name="email"
-                      placeholder="Enter your email address"
+                      placeholder={t('contactHeader.form.emailPlaceholder')}
                       value={formData.email}
                       onChange={handleChange}
                       className={cn(
@@ -194,12 +196,12 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
                 <div className="grid grid-cols-2 gap-4 max-[767px]:grid-cols-1">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-foreground px-1">
-                      Phone number
+                      {t('contactHeader.form.phoneNumber')}
                     </label>
                     <Input
                       type="tel"
                       name="phone"
-                      placeholder="Enter your phone number"
+                      placeholder={t('contactHeader.form.phonePlaceholder')}
                       value={formData.phone}
                       onChange={handleChange}
                       className="h-14 rounded-full border-border bg-white px-6 text-base placeholder:text-gray-400 focus-visible:ring-primary"
@@ -207,12 +209,12 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-foreground px-1">
-                      Subject
+                      {t('contactHeader.form.subject')}
                     </label>
                     <Input
                       type="text"
                       name="subject"
-                      placeholder="Enter the subject"
+                      placeholder={t('contactHeader.form.subjectPlaceholder')}
                       value={formData.subject}
                       onChange={handleChange}
                       className={cn(
@@ -229,11 +231,11 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
                 {/* Row 3: Message */}
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-foreground px-1">
-                    Message
+                    {t('contactHeader.form.message')}
                   </label>
                   <Textarea
                     name="message"
-                    placeholder="Enter your message"
+                    placeholder={t('contactHeader.form.messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
@@ -256,7 +258,7 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
                     disabled={isSubmitting}
                     className="max-[479px]:w-full"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send message'}
+                    {isSubmitting ? t('contactHeader.form.sending') : t('contactHeader.form.send')}
                   </Button>
                   
                   <div className="flex items-center gap-3 max-[479px]:justify-center">

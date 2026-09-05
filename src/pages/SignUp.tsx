@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -57,6 +58,7 @@ const signUpSchema = z.object({
 });
 
 const SignUp = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const navigate = useNavigate();
   const { signUp, signInAnonymously, user, isLoading: authLoading } = useAuth();
@@ -99,20 +101,20 @@ const SignUp = () => {
     if (error) {
       let message = error.message;
       if (message.includes('already registered')) {
-        message = 'An account with this email already exists. Please sign in instead.';
+        message = t('signUp.toast.alreadyRegistered');
       }
       toast({
         variant: 'destructive',
-        title: "Sign up failed",
+        title: t('signUp.toast.failedTitle'),
         description: message,
       });
       setIsSubmitting(false);
       return;
     }
-    
+
     toast({
-      title: "Account created!",
-      description: "Please check your email to verify your account.",
+      title: t('signUp.toast.successTitle'),
+      description: t('signUp.toast.successDescription'),
     });
     
     setIsSubmitting(false);
@@ -126,16 +128,16 @@ const SignUp = () => {
     if (error) {
       toast({
         variant: 'destructive',
-        title: "Demo mode failed",
+        title: t('signUp.toast.demoFailedTitle'),
         description: error.message,
       });
       setIsDemoLoading(false);
       return;
     }
-    
+
     toast({
-      title: "Welcome to Demo Mode!",
-      description: "Explore Invictus with sample data.",
+      title: t('signUp.toast.demoTitle'),
+      description: t('signUp.toast.demoDescription'),
     });
     
     navigate('/dashboard');
@@ -172,10 +174,10 @@ const SignUp = () => {
               {/* Heading */}
               <div className="text-center mb-6">
                 <h1 className="text-foreground text-2xl sm:text-3xl font-bold font-display mb-2">
-                  Create an account
+                  {t('signUp.heading')}
                 </h1>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  Get started with Invictus today
+                  {t('signUp.subtitle')}
                 </p>
               </div>
               
@@ -186,7 +188,7 @@ const SignUp = () => {
               {/* Divider */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-1 h-px bg-border" />
-                <span className="text-muted-foreground text-sm">Or sign up with</span>
+                <span className="text-muted-foreground text-sm">{t('signUp.orSignUpWith')}</span>
                 <div className="flex-1 h-px bg-border" />
               </div>
               
@@ -194,12 +196,12 @@ const SignUp = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground font-medium">
-                    Full Name
+                    {t('signUp.fullName')}
                   </Label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="Enter your full name"
+                    placeholder={t('signUp.fullNamePlaceholder')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className={`h-14 rounded-full border-border bg-white px-6 ${errors.name ? 'border-destructive' : ''}`}
@@ -211,12 +213,12 @@ const SignUp = () => {
                 
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-foreground font-medium">
-                    Email Address
+                    {t('signUp.emailAddress')}
                   </Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t('signUp.emailPlaceholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={`h-14 rounded-full border-border bg-white px-6 ${errors.email ? 'border-destructive' : ''}`}
@@ -228,12 +230,12 @@ const SignUp = () => {
                 
                 <div className="space-y-2">
                   <Label htmlFor="password" className="text-foreground font-medium">
-                    Password
+                    {t('signUp.password')}
                   </Label>
                   <Input
                     id="password"
                     type="password"
-                    placeholder="Create a password"
+                    placeholder={t('signUp.passwordPlaceholder')}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className={`h-14 rounded-full border-border bg-white px-6 ${errors.password ? 'border-destructive' : ''}`}
@@ -245,12 +247,12 @@ const SignUp = () => {
                 
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword" className="text-foreground font-medium">
-                    Confirm Password
+                    {t('signUp.confirmPassword')}
                   </Label>
                   <Input
                     id="confirmPassword"
                     type="password"
-                    placeholder="Confirm your password"
+                    placeholder={t('signUp.confirmPasswordPlaceholder')}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     className={`h-14 rounded-full border-border bg-white px-6 ${errors.confirmPassword ? 'border-destructive' : ''}`}
@@ -270,10 +272,10 @@ const SignUp = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Creating Account...
+                      {t('signUp.creatingAccount')}
                     </>
                   ) : (
-                    'Sign Up'
+                    t('signUp.signUp')
                   )}
                 </Button>
               </form>
@@ -281,7 +283,7 @@ const SignUp = () => {
               {/* Demo Mode Divider */}
               <div className="flex items-center gap-4 my-6">
                 <div className="flex-1 h-px bg-border" />
-                <span className="text-muted-foreground text-sm">or</span>
+                <span className="text-muted-foreground text-sm">{t('signUp.or')}</span>
                 <div className="flex-1 h-px bg-border" />
               </div>
 
@@ -297,23 +299,23 @@ const SignUp = () => {
                 {isDemoLoading ? (
                   <>
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                    Starting Demo...
+                    {t('signUp.startingDemo')}
                   </>
                 ) : (
-                  'Try Demo Mode'
+                  t('signUp.tryDemoMode')
                 )}
               </Button>
 
               {/* Links */}
               <div className="text-center mt-6 text-sm">
                 <span className="text-muted-foreground">
-                  Already have an account?{' '}
+                  {t('signUp.alreadyHaveAccount')}{' '}
                 </span>
-                <Link 
-                  to="/signin" 
+                <Link
+                  to="/signin"
                   className="text-primary font-semibold hover:underline"
                 >
-                  Sign In
+                  {t('signUp.signIn')}
                 </Link>
               </div>
             </div>

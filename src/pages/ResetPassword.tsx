@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
  import { Button } from '@/components/ui/button';
  import { Input } from '@/components/ui/input';
  import { Label } from '@/components/ui/label';
@@ -64,6 +65,7 @@ const newPasswordSchema = z.object({
 });
 
  const ResetPassword = () => {
+   const { t } = useTranslation();
    const { toast } = useToast();
   const navigate = useNavigate();
    const [email, setEmail] = useState('');
@@ -115,8 +117,8 @@ const newPasswordSchema = z.object({
     // Always show success to prevent email enumeration
     setIsSubmitted(true);
     toast({
-      title: "Check your email",
-      description: "If an account exists for that email, we've sent reset instructions.",
+      title: t('resetPassword.toast.checkEmailTitle'),
+      description: t('resetPassword.toast.checkEmailDescription'),
     });
     if (error) {
       // Log the category, not the raw message, to avoid leaking internals
@@ -143,14 +145,14 @@ const newPasswordSchema = z.object({
     if (error) {
       toast({
         variant: 'destructive',
-        title: 'Could not update password',
+        title: t('resetPassword.toast.updateFailedTitle'),
         description: error.message,
       });
       return;
     }
     toast({
-      title: 'Password updated',
-      description: 'You can now sign in with your new password.',
+      title: t('resetPassword.toast.updatedTitle'),
+      description: t('resetPassword.toast.updatedDescription'),
     });
     await supabase.auth.signOut();
     navigate('/signin');
@@ -163,7 +165,7 @@ const newPasswordSchema = z.object({
          <Link to="/" className="flex items-center gap-2 no-underline">
            <LogoIcon />
            <span className="text-foreground text-[1.675rem] max-[479px]:text-[1.5rem] font-bold font-display leading-[1.2]">
-             Invofy
+             Invictus
            </span>
          </Link>
        </header>
@@ -182,14 +184,14 @@ const newPasswordSchema = z.object({
                {/* Heading */}
                <div className="text-center mb-6">
                  <h1 className="text-foreground text-2xl sm:text-3xl font-bold font-display mb-2">
-                   Reset your password
+                   {t('resetPassword.heading')}
                  </h1>
                  <p className="text-muted-foreground text-sm sm:text-base">
                   {isRecoveryMode
-                    ? "Choose a new password for your account"
+                    ? t('resetPassword.subtitleRecovery')
                     : isSubmitted
-                     ? "We've sent you an email with reset instructions"
-                     : "Enter your email and we'll send you a reset link"
+                     ? t('resetPassword.subtitleSubmitted')
+                     : t('resetPassword.subtitleDefault')
                    }
                  </p>
                </div>
@@ -197,11 +199,11 @@ const newPasswordSchema = z.object({
               {isRecoveryMode ? (
                 <form onSubmit={handleSetNewPassword} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="new-password" className="text-foreground font-medium">New Password</Label>
+                    <Label htmlFor="new-password" className="text-foreground font-medium">{t('resetPassword.newPassword')}</Label>
                     <Input
                       id="new-password"
                       type="password"
-                      placeholder="At least 8 characters"
+                      placeholder={t('resetPassword.newPasswordPlaceholder')}
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
                       maxLength={128}
@@ -210,11 +212,11 @@ const newPasswordSchema = z.object({
                     {pwErrors.password && <p className="text-destructive text-sm">{pwErrors.password}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="confirm-password" className="text-foreground font-medium">Confirm Password</Label>
+                    <Label htmlFor="confirm-password" className="text-foreground font-medium">{t('resetPassword.confirmPassword')}</Label>
                     <Input
                       id="confirm-password"
                       type="password"
-                      placeholder="Repeat new password"
+                      placeholder={t('resetPassword.confirmPasswordPlaceholder')}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       maxLength={128}
@@ -223,7 +225,7 @@ const newPasswordSchema = z.object({
                     {pwErrors.confirmPassword && <p className="text-destructive text-sm">{pwErrors.confirmPassword}</p>}
                   </div>
                   <Button type="submit" variant="invofy" size="invofy" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? 'Updating…' : 'Update Password'}
+                    {isSubmitting ? t('resetPassword.updating') : t('resetPassword.updatePassword')}
                   </Button>
                 </form>
               ) : !isSubmitted ? (
@@ -231,12 +233,12 @@ const newPasswordSchema = z.object({
                  <form onSubmit={handleSubmit} className="space-y-4">
                    <div className="space-y-2">
                      <Label htmlFor="email" className="text-foreground font-medium">
-                       Email Address
+                       {t('resetPassword.emailAddress')}
                      </Label>
                      <Input
                        id="email"
                        type="email"
-                       placeholder="Enter your email"
+                       placeholder={t('resetPassword.emailPlaceholder')}
                        value={email}
                        onChange={(e) => setEmail(e.target.value)}
                       maxLength={255}
@@ -254,7 +256,7 @@ const newPasswordSchema = z.object({
                      className="w-full"
                      disabled={isSubmitting}
                    >
-                     {isSubmitting ? 'Sending...' : 'Send Reset Link'}
+                     {isSubmitting ? t('resetPassword.sending') : t('resetPassword.sendResetLink')}
                    </Button>
                  </form>
                ) : (
@@ -276,7 +278,7 @@ const newPasswordSchema = z.object({
                      </svg>
                    </div>
                    <p className="text-muted-foreground mb-4">
-                     Check your inbox for further instructions
+                     {t('resetPassword.checkInbox')}
                    </p>
                    <Button
                      type="button"
@@ -287,7 +289,7 @@ const newPasswordSchema = z.object({
                        setEmail('');
                      }}
                    >
-                     Try another email
+                     {t('resetPassword.tryAnotherEmail')}
                    </Button>
                  </div>
                )}
@@ -295,13 +297,13 @@ const newPasswordSchema = z.object({
                {/* Links */}
                <div className="text-center mt-6 text-sm">
                  <span className="text-muted-foreground">
-                   Remember your password?{' '}
+                   {t('resetPassword.rememberPassword')}{' '}
                  </span>
-                 <Link 
-                   to="/signin" 
+                 <Link
+                   to="/signin"
                    className="text-primary font-semibold hover:underline"
                  >
-                   Sign In
+                   {t('resetPassword.signIn')}
                  </Link>
                </div>
              </div>

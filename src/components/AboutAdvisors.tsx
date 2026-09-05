@@ -1,34 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import advisor01 from '@/assets/about/advisor-01.png';
 import advisor02 from '@/assets/about/advisor-02.png';
 import advisor03 from '@/assets/about/advisor-03.png';
 import advisor04 from '@/assets/about/advisor-04.png';
 
-const advisors = [
-  {
-    name: 'TBD',
-    role: 'Advisor',
-    image: advisor01,
-    bgColor: '#EEE6DA',
-  },
-  {
-    name: 'TBD',
-    role: 'Advisor',
-    image: advisor02,
-    bgColor: '#EEE6DA',
-  },
-  {
-    name: 'TBD',
-    role: 'Advisor',
-    image: advisor03,
-    bgColor: '#EEE6DA',
-  },
-  {
-    name: 'TBD',
-    role: 'Advisor',
-    image: advisor04,
-    bgColor: '#EEE6DA',
-  },
-];
+const advisorImages = [advisor01, advisor02, advisor03, advisor04];
 
 interface AdvisorCardProps {
   name: string;
@@ -65,26 +41,34 @@ const AdvisorCard = ({ name, role, image, bgColor }: AdvisorCardProps) => (
 );
 
 const AboutAdvisors = () => {
+  const { t } = useTranslation();
+  const role = t('aboutAdvisors.role');
+  const advisors = advisorImages.map((image) => ({
+    name: 'TBD',
+    role,
+    image,
+    bgColor: '#EEE6DA',
+  }));
   return (
     <section className="px-10 max-[767px]:px-6 max-[479px]:px-5 pb-32 max-[991px]:pb-24 max-[479px]:pb-20">
       <div className="max-w-[100rem] mx-auto">
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center mb-12">
           <span className="text-xs tracking-[0.15em] uppercase font-semibold">
-            Advisors
+            {t('aboutAdvisors.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2rem] leading-[1.2] font-bold font-display">
-            Guided by Experience
+            {t('aboutAdvisors.title')}
           </h2>
           <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-            A network of operators, investors, and football people who help us stay close to the real work of agents and clubs.
+            {t('aboutAdvisors.description')}
           </p>
         </div>
 
         {/* Advisors Grid */}
         <div className="grid grid-cols-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1 gap-6">
-          {advisors.map((advisor) => (
-            <AdvisorCard key={advisor.name + advisor.image} {...advisor} />
+          {advisors.map((advisor, index) => (
+            <AdvisorCard key={index} {...advisor} />
           ))}
         </div>
       </div>

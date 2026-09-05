@@ -1,31 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import waveBg from '@/assets/about/wave-bg-values.png';
 
 import valuesImage from '@/assets/about/values-image.jpg';
-
-const valuesData = [
-  {
-    number: 1,
-    title: 'Football First',
-    description: 'Every feature is built for agents, players, and sporting directors, designed around how football recruitment actually works.',
-  },
-  {
-    number: 2,
-    title: 'Evidence Over Instinct',
-    description: 'Every recommendation is backed by integrated performance data and explainable AI, so a pitch to a club is proven, not just claimed.',
-  },
-  {
-    number: 3,
-    title: 'One Conversation',
-    description: 'We replace scattered WhatsApp threads and email chains with a single shared record that agents, players, and clubs can trust.',
-  },
-  {
-    number: 4,
-    title: 'Agent Ownership',
-    description: 'Your player lists, reports, and club relationships stay yours, exportable as professional PDF agency reports at any time.',
-  },
-];
 
 interface ValueCardProps {
   number: number;
@@ -47,6 +25,9 @@ const ValueCard = ({ number, title, description }: ValueCardProps) => (
 );
 
 const AboutValues = () => {
+  const { t } = useTranslation();
+  const items = t('aboutValues.items', { returnObjects: true }) as { title: string; description: string }[];
+  const valuesData = items.map((item, index) => ({ number: index + 1, ...item }));
   return (
     <section className="px-10 max-[767px]:px-6 max-[479px]:px-5 pb-32 max-[991px]:pb-24 max-[479px]:pb-20">
       <div className="max-w-[100rem] mx-auto">
@@ -69,14 +50,14 @@ const AboutValues = () => {
               {/* Header */}
               <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center">
                 <span className="text-xs tracking-[1px] uppercase font-semibold">
-                  Our Values
+                  {t('aboutValues.eyebrow')}
                 </span>
                 <h2 className="text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2rem] leading-[1.2] font-bold font-display">
-                  Principles Behind Everything We Build
+                  {t('aboutValues.title')}
                 </h2>
                 <div className="w-full">
                   <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-                    We believe the best football tools get out of the way, so agents can focus on players and clubs instead of admin.
+                    {t('aboutValues.description')}
                   </p>
                 </div>
               </div>
@@ -119,7 +100,7 @@ const AboutValues = () => {
               {/* CTA Button */}
               <div className="flex justify-center">
                 <Button variant="invofy" size="invofy" asChild>
-                  <Link to="/contact">Get in Touch</Link>
+                  <Link to="/contact">{t('aboutValues.getInTouch')}</Link>
                 </Button>
               </div>
             </div>

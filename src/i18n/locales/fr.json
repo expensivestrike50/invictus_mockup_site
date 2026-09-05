@@ -262,5 +262,217 @@
         ]
       }
     ]
+  },
+  "contactHeader": {
+    "label": "Contactez-nous",
+    "title": "Parlez à Notre Équipe",
+    "description": "Que vous soyez agent, directeur sportif ou un club, envoyez-nous un message et nous vous répondrons dans les plus brefs délais.",
+    "form": {
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Entrez votre nom complet",
+      "emailAddress": "Adresse e-mail",
+      "emailPlaceholder": "Entrez votre adresse e-mail",
+      "phoneNumber": "Numéro de téléphone",
+      "phonePlaceholder": "Entrez votre numéro de téléphone",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Entrez le sujet",
+      "message": "Message",
+      "messagePlaceholder": "Écrivez votre message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours..."
+    },
+    "toast": {
+      "title": "Message envoyé !",
+      "description": "Nous vous répondrons dans les plus brefs délais."
+    }
+  },
+  "contactLocation": {
+    "eyebrow": "Nos Emplacements",
+    "title": "Trouvez-nous Près de Chez Vous",
+    "description": "Que vous préfériez nous rendre visite en personne ou échanger en ligne, nous sommes là pour vous aider. Contactez-nous à tout moment, nous serions ravis d'échanger avec vous.",
+    "labels": {
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "address": "Adresse"
+    },
+    "cleveland": {
+      "title": "Cleveland, Ohio",
+      "description": "Notre siège nord-américain pour les agents, les clubs et les directeurs sportifs de toute la région."
+    },
+    "barcelona": {
+      "title": "Barcelone, Espagne",
+      "description": "Notre pôle européen pour les réseaux de recrutement, les partenariats avec les clubs et les opérations liées aux joueurs."
+    }
+  },
+  "aboutHeader": {
+    "label": "À Propos",
+    "title": "Nous Aidons les Agents à Placer le Bon Talent.",
+    "description": "Invictus est la plateforme conçue pour le football, qui aide les agents à associer des joueurs aux demandes des clubs, à le prouver avec des données et à centraliser chaque conversation.",
+    "getInTouch": "Contactez-nous",
+    "viewPricing": "Voir les Tarifs",
+    "stats": [
+      {
+        "value": "80K+",
+        "label": "Joueurs Suivis"
+      },
+      {
+        "value": "2.5K+",
+        "label": "Agences et Clubs"
+      },
+      {
+        "value": "120+",
+        "label": "Pays Couverts"
+      }
+    ]
+  },
+  "aboutMission": {
+    "eyebrow": "Notre Mission",
+    "title": "Notre mission est de donner aux agents de football l'intelligence et la rapidité nécessaires pour s'imposer sur le marché des transferts. Une seule plateforme pour trouver le bon profil, le présenter avec des données et devancer le marché.",
+    "blocks": [
+      {
+        "title": "Conclure des Deals, Pas des Discussions",
+        "description": "Nous remplaçons les appels WhatsApp dispersés et les interminables chaînes d'e-mails entre agents, joueurs et directeurs sportifs par un seul registre partagé et consultable."
+      },
+      {
+        "title": "Des Données Derrière Chaque Proposition",
+        "description": "Les statistiques de match intégrées et l'IA embarquée aident les agents à prouver pourquoi un talent répond à une demande de club précise, et pas seulement à l'affirmer."
+      },
+      {
+        "title": "Un Accompagnement sur Toute la Carrière",
+        "description": "De la première présélection au renouvellement de contrat, les agents suivent joueurs, clubs et conversations sur une plateforme conçue pour le football, et non adaptée à lui."
+      }
+    ]
+  },
+  "aboutValues": {
+    "eyebrow": "Nos Valeurs",
+    "title": "Les Principes Derrière Tout ce que Nous Construisons",
+    "description": "Nous pensons que les meilleurs outils pour le football se font oublier, afin que les agents puissent se concentrer sur les joueurs et les clubs plutôt que sur l'administratif.",
+    "getInTouch": "Contactez-nous",
+    "items": [
+      {
+        "title": "Le Football d'Abord",
+        "description": "Chaque fonctionnalité est conçue pour les agents, les joueurs et les directeurs sportifs, à partir du fonctionnement réel du recrutement dans le football."
+      },
+      {
+        "title": "La Preuve Plutôt que l'Instinct",
+        "description": "Chaque recommandation s'appuie sur des données de performance intégrées et une IA explicable, afin qu'une proposition à un club soit prouvée, et non simplement affirmée."
+      },
+      {
+        "title": "Une Seule Conversation",
+        "description": "Nous remplaçons les fils WhatsApp dispersés et les chaînes d'e-mails par un registre partagé unique auquel agents, joueurs et clubs peuvent faire confiance."
+      },
+      {
+        "title": "L'Agent Garde la Main",
+        "description": "Vos listes de joueurs, rapports et relations avec les clubs vous appartiennent, exportables à tout moment en rapports d'agence professionnels au format PDF."
+      }
+    ]
+  },
+  "aboutTeam": {
+    "eyebrow": "Créateurs et Penseurs",
+    "title": "Les Personnes Derrière Notre Plateforme",
+    "description": "Un groupe de designers, développeurs, anciens recruteurs et professionnels d'agences concentrés sur la construction d'une plateforme fiable pensée pour le football, pour les agents et les clubs avec qui ils travaillent."
+  },
+  "aboutAdvisors": {
+    "eyebrow": "Conseillers",
+    "title": "Guidés par l'Expérience",
+    "description": "Un réseau d'opérateurs, d'investisseurs et de professionnels du football qui nous aident à rester proches du travail réel des agents et des clubs.",
+    "role": "Conseiller"
+  },
+  "aboutPartners": {
+    "eyebrow": "Partenaires et Collaborateurs",
+    "title": "Une Confiance Reconnue Dans Tout le Milieu",
+    "description": "Nous travaillons aux côtés d'agences, de marques et d'organisations de football qui partagent notre conviction d'une représentation meilleure, fondée sur les données."
+  },
+  "pricingHeader": {
+    "eyebrow": "Des Offres Simples",
+    "title": "Des Offres Flexibles pour les Agences",
+    "description": "Choisissez une offre adaptée à votre effectif et commencez à associer des talents aux demandes des clubs grâce à l'IA, aux statistiques en direct et aux rapports prêts pour les clubs."
+  },
+  "signIn": {
+    "heading": "Content de vous revoir",
+    "subtitle": "Connectez-vous à votre compte pour continuer",
+    "orLoginWith": "Ou connectez-vous avec",
+    "emailAddress": "Adresse E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "password": "Mot de Passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "signIn": "Se Connecter",
+    "signingIn": "Connexion en cours...",
+    "or": "ou",
+    "tryDemoMode": "Essayer le Mode Démo",
+    "startingDemo": "Démarrage de la Démo...",
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "toast": {
+      "failedTitle": "Échec de la connexion",
+      "invalidCredentials": "E-mail ou mot de passe invalide. Veuillez réessayer.",
+      "successTitle": "Connexion réussie !",
+      "successDescription": "Content de vous revoir sur Invictus.",
+      "demoFailedTitle": "Échec du mode démo",
+      "demoTitle": "Bienvenue dans le Mode Démo !",
+      "demoDescription": "Découvrez Invictus avec des données d'exemple."
+    }
+  },
+  "signUp": {
+    "heading": "Créer un compte",
+    "subtitle": "Commencez avec Invictus dès aujourd'hui",
+    "orSignUpWith": "Ou inscrivez-vous avec",
+    "fullName": "Nom Complet",
+    "fullNamePlaceholder": "Entrez votre nom complet",
+    "emailAddress": "Adresse E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "password": "Mot de Passe",
+    "passwordPlaceholder": "Créez un mot de passe",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "signUp": "S'inscrire",
+    "creatingAccount": "Création du compte...",
+    "or": "ou",
+    "tryDemoMode": "Essayer le Mode Démo",
+    "startingDemo": "Démarrage de la Démo...",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "signIn": "Se Connecter",
+    "toast": {
+      "failedTitle": "Échec de l'inscription",
+      "alreadyRegistered": "Un compte existe déjà avec cet e-mail. Connectez-vous à la place.",
+      "successTitle": "Compte créé !",
+      "successDescription": "Vérifiez votre e-mail pour confirmer votre compte.",
+      "demoFailedTitle": "Échec du mode démo",
+      "demoTitle": "Bienvenue dans le Mode Démo !",
+      "demoDescription": "Découvrez Invictus avec des données d'exemple."
+    }
+  },
+  "resetPassword": {
+    "heading": "Réinitialisez votre mot de passe",
+    "subtitleRecovery": "Choisissez un nouveau mot de passe pour votre compte",
+    "subtitleSubmitted": "Nous vous avons envoyé un e-mail avec les instructions de réinitialisation",
+    "subtitleDefault": "Entrez votre e-mail et nous vous enverrons un lien de réinitialisation",
+    "newPassword": "Nouveau Mot de Passe",
+    "newPasswordPlaceholder": "Au moins 8 caractères",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "confirmPasswordPlaceholder": "Répétez le nouveau mot de passe",
+    "updatePassword": "Mettre à Jour le Mot de Passe",
+    "updating": "Mise à jour…",
+    "emailAddress": "Adresse E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "sendResetLink": "Envoyer le Lien de Réinitialisation",
+    "sending": "Envoi en cours...",
+    "checkInbox": "Consultez votre boîte de réception pour la suite des instructions",
+    "tryAnotherEmail": "Essayer un autre e-mail",
+    "rememberPassword": "Vous vous souvenez de votre mot de passe ?",
+    "signIn": "Se Connecter",
+    "toast": {
+      "checkEmailTitle": "Consultez votre e-mail",
+      "checkEmailDescription": "Si un compte existe avec cet e-mail, nous avons envoyé les instructions de réinitialisation.",
+      "updateFailedTitle": "Impossible de mettre à jour le mot de passe",
+      "updatedTitle": "Mot de passe mis à jour",
+      "updatedDescription": "Vous pouvez maintenant vous connecter avec votre nouveau mot de passe."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oups ! Page introuvable",
+    "returnHome": "Retour à l'Accueil"
   }
 }

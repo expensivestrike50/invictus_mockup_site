@@ -262,5 +262,217 @@
         ]
       }
     ]
+  },
+  "contactHeader": {
+    "label": "Get in Touch",
+    "title": "Talk to Our Team",
+    "description": "Whether you are an agent, a sporting director, or a club, send us a message and we will get back to you as soon as possible.",
+    "form": {
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter your full name",
+      "emailAddress": "Email address",
+      "emailPlaceholder": "Enter your email address",
+      "phoneNumber": "Phone number",
+      "phonePlaceholder": "Enter your phone number",
+      "subject": "Subject",
+      "subjectPlaceholder": "Enter the subject",
+      "message": "Message",
+      "messagePlaceholder": "Enter your message",
+      "send": "Send message",
+      "sending": "Sending..."
+    },
+    "toast": {
+      "title": "Message sent!",
+      "description": "We'll get back to you as soon as possible."
+    }
+  },
+  "contactLocation": {
+    "eyebrow": "Our Locations",
+    "title": "Find Us Near You",
+    "description": "Whether you prefer to visit in person or connect online, we are here to help. Reach out anytime, we would love to hear from you.",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "cleveland": {
+      "title": "Cleveland, Ohio",
+      "description": "Our North American home for agents, clubs, and sporting directors across the region."
+    },
+    "barcelona": {
+      "title": "Barcelona, Spain",
+      "description": "Our European hub for scouting networks, club partnerships, and player operations."
+    }
+  },
+  "aboutHeader": {
+    "label": "About Us",
+    "title": "We Help Agents Place the Right Talent.",
+    "description": "Invictus is the platform built for football, helping agents match players to club requests, prove it with data, and keep every conversation in one place.",
+    "getInTouch": "Get in Touch",
+    "viewPricing": "View Pricing",
+    "stats": [
+      {
+        "value": "80K+",
+        "label": "Players Tracked"
+      },
+      {
+        "value": "2.5K+",
+        "label": "Agencies & Clubs"
+      },
+      {
+        "value": "120+",
+        "label": "Countries Reached"
+      }
+    ]
+  },
+  "aboutMission": {
+    "eyebrow": "Our Mission",
+    "title": "Our mission is to give football agents the intelligence and speed to win in the transfer market. One platform to find the right fit, pitch with data, and move before the market does.",
+    "blocks": [
+      {
+        "title": "Close Deals, Not Chats",
+        "description": "We replace scattered WhatsApp calls and endless email chains between agents, players, and sporting directors with one shared, searchable record."
+      },
+      {
+        "title": "Data Behind Every Pitch",
+        "description": "Integrated match statistics and embedded AI help agents prove why a talent answers a specific club request, not just claim it."
+      },
+      {
+        "title": "Support the Career",
+        "description": "From first shortlist to contract renewal, agents track players, clubs, and conversations in a platform built for football, not adapted to it."
+      }
+    ]
+  },
+  "aboutValues": {
+    "eyebrow": "Our Values",
+    "title": "Principles Behind Everything We Build",
+    "description": "We believe the best football tools get out of the way, so agents can focus on players and clubs instead of admin.",
+    "getInTouch": "Get in Touch",
+    "items": [
+      {
+        "title": "Football First",
+        "description": "Every feature is built for agents, players, and sporting directors, designed around how football recruitment actually works."
+      },
+      {
+        "title": "Evidence Over Instinct",
+        "description": "Every recommendation is backed by integrated performance data and explainable AI, so a pitch to a club is proven, not just claimed."
+      },
+      {
+        "title": "One Conversation",
+        "description": "We replace scattered WhatsApp threads and email chains with a single shared record that agents, players, and clubs can trust."
+      },
+      {
+        "title": "Agent Ownership",
+        "description": "Your player lists, reports, and club relationships stay yours, exportable as professional PDF agency reports at any time."
+      }
+    ]
+  },
+  "aboutTeam": {
+    "eyebrow": "Makers and Thinkers",
+    "title": "The People Behind Our Platform",
+    "description": "A group of designers, developers, former scouts, and agency people focused on building a reliable platform made for football, for agents and the clubs they work with."
+  },
+  "aboutAdvisors": {
+    "eyebrow": "Advisors",
+    "title": "Guided by Experience",
+    "description": "A network of operators, investors, and football people who help us stay close to the real work of agents and clubs.",
+    "role": "Advisor"
+  },
+  "aboutPartners": {
+    "eyebrow": "Partners and Collaborators",
+    "title": "Trusted Across the Game",
+    "description": "We work alongside agencies, brands, and football organisations that share our belief in better, data backed representation."
+  },
+  "pricingHeader": {
+    "eyebrow": "Straightforward Plans",
+    "title": "Flexible Plans for Agencies",
+    "description": "Choose a plan that matches your roster and start matching talent to club requests with AI, live statistics, and club-ready reports."
+  },
+  "signIn": {
+    "heading": "Welcome back",
+    "subtitle": "Sign in to your account to continue",
+    "orLoginWith": "Or login with",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign In",
+    "signingIn": "Signing In...",
+    "or": "or",
+    "tryDemoMode": "Try Demo Mode",
+    "startingDemo": "Starting Demo...",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "toast": {
+      "failedTitle": "Sign in failed",
+      "invalidCredentials": "Invalid email or password. Please try again.",
+      "successTitle": "Sign in successful!",
+      "successDescription": "Welcome back to Invictus.",
+      "demoFailedTitle": "Demo mode failed",
+      "demoTitle": "Welcome to Demo Mode!",
+      "demoDescription": "Explore Invictus with sample data."
+    }
+  },
+  "signUp": {
+    "heading": "Create an account",
+    "subtitle": "Get started with Invictus today",
+    "orSignUpWith": "Or sign up with",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Create a password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "signUp": "Sign Up",
+    "creatingAccount": "Creating Account...",
+    "or": "or",
+    "tryDemoMode": "Try Demo Mode",
+    "startingDemo": "Starting Demo...",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign In",
+    "toast": {
+      "failedTitle": "Sign up failed",
+      "alreadyRegistered": "An account with this email already exists. Please sign in instead.",
+      "successTitle": "Account created!",
+      "successDescription": "Please check your email to verify your account.",
+      "demoFailedTitle": "Demo mode failed",
+      "demoTitle": "Welcome to Demo Mode!",
+      "demoDescription": "Explore Invictus with sample data."
+    }
+  },
+  "resetPassword": {
+    "heading": "Reset your password",
+    "subtitleRecovery": "Choose a new password for your account",
+    "subtitleSubmitted": "We've sent you an email with reset instructions",
+    "subtitleDefault": "Enter your email and we'll send you a reset link",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "At least 8 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Repeat new password",
+    "updatePassword": "Update Password",
+    "updating": "Updating…",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "sendResetLink": "Send Reset Link",
+    "sending": "Sending...",
+    "checkInbox": "Check your inbox for further instructions",
+    "tryAnotherEmail": "Try another email",
+    "rememberPassword": "Remember your password?",
+    "signIn": "Sign In",
+    "toast": {
+      "checkEmailTitle": "Check your email",
+      "checkEmailDescription": "If an account exists for that email, we've sent reset instructions.",
+      "updateFailedTitle": "Could not update password",
+      "updatedTitle": "Password updated",
+      "updatedDescription": "You can now sign in with your new password."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
   }
 }

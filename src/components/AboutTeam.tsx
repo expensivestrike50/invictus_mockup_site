@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import dylanDewey from '@/assets/about/dylan-dewey.png';
 import teamMember02 from '@/assets/about/avatar-02.png';
 import teamMember03 from '@/assets/about/avatar-03.png';
@@ -68,26 +69,27 @@ const TeamMemberCard = ({ name, role, image, bgColor, imageClass }: TeamMemberCa
 );
 
 const AboutTeam = () => {
+  const { t } = useTranslation();
   return (
     <section className="px-10 max-[767px]:px-6 max-[479px]:px-5 pb-32 max-[991px]:pb-24 max-[479px]:pb-20">
       <div className="max-w-[100rem] mx-auto">
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center mb-12">
           <span className="text-xs tracking-[0.15em] uppercase font-semibold">
-            MAKERS AND THINKERS
+            {t('aboutTeam.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2rem] leading-[1.2] font-bold font-display">
-            The People Behind Our Platform
+            {t('aboutTeam.title')}
           </h2>
           <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-            A group of designers, developers, former scouts, and agency people focused on building a reliable CRM made for football, for agents and the clubs they work with.
+            {t('aboutTeam.description')}
           </p>
         </div>
 
         {/* Team Grid */}
         <div className="grid grid-cols-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1 gap-6">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.name} {...member} />
+          {teamMembers.map((member, index) => (
+            <TeamMemberCard key={index} {...member} />
           ))}
         </div>
       </div>

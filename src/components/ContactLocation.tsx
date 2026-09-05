@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 
 interface ContactLocationProps extends React.ComponentProps<'section'> {}
@@ -35,6 +36,7 @@ const SlideUpLink = ({
 );
 
 const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
+  const { t } = useTranslation();
   return (
     <section
       className={cn(
@@ -47,14 +49,14 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-[50rem] mx-auto text-center mb-16 max-[767px]:mb-12">
           <span className="text-xs tracking-[1px] uppercase font-semibold">
-            Our Locations
+            {t('contactLocation.eyebrow')}
           </span>
           <h2 className="text-[4.5rem] max-[991px]:text-[3rem] max-[767px]:text-[2rem] leading-[1.2] font-bold font-display">
-            Find Us Near You
+            {t('contactLocation.title')}
           </h2>
           <div className="w-full">
             <p className="text-muted-foreground text-lg leading-[1.4] font-normal">
-            Whether you prefer to visit in person or connect online, we are here to help. Reach out anytime, we would love to hear from you.
+            {t('contactLocation.description')}
             </p>
           </div>
         </div>
@@ -66,10 +68,10 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
             <div className="bg-card border border-border rounded-[30px] p-10 max-[991px]:p-8 max-[767px]:p-6 max-[479px]:p-5 h-full flex flex-col gap-8">
               <div>
                 <h3 className="text-3xl max-[991px]:text-2xl max-[767px]:text-xl font-bold mb-3">
-                  Cleveland, Ohio
+                  {t('contactLocation.cleveland.title')}
                 </h3>
                 <p className="text-muted-foreground text-base leading-[1.6]">
-                  Our North American home for agents, clubs, and sporting directors across the region.
+                  {t('contactLocation.cleveland.description')}
                 </p>
               </div>
 
@@ -79,7 +81,7 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Email</span>
+                    <span className="text-sm text-muted-foreground">{t('contactLocation.labels.email')}</span>
                     <SlideUpLink label="hello@invictus.agency" href="mailto:hello@invictus.agency" />
                   </div>
                 </div>
@@ -89,7 +91,7 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Phone</span>
+                    <span className="text-sm text-muted-foreground">{t('contactLocation.labels.phone')}</span>
                     <SlideUpLink label="(216) 555-0123" href="tel:+12165550123" />
                   </div>
                 </div>
@@ -99,7 +101,7 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Address</span>
+                    <span className="text-sm text-muted-foreground">{t('contactLocation.labels.address')}</span>
                     <SlideUpLink 
                       label="127 Public Square, Suite 500" 
                       href="https://www.google.com/maps"
@@ -117,10 +119,10 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
             <div className="bg-card border border-border rounded-[30px] p-10 max-[991px]:p-8 max-[767px]:p-6 max-[479px]:p-5 h-full flex flex-col gap-8">
               <div>
                 <h3 className="text-3xl max-[991px]:text-2xl max-[767px]:text-xl font-bold mb-3">
-                  Barcelona, Spain
+                  {t('contactLocation.barcelona.title')}
                 </h3>
                 <p className="text-muted-foreground text-base leading-[1.6]">
-                  Our European hub for scouting networks, club partnerships, and player operations.
+                  {t('contactLocation.barcelona.description')}
                 </p>
               </div>
 
@@ -130,7 +132,7 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Email</span>
+                    <span className="text-sm text-muted-foreground">{t('contactLocation.labels.email')}</span>
                     <SlideUpLink label="hello@invictus.agency" href="mailto:hello@invictus.agency" />
                   </div>
                 </div>
@@ -140,7 +142,7 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Phone</span>
+                    <span className="text-sm text-muted-foreground">{t('contactLocation.labels.phone')}</span>
                     <SlideUpLink label="+34 93 555 0123" href="tel:+34935550123" />
                   </div>
                 </div>
@@ -150,7 +152,7 @@ const ContactLocation = ({ className, ...props }: ContactLocationProps) => {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Address</span>
+                    <span className="text-sm text-muted-foreground">{t('contactLocation.labels.address')}</span>
                     <SlideUpLink 
                       label="Carrer de València, 350" 
                       href="https://www.google.com/maps"

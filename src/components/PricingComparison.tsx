@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -226,7 +227,7 @@ const PricingComparison = ({ className }: PricingComparisonProps) => {
 
                       <tbody>
                         {comparisonData.map((category, categoryIndex) => (
-                          <>
+                          <Fragment key={categoryIndex}>
                             {/* Category Header */}
                             <tr key={`category-${categoryIndex}`} className="bg-brand-ink">
                               <td
@@ -256,7 +257,7 @@ const PricingComparison = ({ className }: PricingComparisonProps) => {
                                 </td>
                               </tr>
                             ))}
-                          </>
+                          </Fragment>
                         ))}
 
                         {/* CTA Row */}

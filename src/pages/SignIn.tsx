@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -48,6 +49,7 @@ const signInSchema = z.object({
 });
 
 const SignIn = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const navigate = useNavigate();
   const { signIn, signInAnonymously, user, isLoading: authLoading } = useAuth();
@@ -88,18 +90,18 @@ const SignIn = () => {
     if (error) {
       toast({
         variant: 'destructive',
-        title: "Sign in failed",
-        description: error.message === 'Invalid login credentials' 
-          ? 'Invalid email or password. Please try again.'
+        title: t('signIn.toast.failedTitle'),
+        description: error.message === 'Invalid login credentials'
+          ? t('signIn.toast.invalidCredentials')
           : error.message,
       });
       setIsSubmitting(false);
       return;
     }
-    
+
     toast({
-      title: "Sign in successful!",
-      description: "Welcome back to Invictus.",
+      title: t('signIn.toast.successTitle'),
+      description: t('signIn.toast.successDescription'),
     });
     
     navigate('/dashboard');
@@ -113,16 +115,16 @@ const SignIn = () => {
     if (error) {
       toast({
         variant: 'destructive',
-        title: "Demo mode failed",
+        title: t('signIn.toast.demoFailedTitle'),
         description: error.message,
       });
       setIsDemoLoading(false);
       return;
     }
-    
+
     toast({
-      title: "Welcome to Demo Mode!",
-      description: "Explore Invictus with sample data.",
+      title: t('signIn.toast.demoTitle'),
+      description: t('signIn.toast.demoDescription'),
     });
     
     navigate('/dashboard');
@@ -159,10 +161,10 @@ const SignIn = () => {
               {/* Heading */}
               <div className="text-center mb-6">
                 <h1 className="text-foreground text-2xl sm:text-3xl font-bold font-display mb-2">
-                  Welcome back
+                  {t('signIn.heading')}
                 </h1>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  Sign in to your account to continue
+                  {t('signIn.subtitle')}
                 </p>
               </div>
               
@@ -173,7 +175,7 @@ const SignIn = () => {
               {/* Divider */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-1 h-px bg-border" />
-                <span className="text-muted-foreground text-sm">Or login with</span>
+                <span className="text-muted-foreground text-sm">{t('signIn.orLoginWith')}</span>
                 <div className="flex-1 h-px bg-border" />
               </div>
               
@@ -181,12 +183,12 @@ const SignIn = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-foreground font-medium">
-                    Email Address
+                    {t('signIn.emailAddress')}
                   </Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t('signIn.emailPlaceholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={`h-14 rounded-full border-border bg-white px-6 ${errors.email ? 'border-destructive' : ''}`}
@@ -198,12 +200,12 @@ const SignIn = () => {
                 
                 <div className="space-y-2">
                   <Label htmlFor="password" className="text-foreground font-medium">
-                    Password
+                    {t('signIn.password')}
                   </Label>
                   <Input
                     id="password"
                     type="password"
-                    placeholder="Enter your password"
+                    placeholder={t('signIn.passwordPlaceholder')}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className={`h-14 rounded-full border-border bg-white px-6 ${errors.password ? 'border-destructive' : ''}`}
@@ -223,10 +225,10 @@ const SignIn = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      Signing In...
+                      {t('signIn.signingIn')}
                     </>
                   ) : (
-                    'Sign In'
+                    t('signIn.signIn')
                   )}
                 </Button>
               </form>
@@ -234,7 +236,7 @@ const SignIn = () => {
               {/* Demo Mode Divider */}
               <div className="flex items-center gap-4 my-6">
                 <div className="flex-1 h-px bg-border" />
-                <span className="text-muted-foreground text-sm">or</span>
+                <span className="text-muted-foreground text-sm">{t('signIn.or')}</span>
                 <div className="flex-1 h-px bg-border" />
               </div>
 
@@ -250,10 +252,10 @@ const SignIn = () => {
                 {isDemoLoading ? (
                   <>
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                    Starting Demo...
+                    {t('signIn.startingDemo')}
                   </>
                 ) : (
-                  'Try Demo Mode'
+                  t('signIn.tryDemoMode')
                 )}
               </Button>
 
@@ -263,15 +265,15 @@ const SignIn = () => {
                   to="/reset-password" 
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Forgot password?
+                  {t('signIn.forgotPassword')}
                 </Link>
                 <div className="text-muted-foreground">
-                  Don't have an account?{' '}
-                  <Link 
-                    to="/signup" 
+                  {t('signIn.noAccount')}{' '}
+                  <Link
+                    to="/signup"
                     className="text-primary font-semibold hover:underline"
                   >
-                    Sign Up
+                    {t('signIn.signUp')}
                   </Link>
                 </div>
               </div>
