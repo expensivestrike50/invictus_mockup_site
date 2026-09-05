@@ -1,5 +1,4 @@
-import { useState, useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,8 +6,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import contactHeaderBg from '@/assets/contact/contact-header-bg.jpg';
-import contactImage01 from '@/assets/contact/contact-image-01.jpg';
-import contactImage02 from '@/assets/contact/contact-image-02.jpg';
 import xIcon from '@/assets/icons/x-icon.png';
 import instagramIcon from '@/assets/icons/instagram-icon.png';
 import linkedinIcon from '@/assets/icons/linkedin-icon.png';
@@ -54,42 +51,6 @@ const SocialIcon = ({ icon, href, alt }: { icon: string; href: string; alt: stri
 
 const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
   const { toast } = useToast();
-  const sectionRef = useRef<HTMLElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Smooth spring animation for mouse movement
-  const springConfig = { stiffness: 150, damping: 25, mass: 0.5 };
-  const smoothX = useSpring(mouseX, springConfig);
-  const smoothY = useSpring(mouseY, springConfig);
-
-  // Movement for left image
-  const leftX = useTransform(smoothX, [-1, 1], [-15, 15]);
-  const leftY = useTransform(smoothY, [-1, 1], [-12, 12]);
-
-  // Movement for right image (inverted X for opposite direction)
-  const rightX = useTransform(smoothX, [-1, 1], [18, -18]);
-  const rightY = useTransform(smoothY, [-1, 1], [-10, 10]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (!sectionRef.current) return;
-    
-    const rect = sectionRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    // Normalize to -1 to 1 range
-    const normalizedX = (e.clientX - centerX) / (rect.width / 2);
-    const normalizedY = (e.clientY - centerY) / (rect.height / 2);
-    
-    mouseX.set(normalizedX);
-    mouseY.set(normalizedY);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
 
   const [formData, setFormData] = useState<ContactFormData>({
     fullName: '',
@@ -149,61 +110,19 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
   };
 
   return (
-    <section 
-      ref={sectionRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+    <section
       className={cn(
         'relative min-h-[120vh] max-[991px]:min-h-fit',
         className
-      )} 
+      )}
       {...props}
     >
       {/* Background - covers top 60% */}
-      <div 
+      <div
         className="absolute top-0 left-0 right-0 h-[60%] max-[991px]:h-[50%] bg-cover bg-center bg-no-repeat rounded-b-[4rem] max-[767px]:rounded-b-[48px]"
         style={{ backgroundImage: `url(${contactHeaderBg})` }}
       />
-      
-      {/* Positioned Images - Desktop Only */}
-      <div className="max-[991px]:hidden">
-        {/* Left Image - Woman in yellow sweater */}
-        <motion.div 
-          className="absolute left-[5%] top-[18%] w-[12rem] min-[1440px]:w-[14rem] min-[1920px]:w-[16rem] z-20"
-          style={{ x: leftX, y: leftY }}
-        >
-          <div className="relative overflow-hidden rounded-3xl aspect-square">
-            <img 
-              src={contactImage01}
-              alt="Contact person"
-              width={256}
-              height={256}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-        
-        {/* Right Image - Man in blue polo */}
-        <motion.div 
-          className="absolute right-[5%] top-[16%] w-[12rem] min-[1440px]:w-[14rem] min-[1920px]:w-[16rem] z-20"
-          style={{ x: rightX, y: rightY }}
-        >
-          <div className="relative overflow-hidden rounded-3xl aspect-square">
-            <img 
-              src={contactImage02}
-              alt="Contact person"
-              width={256}
-              height={256}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-      </div>
-      
+
       {/* Content Container */}
       <div className="relative z-10 w-full px-10 max-[767px]:px-6 max-[479px]:px-5">
         <div className="w-full max-w-[1440px] mx-auto">
@@ -223,32 +142,6 @@ const ContactHeader = ({ className, ...props }: ContactHeaderProps) => {
             <p className="text-muted-foreground text-lg max-[479px]:text-base leading-[1.4] font-normal max-w-[40rem]">
               Whether you are an agent, a sporting director, or a club, send us a message and we will get back to you as soon as possible.
             </p>
-            
-            {/* Mobile/Tablet Images - centered above form */}
-            <div className="hidden max-[991px]:flex justify-center gap-4 mt-8">
-              <div className="w-28 h-28 max-[479px]:w-24 max-[479px]:h-24 rounded-2xl overflow-hidden">
-                <img 
-                  src={contactImage01}
-                  alt="Contact person"
-                  width={112}
-                  height={112}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-28 h-28 max-[479px]:w-24 max-[479px]:h-24 rounded-2xl overflow-hidden">
-                <img 
-                  src={contactImage02}
-                  alt="Contact person"
-                  width={112}
-                  height={112}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
           </div>
           
           {/* Contact Form Card */}
