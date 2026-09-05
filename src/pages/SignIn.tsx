@@ -189,7 +189,7 @@ const SignIn = () => {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className={`h-14 rounded-full border-border bg-background px-6 ${errors.email ? 'border-destructive' : ''}`}
+                    className={`h-14 rounded-full border-border bg-white px-6 ${errors.email ? 'border-destructive' : ''}`}
                   />
                   {errors.email && (
                     <p className="text-destructive text-sm">{errors.email}</p>
@@ -206,7 +206,7 @@ const SignIn = () => {
                     placeholder="Enter your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className={`h-14 rounded-full border-border bg-background px-6 ${errors.password ? 'border-destructive' : ''}`}
+                    className={`h-14 rounded-full border-border bg-white px-6 ${errors.password ? 'border-destructive' : ''}`}
                   />
                   {errors.password && (
                     <p className="text-destructive text-sm">{errors.password}</p>
@@ -256,10 +256,7 @@ const SignIn = () => {
                   'Try Demo Mode'
                 )}
               </Button>
-              <p className="text-center text-muted-foreground text-xs mt-2">
-                No account required — explore with sample data
-              </p>
-              
+
               {/* Links */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-2 mt-6 text-sm">
                 <Link 
