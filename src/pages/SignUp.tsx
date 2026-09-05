@@ -202,7 +202,7 @@ const SignUp = () => {
                     placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className={`h-14 rounded-full border-border bg-background px-6 ${errors.name ? 'border-destructive' : ''}`}
+                    className={`h-14 rounded-full border-border bg-white px-6 ${errors.name ? 'border-destructive' : ''}`}
                   />
                   {errors.name && (
                     <p className="text-destructive text-sm">{errors.name}</p>
@@ -219,7 +219,7 @@ const SignUp = () => {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className={`h-14 rounded-full border-border bg-background px-6 ${errors.email ? 'border-destructive' : ''}`}
+                    className={`h-14 rounded-full border-border bg-white px-6 ${errors.email ? 'border-destructive' : ''}`}
                   />
                   {errors.email && (
                     <p className="text-destructive text-sm">{errors.email}</p>
@@ -236,7 +236,7 @@ const SignUp = () => {
                     placeholder="Create a password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className={`h-14 rounded-full border-border bg-background px-6 ${errors.password ? 'border-destructive' : ''}`}
+                    className={`h-14 rounded-full border-border bg-white px-6 ${errors.password ? 'border-destructive' : ''}`}
                   />
                   {errors.password && (
                     <p className="text-destructive text-sm">{errors.password}</p>
@@ -253,7 +253,7 @@ const SignUp = () => {
                     placeholder="Confirm your password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className={`h-14 rounded-full border-border bg-background px-6 ${errors.confirmPassword ? 'border-destructive' : ''}`}
+                    className={`h-14 rounded-full border-border bg-white px-6 ${errors.confirmPassword ? 'border-destructive' : ''}`}
                   />
                   {errors.confirmPassword && (
                     <p className="text-destructive text-sm">{errors.confirmPassword}</p>
@@ -303,10 +303,7 @@ const SignUp = () => {
                   'Try Demo Mode'
                 )}
               </Button>
-              <p className="text-center text-muted-foreground text-xs mt-2">
-                No account required — explore with sample data
-              </p>
-              
+
               {/* Links */}
               <div className="text-center mt-6 text-sm">
                 <span className="text-muted-foreground">
