@@ -77,6 +77,7 @@ const MobileComparisonCard = ({
   planKey: 'starter' | 'professional' | 'business';
 }) => {
   const { t } = useTranslation();
+  const comparisonData = useComparisonData();
   return (
     <div className={cn(
       'bg-card rounded-[30px] border border-border shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden',
