@@ -59,20 +59,29 @@ const HowItWorks = ({ className, ...props }: HowItWorksProps) => {
         <div className="flex justify-center items-start w-full gap-10 xl:gap-16 max-lg:flex-col max-lg:items-center max-lg:gap-8">
           <div className="shrink-0 max-lg:w-full">
             <div
-              className="relative aspect-[1440/824] w-auto h-[var(--cards-h,470px)] overflow-hidden rounded-[40px] max-lg:!w-full max-lg:!h-auto"
+              className="flex flex-col aspect-[1440/824] w-auto h-[var(--cards-h,470px)] overflow-hidden rounded-[18px] border border-black/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] max-lg:!w-full max-lg:!h-auto"
               style={{ '--cards-h': cardsHeight ? `${cardsHeight}px` : undefined } as React.CSSProperties}
             >
-              <video
-                src={demoVideo}
-                poster={demoVideoPoster}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                aria-label="Invictus product demo"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              {/* macOS-style title bar */}
+              <div className="flex items-center gap-2 h-9 xl:h-10 px-4 flex-shrink-0 bg-[#E8E8EA] border-b border-black/10">
+                <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+                <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+                <span className="w-3 h-3 rounded-full bg-[#28C840]" />
+              </div>
+
+              <div className="relative flex-1 min-h-0 overflow-hidden">
+                <video
+                  src={demoVideo}
+                  poster={demoVideoPoster}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Invictus product demo"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
