@@ -46,14 +46,11 @@ const ProductStory = () => {
     if (n === 0) return;
 
     let raf: number | null = null;
-    let animRaf: number | null = null;
-    let isAnimating = false;
     let cooldownUntil = 0;
-    const STEP_DURATION = 420; // ms — swift, fixed-length transition
-    const COOLDOWN = 180; // ms — swallow trailing trackpad momentum after arrival
+    let activeIndex = 0;
+    const COOLDOWN = 500; // ms — treat one wheel gesture (incl. trackpad momentum) as one slide
 
     const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
     const metrics = () => {
       const storyTop = window.scrollY + story.getBoundingClientRect().top;
@@ -67,74 +64,26 @@ const ProductStory = () => {
       return clamp((window.scrollY - storyTop) / step, 0, n - 1);
     };
 
-    const animateTo = (index: number) => {
-      const { storyTop, step } = metrics();
-      const target = storyTop + clamp(index, 0, n - 1) * step;
-      const start = window.scrollY;
-      const distance = target - start;
-      if (Math.abs(distance) < 1) return;
-
-      if (animRaf) cancelAnimationFrame(animRaf);
-      isAnimating = true;
-      const startTime = performance.now();
-
-      const tick = (now: number) => {
-        const t = clamp((now - startTime) / STEP_DURATION, 0, 1);
-        window.scrollTo(0, start + distance * easeOutCubic(t));
-        if (t < 1) {
-          animRaf = requestAnimationFrame(tick);
-        } else {
-          animRaf = null;
-          isAnimating = false;
-          cooldownUntil = performance.now() + COOLDOWN;
-        }
-      };
-      animRaf = requestAnimationFrame(tick);
-    };
-
-    const render = () => {
-      raf = null;
-      const pos = currentPosition();
-      const active = Math.min(n - 1, Math.floor(pos + 0.5));
+    // Hard-cut to a slide, no transition — like clicking "Next" in a slide
+    // deck: the target slide is either fully shown or fully hidden.
+    const render = (index: number) => {
+      activeIndex = clamp(Math.round(index), 0, n - 1);
 
       cardEls.forEach((card, i) => {
-        const delta = i - pos;
-        let transform: string;
-        let opacity = 1;
-        let filter = 'none';
-        let z = i + 1;
-
-        if (delta <= 0) {
-          const behind = Math.min(Math.abs(delta), 1);
-          transform = `translate3d(0, ${-behind * 8}px, 0) scale(${1 - behind * 0.018}) rotateX(0deg)`;
-          opacity = 1 - Math.min(Math.abs(delta) * 0.16, 0.28);
-          filter = `brightness(${1 - Math.min(Math.abs(delta) * 0.08, 0.12)})`;
-        } else if (delta < 1) {
-          const t2 = 1 - delta;
-          const ease = 1 - Math.pow(1 - t2, 3);
-          transform = `translate3d(0, ${(1 - ease) * 46}px, 0) rotateX(${(1 - ease) * -86}deg) scale(${0.985 + ease * 0.015})`;
-          // Fully opaque throughout the entry so it never looks see-through
-          // over the card it's replacing — only the transform animates.
-          opacity = 1;
-          z = 100 + i;
-        } else {
-          transform = 'translate3d(0,58px,0) rotateX(-88deg) scale(.985)';
-          opacity = 0;
-        }
-
-        card.style.transform = transform;
-        card.style.opacity = String(opacity);
-        card.style.filter = filter;
-        card.style.zIndex = String(z);
-        card.style.pointerEvents = Math.abs(delta) < 0.5 ? 'auto' : 'none';
-        card.setAttribute('aria-hidden', Math.abs(delta) < 0.5 ? 'false' : 'true');
+        const isActive = i === activeIndex;
+        card.style.transform = 'none';
+        card.style.opacity = isActive ? '1' : '0';
+        card.style.filter = 'none';
+        card.style.zIndex = isActive ? '2' : '1';
+        card.style.pointerEvents = isActive ? 'auto' : 'none';
+        card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
       });
 
-      dotEls.forEach((dot, i) => dot.classList.toggle('active', i === active));
+      dotEls.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
     };
 
     const schedule = () => {
-      if (!raf) raf = requestAnimationFrame(render);
+      if (!raf) raf = requestAnimationFrame(() => { raf = null; render(currentPosition()); });
     };
 
     const storyIsActive = () => {
@@ -142,23 +91,31 @@ const ProductStory = () => {
       return r.top <= 1 && r.bottom >= window.innerHeight - 1;
     };
 
+    // Instant jump — no smooth scroll, no eased tween.
+    const jumpTo = (index: number) => {
+      const { storyTop, step } = metrics();
+      const target = clamp(index, 0, n - 1);
+      window.scrollTo(0, storyTop + target * step);
+      render(target);
+      cooldownUntil = performance.now() + COOLDOWN;
+    };
+
     const handleWheel = (e: WheelEvent) => {
       if (!storyIsActive()) return;
       if (Math.abs(e.deltaY) < 8) return;
 
-      const current = Math.round(currentPosition());
       const direction = e.deltaY > 0 ? 1 : -1;
 
-      if ((current <= 0 && direction < 0) || (current >= n - 1 && direction > 0)) {
+      if ((activeIndex <= 0 && direction < 0) || (activeIndex >= n - 1 && direction > 0)) {
         return;
       }
 
       // Always swallow the event inside the story's range so trackpad
-      // momentum never leaks into a native scroll while we're animating.
+      // momentum never leaks into a native scroll.
       e.preventDefault();
-      if (isAnimating || performance.now() < cooldownUntil) return;
+      if (performance.now() < cooldownUntil) return;
 
-      animateTo(current + direction);
+      jumpTo(activeIndex + direction);
     };
 
     const handleKeydown = (e: KeyboardEvent) => {
@@ -170,22 +127,18 @@ const ProductStory = () => {
       if (!forward.includes(e.key) && !backward.includes(e.key)) return;
 
       const direction = backward.includes(e.key) ? -1 : 1;
-      const current = Math.round(currentPosition());
 
-      if ((current <= 0 && direction < 0) || (current >= n - 1 && direction > 0)) {
+      if ((activeIndex <= 0 && direction < 0) || (activeIndex >= n - 1 && direction > 0)) {
         return;
       }
 
       e.preventDefault();
-      if (isAnimating) return;
-      animateTo(current + direction);
+      if (performance.now() < cooldownUntil) return;
+      jumpTo(activeIndex + direction);
     };
 
     const dotClickHandlers = dotEls.map((dot, i) => {
-      const handler = () => {
-        if (isAnimating) return;
-        animateTo(i);
-      };
+      const handler = () => jumpTo(i);
       dot.addEventListener('click', handler);
       return { dot, handler };
     });
@@ -195,7 +148,7 @@ const ProductStory = () => {
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
 
-    render();
+    render(0);
 
     return () => {
       window.removeEventListener('wheel', handleWheel);
@@ -204,7 +157,6 @@ const ProductStory = () => {
       window.removeEventListener('resize', schedule);
       dotClickHandlers.forEach(({ dot, handler }) => dot.removeEventListener('click', handler));
       if (raf) cancelAnimationFrame(raf);
-      if (animRaf) cancelAnimationFrame(animRaf);
     };
   }, [cards.length]);
 
@@ -231,7 +183,7 @@ const ProductStory = () => {
                   ref={(el) => { cardRefs.current[index] = el; }}
                 >
                   <figure className="visual">
-                    <img src={meta.image} alt={meta.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+                    <img src={meta.image} alt={meta.alt} loading="eager" decoding="async" />
                   </figure>
                   <div className="copy-veil" />
                   <div className="overlay">
