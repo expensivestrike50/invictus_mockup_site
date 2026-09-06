@@ -70,6 +70,7 @@
   margin: 0;
   overflow: hidden;
   border-radius: inherit;
+  z-index: 1;
 }
 .product-story .visual img {
   width: 100%;
@@ -88,6 +89,17 @@
 .product-story .story-card:nth-child(4) { background: #ffd20a; }
 .product-story .story-card:nth-child(5) { background: #e8dcc9; } /* beige */
 .product-story .story-card:nth-child(6) { background: #e9eef5; } /* cool light gray */
+
+/* Fine dot-grid texture over every slide, above the image, below the copy. */
+.product-story .story-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, .4) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
 
 /* All marketing copy is HTML layered on top of the image. */
 .product-story .overlay {
