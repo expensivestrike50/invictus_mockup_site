@@ -46,10 +46,14 @@ const ProductStory = () => {
     if (n === 0) return;
 
     let raf: number | null = null;
-    let wheelLocked = false;
-    let unlockTimer: ReturnType<typeof setTimeout> | undefined;
+    let animRaf: number | null = null;
+    let isAnimating = false;
+    let cooldownUntil = 0;
+    const STEP_DURATION = 420; // ms — swift, fixed-length transition
+    const COOLDOWN = 180; // ms — swallow trailing trackpad momentum after arrival
 
     const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
     const metrics = () => {
       const storyTop = window.scrollY + story.getBoundingClientRect().top;
@@ -63,10 +67,29 @@ const ProductStory = () => {
       return clamp((window.scrollY - storyTop) / step, 0, n - 1);
     };
 
-    const goToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
+    const animateTo = (index: number) => {
       const { storyTop, step } = metrics();
-      const i = clamp(index, 0, n - 1);
-      window.scrollTo({ top: storyTop + i * step, behavior });
+      const target = storyTop + clamp(index, 0, n - 1) * step;
+      const start = window.scrollY;
+      const distance = target - start;
+      if (Math.abs(distance) < 1) return;
+
+      if (animRaf) cancelAnimationFrame(animRaf);
+      isAnimating = true;
+      const startTime = performance.now();
+
+      const tick = (now: number) => {
+        const t = clamp((now - startTime) / STEP_DURATION, 0, 1);
+        window.scrollTo(0, start + distance * easeOutCubic(t));
+        if (t < 1) {
+          animRaf = requestAnimationFrame(tick);
+        } else {
+          animRaf = null;
+          isAnimating = false;
+          cooldownUntil = performance.now() + COOLDOWN;
+        }
+      };
+      animRaf = requestAnimationFrame(tick);
     };
 
     const render = () => {
@@ -90,7 +113,9 @@ const ProductStory = () => {
           const t2 = 1 - delta;
           const ease = 1 - Math.pow(1 - t2, 3);
           transform = `translate3d(0, ${(1 - ease) * 46}px, 0) rotateX(${(1 - ease) * -86}deg) scale(${0.985 + ease * 0.015})`;
-          opacity = clamp(0.18 + ease * 0.82, 0, 1);
+          // Fully opaque throughout the entry so it never looks see-through
+          // over the card it's replacing — only the transform animates.
+          opacity = 1;
           z = 100 + i;
         } else {
           transform = 'translate3d(0,58px,0) rotateX(-88deg) scale(.985)';
@@ -128,14 +153,12 @@ const ProductStory = () => {
         return;
       }
 
+      // Always swallow the event inside the story's range so trackpad
+      // momentum never leaks into a native scroll while we're animating.
       e.preventDefault();
-      if (wheelLocked) return;
+      if (isAnimating || performance.now() < cooldownUntil) return;
 
-      wheelLocked = true;
-      goToIndex(current + direction);
-
-      clearTimeout(unlockTimer);
-      unlockTimer = setTimeout(() => { wheelLocked = false; }, 650);
+      animateTo(current + direction);
     };
 
     const handleKeydown = (e: KeyboardEvent) => {
@@ -154,11 +177,15 @@ const ProductStory = () => {
       }
 
       e.preventDefault();
-      goToIndex(current + direction);
+      if (isAnimating) return;
+      animateTo(current + direction);
     };
 
     const dotClickHandlers = dotEls.map((dot, i) => {
-      const handler = () => goToIndex(i);
+      const handler = () => {
+        if (isAnimating) return;
+        animateTo(i);
+      };
       dot.addEventListener('click', handler);
       return { dot, handler };
     });
@@ -177,7 +204,7 @@ const ProductStory = () => {
       window.removeEventListener('resize', schedule);
       dotClickHandlers.forEach(({ dot, handler }) => dot.removeEventListener('click', handler));
       if (raf) cancelAnimationFrame(raf);
-      clearTimeout(unlockTimer);
+      if (animRaf) cancelAnimationFrame(animRaf);
     };
   }, [cards.length]);
 
