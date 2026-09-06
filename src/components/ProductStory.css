@@ -100,6 +100,11 @@
   background-image: radial-gradient(circle, rgba(255, 255, 255, .4) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+/* Light-background slides need dark dots to stay visible. */
+.product-story .story-card:nth-child(4)::after,
+.product-story .story-card:nth-child(5)::after {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, .35) 1px, transparent 1px);
+}
 
 /* All marketing copy is HTML layered on top of the image. */
 .product-story .overlay {
