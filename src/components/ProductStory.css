@@ -133,6 +133,9 @@
 .product-story .hero-card h2 {
   font-size: 4.15rem;
 }
+.product-story .story-card:nth-child(2) h2 {
+  max-width: 560px;
+}
 .product-story .overlay p {
   max-width: 440px;
   margin: 26px 0 0;
