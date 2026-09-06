@@ -474,5 +474,34 @@
     "title": "404",
     "message": "¡Ups! Página no encontrada",
     "returnHome": "Volver al Inicio"
+  },
+  "productStory": {
+    "cards": [
+      {
+        "eyebrow": "Inteligencia de Scouting",
+        "title": "Menos administración.\nMás ingresos.",
+        "description": "La plataforma de fútbol que pone la IA a trabajar en cada etapa, para que agencias, directores deportivos y clubes dediquen más tiempo a encontrar el talento correcto y menos tiempo a gestionar el proceso."
+      },
+      {
+        "eyebrow": "Emparejamiento de Talento con IA",
+        "title": "Listas cortas que se arman solas.",
+        "description": "Las solicitudes de los clubes se comparan con los perfiles de los jugadores, las estadísticas y la inteligencia de scouting, para que los agentes despierten con listas de talento calificado en lugar de búsquedas manuales."
+      },
+      {
+        "eyebrow": "Automatización de Flujos de Trabajo",
+        "title": "Las transferencias avanzan más rápido.",
+        "description": "La IA se encarga de preparar reuniones, informes de scouting, seguimientos y próximos pasos, para que agentes y directores deportivos puedan concentrarse en relaciones, decisiones y cerrar transferencias."
+      },
+      {
+        "eyebrow": "Visibilidad del Pipeline",
+        "title": "Un pronóstico de fichajes en el que puedes confiar.",
+        "description": "Consulta solicitudes de clubes activas, jugadores preseleccionados, negociaciones estancadas, volumen estimado de comisiones y señales de pipeline etapa por etapa, todo en un solo lugar."
+      },
+      {
+        "eyebrow": "Inteligencia de Jugadores",
+        "title": "Información del jugador para cada decisión.",
+        "description": "Reúne rendimiento, ajuste al puesto, contexto de scouting y señales de carrera en una sola vista detallada, para que cada recomendación sea clara, rápida y segura."
+      }
+    ]
   }
 }

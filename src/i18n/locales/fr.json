@@ -474,5 +474,34 @@
     "title": "404",
     "message": "Oups ! Page introuvable",
     "returnHome": "Retour à l'Accueil"
+  },
+  "productStory": {
+    "cards": [
+      {
+        "eyebrow": "Intelligence de Recrutement",
+        "title": "Moins d'administratif.\nPlus de revenus.",
+        "description": "La plateforme dédiée au football qui met l'IA au travail à chaque étape, pour que les agences, directeurs sportifs et clubs passent plus de temps à trouver le bon talent et moins de temps à gérer le processus."
+      },
+      {
+        "eyebrow": "Association de Talents par IA",
+        "title": "Des présélections qui se construisent seules.",
+        "description": "Les demandes des clubs sont comparées aux profils des joueurs, aux statistiques et à l'intelligence de recrutement, afin que les agents disposent de listes de talents qualifiés au lieu d'une recherche manuelle."
+      },
+      {
+        "eyebrow": "Automatisation des Flux de Travail",
+        "title": "Les transferts avancent plus vite.",
+        "description": "L'IA se charge de la préparation des rendez-vous, des briefs de recrutement, des relances et des prochaines étapes, afin que les agents et directeurs sportifs se concentrent sur les relations, les décisions et la conclusion des transferts."
+      },
+      {
+        "eyebrow": "Visibilité du Pipeline",
+        "title": "Une prévision de recrutement fiable.",
+        "description": "Visualisez les demandes de clubs actives, les joueurs présélectionnés, les négociations bloquées, le volume estimé des commissions et les signaux de pipeline étape par étape, le tout au même endroit."
+      },
+      {
+        "eyebrow": "Intelligence Joueurs",
+        "title": "Une vision du joueur pour chaque décision.",
+        "description": "Réunissez performance, adéquation au poste, contexte de recrutement et signaux de carrière dans une vue détaillée unique, pour que chaque recommandation soit claire, rapide et fiable."
+      }
+    ]
   }
 }

@@ -474,5 +474,34 @@
     "title": "404",
     "message": "Oops! Page not found",
     "returnHome": "Return to Home"
+  },
+  "productStory": {
+    "cards": [
+      {
+        "eyebrow": "Scouting Intelligence",
+        "title": "Less admin.\nMore revenue.",
+        "description": "The football platform that puts AI to work at every stage, so agencies, sporting directors and clubs spend more time finding the right talent and less time managing the process."
+      },
+      {
+        "eyebrow": "AI Talent Matching",
+        "title": "Shortlists that build themselves.",
+        "description": "Club requests are matched against player profiles, statistics and scouting intelligence so agents wake up to qualified talent lists instead of manual searching."
+      },
+      {
+        "eyebrow": "Workflow Automation",
+        "title": "Transfers move faster.",
+        "description": "AI handles meeting prep, scouting briefs, follow-ups and next actions, so agents and sporting directors can focus on relationships, decisions and closing transfers."
+      },
+      {
+        "eyebrow": "Pipeline Visibility",
+        "title": "A recruitment forecast you can trust.",
+        "description": "See active club requests, shortlisted players, stalled deals, estimated fee volume, and stage-by-stage pipeline signals in one place."
+      },
+      {
+        "eyebrow": "Player Intelligence",
+        "title": "Player insight for every decision.",
+        "description": "Bring performance, role fit, scouting context, and career signals into one detailed view so every recommendation is clear, fast, and confident."
+      }
+    ]
   }
 }
