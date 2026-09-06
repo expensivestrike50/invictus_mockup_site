@@ -200,7 +200,6 @@
   width: min(28%, 400px);
   max-width: 400px;
   min-height: 410px;
-  z-index: 1;
 }
 .product-story .story-card:nth-child(5) h2 {
   max-width: 400px;
@@ -210,23 +209,6 @@
 .product-story .story-card:nth-child(5) .overlay p {
   max-width: 390px;
 }
-
-/* Subtle network/mesh pattern behind the floating dashboard card, filling
-   the beige space the image doesn't cover. */
-.product-story .story-card:nth-child(5)::before,
-.product-story .story-card:nth-child(6)::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(94, 74, 51, .4) 0, rgba(94, 74, 51, .4) 1.6px, transparent 1.6px),
-    repeating-linear-gradient(60deg, rgba(94, 74, 51, .16) 0, rgba(94, 74, 51, .16) 1px, transparent 1px, transparent 64px),
-    repeating-linear-gradient(-60deg, rgba(94, 74, 51, .16) 0, rgba(94, 74, 51, .16) 1px, transparent 1px, transparent 64px);
-  background-size: 64px 64px, 64px 64px, 64px 64px;
-}
-
 .product-story .story-card:nth-child(5) .visual {
   position: absolute;
   left: 39%;
