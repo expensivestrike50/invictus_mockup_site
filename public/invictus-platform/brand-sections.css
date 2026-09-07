@@ -1,4 +1,27 @@
-:root{--ls-beige:#e9e1d3;--ls-black:#171917;--ls-green:#269b63;--ls-yellow:#f1c84a;--ls-blue:#2874dd}
+:root{--ls-beige:#f6f1e9;--ls-black:#0a0f1a;--ls-green:#269b63;--ls-yellow:#f1c84a;--ls-blue:#2463eb}
+/* Invictus brand: font + background + nav, matching the main site's design tokens. */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap');
+body,body *{font-family:'Inter Tight',sans-serif!important}
+html,body{background:var(--ls-beige)!important}
+.ivx-nav{position:sticky;top:0;z-index:999;background:var(--ls-beige);border-bottom:1px solid #0a0f1a1a}
+.ivx-nav__inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 2rem}
+.ivx-nav__logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ls-black)}
+.ivx-nav__mark{width:22px;height:auto;fill:currentColor}
+.ivx-nav__word{font-weight:700!important;font-size:1.5rem;letter-spacing:-.02em}
+.ivx-nav__links{display:flex;align-items:center;gap:1.75rem}
+.ivx-nav__links a{font-weight:600!important;font-size:1rem;color:var(--ls-black);text-decoration:none}
+.ivx-nav__links a:hover{color:var(--ls-blue)}
+.ivx-nav__cta{font-weight:600!important;font-size:.95rem;background:var(--ls-blue);color:#fff!important;padding:.65rem 1.4rem;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .2s ease}
+.ivx-nav__cta:hover{background:var(--ls-black)}
+.ivx-nav__burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
+.ivx-nav__burger span{width:22px;height:2px;background:var(--ls-black);display:block;transition:transform .2s ease,opacity .2s ease}
+.ivx-nav.is-open .ivx-nav__burger span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.ivx-nav.is-open .ivx-nav__burger span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.ivx-nav__mobile{display:none;flex-direction:column;gap:1.25rem;padding:1.5rem 2rem 2rem;background:var(--ls-beige);border-top:1px solid #0a0f1a1a}
+.ivx-nav__mobile a{font-weight:600!important;font-size:1.25rem;color:var(--ls-black);text-decoration:none}
+.ivx-nav__mobile .ivx-nav__cta{align-self:flex-start}
+.ivx-nav.is-open .ivx-nav__mobile{display:flex}
+@media(max-width:900px){.ivx-nav__links{display:none}.ivx-nav__cta{display:none}.ivx-nav__burger{display:flex}}
 /* Preserve the source's geometry and animation hooks; apply the requested palette. */
 .apl-acc-comp-light{background:var(--ls-beige);border-radius:2rem}
 .apl-acc-item-white{border-color:#b7b2a6!important;color:var(--ls-black)!important}
