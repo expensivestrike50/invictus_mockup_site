@@ -503,5 +503,47 @@
         "description": "Réunissez performance, adéquation au poste, contexte de recrutement et signaux de carrière dans une vue détaillée unique, pour que chaque recommandation soit claire, rapide et fiable."
       }
     ]
+  },
+  "signals": {
+    "eyebrow": "Intelligence Intégrée",
+    "title": "Chaque Signal, une Seule Vue.",
+    "titleAccent": "Prête à agir.",
+    "moreLabel": "Voir comment ça marche",
+    "features": [
+      {
+        "title": "Tout est capturé.",
+        "description": "Appels, e-mails et notes de recrutement sont enregistrés automatiquement, sans dépendre de la mémoire de quelqu'un."
+      },
+      {
+        "title": "Vos outils communiquent enfin.",
+        "description": "WhatsApp, e-mail et votre CRM restent synchronisés, pour qu'aucune mise à jour ne se perde dans un message transféré."
+      },
+      {
+        "title": "Elle apprend de votre effectif.",
+        "description": "Chaque rapport de match et chaque réponse de club affine la prochaine recommandation d'Invictus."
+      },
+      {
+        "title": "Demandez, c'est là.",
+        "description": "N'importe quel joueur, n'importe quelle demande de club, n'importe quelle clause de contrat, en quelques secondes."
+      },
+      {
+        "title": "Toute votre équipe alignée.",
+        "description": "Chaque agent travaille à partir de la même présélection, des mêmes notes, des mêmes faits."
+      }
+    ],
+    "accordion": [
+      {
+        "title": "Contexte",
+        "description": "Chaque contact, appels, e-mails, notes de recrutement, est intégré dans un registre partagé unique dès qu'il a lieu."
+      },
+      {
+        "title": "Agents et Automatisations",
+        "description": "L'IA classe les talents selon chaque demande de club et rédige la prochaine étape, sans attendre un moment de libre."
+      },
+      {
+        "title": "Écosystème",
+        "description": "Observez l'ensemble du marché : quels clubs sont actifs, quels agents bougent, et où la prochaine affaire risque de se conclure."
+      }
+    ]
   }
 }
