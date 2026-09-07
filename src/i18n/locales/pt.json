@@ -503,47 +503,5 @@
         "description": "Reúna desempenho, adequação à posição, contexto de scouting e sinais de carreira em uma única visão detalhada, para que cada recomendação seja clara, rápida e confiante."
       }
     ]
-  },
-  "signals": {
-    "eyebrow": "Inteligência Integrada",
-    "title": "Cada Sinal, uma Só Visão.",
-    "titleAccent": "Pronta para agir.",
-    "moreLabel": "Veja como funciona",
-    "features": [
-      {
-        "title": "Captura tudo.",
-        "description": "Ligações, e-mails e notas de scouting são registrados automaticamente, sem depender de alguém se lembrar de anotar."
-      },
-      {
-        "title": "Suas ferramentas finalmente conversam.",
-        "description": "WhatsApp, e-mail e seu CRM permanecem sincronizados, para que nenhuma atualização se perca em uma mensagem encaminhada."
-      },
-      {
-        "title": "Aprende com seu elenco.",
-        "description": "Cada relatório de partida e cada resposta de clube aprimora a próxima recomendação do Invictus."
-      },
-      {
-        "title": "Pergunte, e está lá.",
-        "description": "Qualquer jogador, qualquer solicitação de clube, qualquer cláusula contratual, em segundos."
-      },
-      {
-        "title": "Todo o seu time alinhado.",
-        "description": "Cada agente trabalha com a mesma lista curta, as mesmas notas, os mesmos fatos."
-      }
-    ],
-    "accordion": [
-      {
-        "title": "Contexto",
-        "description": "Cada contato, ligações, e-mails, notas de scouting, é reunido em um único registro compartilhado no momento em que acontece."
-      },
-      {
-        "title": "Agentes e Automações",
-        "description": "A IA classifica talentos de acordo com cada solicitação de clube e prepara o próximo passo, sem esperar por um momento livre."
-      },
-      {
-        "title": "Ecossistema",
-        "description": "Veja o mercado mais amplo: quais clubes estão ativos, quais agentes estão se movimentando e onde o próximo negócio deve se concretizar."
-      }
-    ]
   }
 }

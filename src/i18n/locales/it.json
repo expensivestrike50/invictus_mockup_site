@@ -503,47 +503,5 @@
         "description": "Riunisci performance, adattamento al ruolo, contesto di scouting e segnali di carriera in un'unica vista dettagliata, così ogni raccomandazione è chiara, rapida e sicura."
       }
     ]
-  },
-  "signals": {
-    "eyebrow": "Intelligenza Integrata",
-    "title": "Ogni Segnale, in un'Unica Vista.",
-    "titleAccent": "Pronta all'azione.",
-    "moreLabel": "Scopri come funziona",
-    "features": [
-      {
-        "title": "Cattura tutto.",
-        "description": "Chiamate, email e note di scouting vengono registrate automaticamente, senza dipendere dal fatto che qualcuno se le ricordi di annotare."
-      },
-      {
-        "title": "I tuoi strumenti finalmente comunicano.",
-        "description": "WhatsApp, email e il tuo CRM restano sincronizzati, così nessun aggiornamento si perde in un messaggio inoltrato."
-      },
-      {
-        "title": "Impara dalla tua rosa.",
-        "description": "Ogni report di partita e ogni risposta di un club affina il prossimo suggerimento di Invictus."
-      },
-      {
-        "title": "Chiedi, ed è lì.",
-        "description": "Qualsiasi giocatore, qualsiasi richiesta di un club, qualsiasi clausola contrattuale, in pochi secondi."
-      },
-      {
-        "title": "Tutto il tuo team allineato.",
-        "description": "Ogni agente lavora con la stessa shortlist, le stesse note, gli stessi dati."
-      }
-    ],
-    "accordion": [
-      {
-        "title": "Contesto",
-        "description": "Ogni contatto, chiamate, email, note di scouting, confluisce in un unico registro condiviso nel momento stesso in cui avviene."
-      },
-      {
-        "title": "Agenti e Automazioni",
-        "description": "L'IA classifica i talenti in base a ogni richiesta di un club e prepara la mossa successiva, senza aspettare un momento libero."
-      },
-      {
-        "title": "Ecosistema",
-        "description": "Osserva il mercato nel suo insieme: quali club sono attivi, quali agenti si stanno muovendo e dove probabilmente si concluderà il prossimo affare."
-      }
-    ]
   }
 }

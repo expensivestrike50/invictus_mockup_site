@@ -503,47 +503,5 @@
         "description": "Bring performance, role fit, scouting context, and career signals into one detailed view so every recommendation is clear, fast, and confident."
       }
     ]
-  },
-  "signals": {
-    "eyebrow": "Built-In Intelligence",
-    "title": "Every Signal, One Picture.",
-    "titleAccent": "Ready to act on.",
-    "moreLabel": "See how it works",
-    "features": [
-      {
-        "title": "It captures everything.",
-        "description": "Calls, emails, and scouting notes are logged automatically, so nothing depends on someone remembering to write it down."
-      },
-      {
-        "title": "Your tools finally talk.",
-        "description": "WhatsApp, email, and your CRM stay in sync, so no update gets lost in a forwarded thread."
-      },
-      {
-        "title": "It learns your roster.",
-        "description": "Every match report and club reply sharpens the next recommendation Invictus makes."
-      },
-      {
-        "title": "Ask, and it's there.",
-        "description": "Any player, any club request, any contract term, surfaced in seconds."
-      },
-      {
-        "title": "Your whole team aligned.",
-        "description": "Every agent works from the same shortlist, the same notes, the same facts."
-      }
-    ],
-    "accordion": [
-      {
-        "title": "Context",
-        "description": "Every touchpoint, calls, emails, scouting notes, mapped into one shared record the moment it happens."
-      },
-      {
-        "title": "Agents & Automations",
-        "description": "AI ranks talent against each club request and drafts the next move, so nothing waits on a free afternoon."
-      },
-      {
-        "title": "Ecosystem",
-        "description": "See the wider market: which clubs are active, which agents are moving, and where the next deal is likely to land."
-      }
-    ]
   }
 }

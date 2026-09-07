@@ -8,7 +8,6 @@ const Features = lazy(() => import('@/components/Features'));
 const CaseStudies = lazy(() => import('@/components/CaseStudies'));
 const ProductStory = lazy(() => import('@/components/ProductStory'));
 const HowItWorks = lazy(() => import('@/components/HowItWorks'));
-const Signals = lazy(() => import('@/components/Signals'));
 const Pricing = lazy(() => import('@/components/Pricing'));
 const Testimonials = lazy(() => import('@/components/Testimonials'));
 const FAQ = lazy(() => import('@/components/FAQ'));
@@ -27,7 +26,6 @@ const Index = () => {
           <CaseStudies />
           <ProductStory />
           <HowItWorks />
-          <Signals />
           <Pricing />
           <Testimonials />
           <FAQ />

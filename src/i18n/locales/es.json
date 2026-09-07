@@ -503,47 +503,5 @@
         "description": "Reúne rendimiento, ajuste al puesto, contexto de scouting y señales de carrera en una sola vista detallada, para que cada recomendación sea clara, rápida y segura."
       }
     ]
-  },
-  "signals": {
-    "eyebrow": "Inteligencia Integrada",
-    "title": "Cada Señal, en un Solo Lugar.",
-    "titleAccent": "Lista para actuar.",
-    "moreLabel": "Ver cómo funciona",
-    "features": [
-      {
-        "title": "Lo captura todo.",
-        "description": "Llamadas, correos y notas de scouting se registran automáticamente, sin depender de que alguien se acuerde de anotarlo."
-      },
-      {
-        "title": "Tus herramientas por fin se comunican.",
-        "description": "WhatsApp, correo y tu CRM se mantienen sincronizados, para que ninguna actualización se pierda en un mensaje reenviado."
-      },
-      {
-        "title": "Aprende de tu plantilla.",
-        "description": "Cada informe de partido y cada respuesta de un club afina la siguiente recomendación de Invictus."
-      },
-      {
-        "title": "Pregunta, y ahí está.",
-        "description": "Cualquier jugador, cualquier solicitud de club, cualquier cláusula de contrato, en segundos."
-      },
-      {
-        "title": "Todo tu equipo alineado.",
-        "description": "Cada agente trabaja con la misma lista corta, las mismas notas, los mismos datos."
-      }
-    ],
-    "accordion": [
-      {
-        "title": "Contexto",
-        "description": "Cada contacto, llamadas, correos, notas de scouting, se integra en un único registro compartido en el momento en que ocurre."
-      },
-      {
-        "title": "Agentes y Automatizaciones",
-        "description": "La IA clasifica el talento frente a cada solicitud de club y redacta el siguiente paso, sin esperar a que haya tiempo libre."
-      },
-      {
-        "title": "Ecosistema",
-        "description": "Observa el mercado en su conjunto: qué clubes están activos, qué agentes se mueven y dónde es probable que se cierre el próximo fichaje."
-      }
-    ]
   }
 }
