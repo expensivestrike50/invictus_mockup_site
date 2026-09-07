@@ -14,7 +14,8 @@
     "account": "Account",
     "signOut": "Sign Out",
     "getStarted": "Get Started",
-    "language": "Language"
+    "language": "Language",
+    "platform": "Platform"
   },
   "hero": {
     "eyebrow": "Football Agency CRM",

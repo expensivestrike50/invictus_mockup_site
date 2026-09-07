@@ -14,7 +14,8 @@
     "account": "Cuenta",
     "signOut": "Cerrar sesión",
     "getStarted": "Empezar",
-    "language": "Idioma"
+    "language": "Idioma",
+    "platform": "Plataforma"
   },
   "hero": {
     "eyebrow": "CRM para agencias de fútbol",

@@ -1,0 +1,38 @@
+:root{--ls-beige:#e9e1d3;--ls-black:#171917;--ls-green:#269b63;--ls-yellow:#f1c84a;--ls-blue:#2874dd}
+/* Preserve the source's geometry and animation hooks; apply the requested palette. */
+.apl-acc-comp-light{background:var(--ls-beige);border-radius:2rem}
+.apl-acc-item-white{border-color:#b7b2a6!important;color:var(--ls-black)!important}
+.apl-acc-item-white.is-open{background:#fff!important;border-color:#fff!important}
+.apl-acc-item-white:nth-child(1){--agent-accent:var(--ls-blue)}
+.apl-acc-item-white:nth-child(2){--agent-accent:var(--ls-green)}
+.apl-acc-item-white:nth-child(3){--agent-accent:var(--ls-yellow)}
+.apl-acc-item-white:nth-child(4){--agent-accent:var(--ls-blue)}
+.apl-acc-item-white:nth-child(5){--agent-accent:var(--ls-green)}
+.apl-acc-item-white:nth-child(6){--agent-accent:var(--ls-black)}
+.apl-acc-item-white.is-open [data-acc-header]{color:var(--ls-black);border-left:3px solid var(--agent-accent);padding-left:.6rem}
+.apl-acc-par.for-light,.agents-slide-card-par.for-light{color:#64675e!important}
+/* Inactive groups disappear before the incoming group fades in, preventing doubled text. */
+.apl-tab-pane{visibility:hidden;transition:opacity .35s ease;pointer-events:none}
+.apl-tab-pane.is-open{visibility:visible;opacity:1;pointer-events:auto}
+.agents-slide-card.for-light{background:white!important;color:var(--ls-black)}
+.ls-agent-art{position:relative;overflow:hidden;border-radius:1rem;background:#f7f3eb;aspect-ratio:1.12}
+.ls-agent-art[data-color="1"]{background:#e8f3ea}.ls-agent-art[data-color="2"]{background:#fcf3cf}.ls-agent-art[data-color="3"]{background:#e9f1fd}
+.ls-agent-art .agents-slide-card-image{width:100%;height:100%;object-fit:cover;object-position:50% 18%;mix-blend-mode:multiply;display:block}
+.ls-agent-toast{position:absolute;bottom:7%;left:4%;right:4%;display:flex;align-items:center;gap:.55rem;padding:.65rem .75rem;background:#ffffffed;color:var(--ls-black);border:1px solid #e4e2da;border-radius:2rem;font-size:clamp(10px,.9vw,14px);line-height:1.35;box-shadow:0 4px 12px #17191708}
+.ls-check{flex:0 0 24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--ls-green);color:white;font-size:14px}
+.m_button,.m_button-27{background:var(--ls-black)!important;color:white!important;border-color:var(--ls-black)!important}
+.m_button:hover,.m_button-27:hover{background:var(--ls-blue)!important;border-color:var(--ls-blue)!important}
+.m_button-outline.for-hp-card{border-color:var(--ls-black)!important;color:var(--ls-black)!important}
+.m_button-outline.for-hp-card:hover{background:var(--ls-yellow)!important}
+.hp-agents-tabs_span.is-purple{color:var(--ls-blue)!important}
+.hero_test-tabs-menu-link.is-active{background:var(--ls-beige)!important;color:var(--ls-black)!important}
+.splide__pagination__page.is-active{background:var(--ls-black)!important}
+.splide__pagination__page{background:#c8bfae!important}
+.hp-agents-content_center-agent,.hp-agents-content_center-agent-color{object-fit:contain}
+.hp-agents_section.for-control{background:#f5f0e7!important}
+@media(max-width:767px){.ls-agent-toast{font-size:11px}.ls-check{flex-basis:20px;height:20px;font-size:12px}.apl-acc-comp-light{border-radius:1.25rem}}
+@media(prefers-reduced-motion:reduce){.apl-tab-pane{transition:none}}
+/* Football product-media presentation. Keeps existing placement and motion. */
+video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9fc;box-shadow:0 12px 38px #2338560a}
+.hp-tab-layout-end{border-color:#e7ebf2}
+.hp-agents-limitless_card-image,.v4-ani-board-mb{border-radius:12px}

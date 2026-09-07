@@ -14,7 +14,8 @@
     "account": "Account",
     "signOut": "Esci",
     "getStarted": "Inizia ora",
-    "language": "Lingua"
+    "language": "Lingua",
+    "platform": "Piattaforma"
   },
   "hero": {
     "eyebrow": "CRM per agenzie calcistiche",

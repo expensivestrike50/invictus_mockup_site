@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, LogOut } from 'lucide-react';
+import { ChevronDown, LogOut, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -16,10 +16,11 @@ import { LanguageSwitcher } from '@/components/base/language-switcher';
 
 const navLinks = [
   { key: 'nav.home', href: '/' },
-  { key: 'nav.about', href: '/about' },
   { key: 'nav.pricing', href: '/pricing' },
   { key: 'nav.contact', href: '/contact' },
 ];
+
+const INVICTUS_PLATFORM_URL = `${import.meta.env.BASE_URL}invictus-platform/index.html`;
 
 const accountLinks = [
   { key: 'nav.signIn', href: '/signin' },
@@ -33,9 +34,6 @@ const authenticatedLinks = [
   { key: 'nav.reports', href: '/reports' },
 ];
 
-const prefetchAbout = () => {
-  import('@/pages/About');
-};
 const prefetchPricing = () => {
   import('@/pages/Pricing');
 };
@@ -48,11 +46,14 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPlatformDropdownOpen, setIsPlatformDropdownOpen] = useState(false);
+  const [isPlatformOpen, setIsPlatformOpen] = useState(false);
   const { user, isAnonymous, signOut, isLoading } = useAuth();
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleAccountSubmenu = () => setIsAccountOpen(!isAccountOpen);
+  const togglePlatformSubmenu = () => setIsPlatformOpen(!isPlatformOpen);
 
   const handleSignOut = async () => {
     await signOut();
@@ -90,9 +91,7 @@ const Navbar = () => {
                     key={link.href}
                     to={link.href}
                     onMouseEnter={
-                      link.href === '/about'
-                        ? prefetchAbout
-                        : link.href === '/pricing'
+                      link.href === '/pricing'
                         ? prefetchPricing
                         : link.href === '/contact'
                         ? prefetchContact
@@ -112,6 +111,48 @@ const Navbar = () => {
                     </div>
                   </Link>
                 ))}
+
+                {/* Platform Dropdown */}
+                <div
+                  className="relative"
+                  onPointerEnter={() => setIsPlatformDropdownOpen(true)}
+                  onPointerLeave={() => setIsPlatformDropdownOpen(false)}
+                >
+                  <DropdownMenu open={isPlatformDropdownOpen} onOpenChange={setIsPlatformDropdownOpen}>
+                    <DropdownMenuTrigger asChild>
+                      <button className="no-underline flex items-center gap-1 cursor-pointer bg-transparent border-none outline-none">
+                        <span className="text-foreground text-base font-semibold leading-5">
+                          {t('nav.platform')}
+                        </span>
+                        <ChevronDown
+                          className={`w-4 h-4 text-foreground transition-transform duration-300 ${
+                            isPlatformDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      align="start"
+                      sideOffset={2}
+                      portalled={false}
+                      className="min-w-[160px] rounded-2xl p-3 flex flex-col gap-3"
+                    >
+                      <DropdownMenuItem asChild className="p-0 focus:bg-transparent">
+                        <a
+                          href={INVICTUS_PLATFORM_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer w-full no-underline flex items-center gap-2 group/item"
+                        >
+                          <Plus className="w-4 h-4 text-foreground shrink-0" />
+                          <span className="text-foreground text-base font-semibold leading-5">
+                            Invictus
+                          </span>
+                        </a>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
 
                 {/* Account Dropdown */}
                 <div
@@ -236,9 +277,7 @@ const Navbar = () => {
                   <Link
                     to={link.href}
                     onMouseEnter={
-                      link.href === '/about'
-                        ? prefetchAbout
-                        : link.href === '/pricing'
+                      link.href === '/pricing'
                         ? prefetchPricing
                         : link.href === '/contact'
                         ? prefetchContact
@@ -254,11 +293,58 @@ const Navbar = () => {
                 </motion.div>
               ))}
 
-              {/* Mobile Account Section */}
+              {/* Mobile Platform Section */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.15 + navLinks.length * 0.05 }}
+                className="flex flex-col items-center"
+              >
+                <button
+                  onClick={togglePlatformSubmenu}
+                  className="no-underline group flex items-center gap-2 bg-transparent border-none cursor-pointer"
+                >
+                  <span className="text-foreground text-5xl max-md:text-[2.5rem] max-xs:text-[2.25rem] font-semibold font-display leading-tight">
+                    {t('nav.platform')}
+                  </span>
+                  <ChevronDown
+                    className={`w-8 h-8 max-md:w-6 max-md:h-6 text-foreground transition-transform duration-300 ${
+                      isPlatformOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {isPlatformOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex flex-col items-center gap-4 mt-4 overflow-hidden"
+                    >
+                      <a
+                        href={INVICTUS_PLATFORM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="no-underline flex items-center gap-2"
+                      >
+                        <Plus className="w-6 h-6 max-md:w-5 max-md:h-5 text-foreground/80" />
+                        <span className="text-foreground/80 text-3xl max-md:text-2xl max-xs:text-xl font-medium font-display leading-tight hover:text-foreground transition-colors">
+                          Invictus
+                        </span>
+                      </a>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Mobile Account Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.15 + (navLinks.length + 1) * 0.05 }}
                 className="flex flex-col items-center"
               >
                 <button
