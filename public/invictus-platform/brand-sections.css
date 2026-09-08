@@ -11,6 +11,20 @@ html,body{background:var(--ls-beige)!important}
 .ivx-nav__links{display:flex;align-items:center;gap:1.75rem}
 .ivx-nav__links a{font-weight:600!important;font-size:1rem;color:var(--ls-black);text-decoration:none}
 .ivx-nav__links a:hover{color:var(--ls-blue)}
+.ivx-dd{position:relative}
+.ivx-dd summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.3rem;font-weight:600!important;font-size:1rem;color:var(--ls-black)}
+.ivx-dd summary::-webkit-details-marker{display:none}
+.ivx-dd summary svg{width:14px;height:14px;transition:transform .2s ease}
+.ivx-dd[open] summary svg{transform:rotate(180deg)}
+.ivx-dd__menu{position:absolute;top:calc(100% + 14px);left:0;background:#fff;border:1px solid #0a0f1a14;border-radius:16px;padding:.75rem;display:flex;flex-direction:column;gap:.85rem;min-width:170px;box-shadow:0 12px 30px #0a0f1a1f;z-index:1000}
+.ivx-dd__menu a{display:flex;align-items:center;gap:.45rem;color:var(--ls-black);font-weight:600!important;font-size:.95rem;white-space:nowrap;text-decoration:none}
+.ivx-dd__menu a:hover{color:var(--ls-blue)}
+.ivx-dd__bullet{color:var(--ls-blue);font-weight:700}
+.ivx-lang{display:flex;align-items:center;gap:.4rem;color:var(--ls-black);font-weight:600!important;font-size:1rem}
+.ivx-lang svg{width:18px;height:18px}
+.ivx-nav__mobile .ivx-dd__menu{position:static;box-shadow:none;border:none;background:transparent;padding:.65rem 0 0 1.1rem}
+.ivx-nav__mobile .ivx-dd summary,.ivx-nav__mobile .ivx-lang{font-size:1.25rem!important}
+.ivx-nav__mobile .ivx-dd__menu a{font-size:1.05rem!important}
 .ivx-nav__cta{font-weight:600!important;font-size:.95rem;background:var(--ls-blue);color:#fff!important;padding:.65rem 1.4rem;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .2s ease}
 .ivx-nav__cta:hover{background:var(--ls-black)}
 .ivx-nav__burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
@@ -22,6 +36,11 @@ html,body{background:var(--ls-beige)!important}
 .ivx-nav__mobile .ivx-nav__cta{align-self:flex-start}
 .ivx-nav.is-open .ivx-nav__mobile{display:flex}
 @media(max-width:900px){.ivx-nav__links{display:none}.ivx-nav__cta{display:none}.ivx-nav__burger{display:flex}}
+/* Invictus landing-page type scale (Hero/Features h1-h3 + body copy). */
+h1{font-size:clamp(2.75rem,6vw,5.25rem)!important;font-weight:700!important;line-height:1.2!important}
+h2{font-size:clamp(2.25rem,5vw,4.5rem)!important;font-weight:700!important;line-height:1.2!important}
+h3{font-size:1.5rem!important;font-weight:700!important;line-height:1.4!important}
+p{font-size:1.125rem!important;line-height:1.4!important;font-weight:400!important}
 /* Preserve the source's geometry and animation hooks; apply the requested palette. */
 .apl-acc-comp-light{background:var(--ls-beige);border-radius:2rem}
 .apl-acc-item-white{border-color:#b7b2a6!important;color:var(--ls-black)!important}
