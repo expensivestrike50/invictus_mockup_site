@@ -10,6 +10,7 @@ html,body{background:var(--ls-beige)!important}
 .ivx-nav__logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ls-black)}
 .ivx-nav__mark{width:24px;height:auto;fill:currentColor}
 .ivx-nav__word{font-weight:700;font-size:26.8px;line-height:32px;letter-spacing:-0.01em}
+.ivx-nav__right{display:flex;align-items:center;gap:24px}
 .ivx-nav__links{display:flex;align-items:center;gap:24px}
 .ivx-nav__links>a{font-weight:600;font-size:16px;color:var(--ls-black);text-decoration:none}
 .ivx-nav__links>a:hover{color:var(--ls-blue)}
@@ -43,7 +44,7 @@ html,body{background:var(--ls-beige)!important}
 .ivx-nav__mobile .ivx-acc__panel a{color:var(--ls-black);opacity:.8;font-weight:500;font-size:30px;text-decoration:none;font-family:inherit;display:flex;align-items:center;gap:8px}
 .ivx-nav__mobile .ivx-acc__panel a:hover{opacity:1}
 .ivx-nav__mobile .ivx-lang__trigger{font-size:20px}
-@media(max-width:900px){.ivx-nav__links{display:none}.ivx-nav__cta{display:none}.ivx-nav__burger{display:flex}}
+@media(max-width:900px){.ivx-nav__right{display:none}.ivx-nav__burger{display:flex}}
 /* Invictus landing-page type scale (Hero/Features h1-h3 + body copy). */
 h1{font-size:clamp(2.75rem,6vw,5.25rem)!important;font-weight:700!important;line-height:1.2!important}
 h2{font-size:clamp(2.25rem,5vw,4.5rem)!important;font-weight:700!important;line-height:1.2!important}
