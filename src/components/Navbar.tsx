@@ -142,7 +142,7 @@ const Navbar = () => {
                         >
                           <Plus className="w-4 h-4 text-foreground shrink-0" />
                           <span className="text-foreground text-base font-semibold leading-5">
-                            Augustus
+                            Invictus
                           </span>
                         </Link>
                       </DropdownMenuItem>
@@ -326,7 +326,7 @@ const Navbar = () => {
                       >
                         <Plus className="w-6 h-6 max-md:w-5 max-md:h-5 text-foreground/80" />
                         <span className="text-foreground/80 text-3xl max-md:text-2xl max-xs:text-xl font-medium font-display leading-tight hover:text-foreground transition-colors">
-                          Augustus
+                          Invictus
                         </span>
                       </Link>
                     </motion.div>
