@@ -71,7 +71,7 @@
 <link href="assets/a5082ef9276eaa6d.css" media="(max-width: 767px)" rel="stylesheet"/>
 <!-- Hero LCP image -->
 <link as="image" fetchpriority="high" href="assets/ea34d13fdacf4faa.jpg" rel="preload"/>
-<meta content="noindex,nofollow" name="robots"/><style>html{scroll-behavior:smooth} @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><link href="brand-sections.css?v=9" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></head><body><div class="m_page_wrapper"><div class="m_mandatory-css w-embed"><style>
+<meta content="noindex,nofollow" name="robots"/><style>html{scroll-behavior:smooth} @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><link href="brand-sections.css?v=10" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></head><body><div class="m_page_wrapper"><div class="m_mandatory-css w-embed"><style>
 a {
 color: inherit;
 }
@@ -471,93 +471,27 @@ display: block;
       background-position: -350px center;
     }
   }
-</style></div></section><section class="hide-tablet" data-wf--logos---marquee---localization--variant="english-default"><div class="m_padding-global"><div class="m_container-large"><div class="m_padding-section-medium"><div class="marquee_logos-wrapper"><div class="marquee-logos_heading">One ecosystem for every part of your football agency<br/></div><div class="marquee-logos_component" data-marquee=""><div class="marquee-logos_track"><div class="marquee-logos_content"><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-1.svg" width="100"/></div><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-2.svg" width="100"/></div><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-3.svg" width="100"/></div><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-4.svg" width="100"/></div><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-5.svg" width="100"/></div><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-6.svg" width="100"/></div><div class="marquee-logos_wrapper"><img alt="LagrangeSport football agency workflow" class="marquee-logos_image" height="47" loading="lazy" src="assets/ecosystem-0.svg" width="100"/></div></div></div></div><div class="marquee-logos_fade"></div><div class="marquee-logos_fade is-right"></div></div></div></div></div><div class="hide w-embed"><style>
-  .marquee-logos_track {
-    animation: scrollMarquee var(--scroll-duration, 10s) linear infinite;
-    will-change: transform;
-  }
-
-  @keyframes scrollMarquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-1 * var(--content-width) * 1px));
-    }
-  }
-
-  .marquee-logos_component:hover .marquee-logos_track {
-    animation-play-state: paused;
-  }
-
-  .marquee-logos_component[data-marquee='off'] .marquee-logos_track {
-    animation: none;
-    width: 100%;
-  }
-  .marquee-logos_component[data-marquee='off'] .marquee-logos_content {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0;
-    column-gap: 3rem;
-    flex-wrap: wrap;
-    row-gap: 2rem;
-  }
-
-  .marquee-logos_component[data-marquee='off'] .marquee-logos_content {
-    flex-wrap: wrap;
-    row-gap: 2rem;
-  }
-
-  .marquee_logos-wrapper:has(.marquee-logos_component[data-marquee='off']) .marquee-logos_fade {
-    display: none;
-  }
-</style></div><div class="hide w-embed w-script"><script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const speed = 60;
-    const components = document.querySelectorAll('.marquee-logos_component');
-
-    function setupMarquees() {
-      components.forEach((component) => {
-        // Skip this instance entirely if it's marked as disabled
-        if (component.getAttribute('data-marquee') === 'off') {
-          component.classList.add('is-marquee-static');
-          return;
-        }
-
-        const track = component.querySelector('.marquee-logos_track');
-        const content = component.querySelector('.marquee-logos_content');
-        if (!track || !content) return;
-
-        const clones = track.querySelectorAll('.marquee-logos_content.clone');
-        clones.forEach((clone) => clone.remove());
-
-        const contentWidth = content.offsetWidth;
-        const viewportWidth = window.innerWidth;
-        if (contentWidth === 0) return;
-
-        const clonesNeeded = Math.ceil(viewportWidth / contentWidth) + 1;
-        for (let i = 0; i < clonesNeeded; i++) {
-          const clone = content.cloneNode(true);
-          clone.classList.add('clone');
-          clone.setAttribute('aria-hidden', 'true');
-          track.appendChild(clone);
-        }
-
-        const duration = contentWidth / speed;
-        track.style.setProperty('--content-width', contentWidth);
-        track.style.setProperty('--scroll-duration', `${duration}s`);
-      });
-    }
-
-    setupMarquees();
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(setupMarquees, 250);
-    });
-  });
-</script></div></section><section class="for-mobile"><div class="m_padding-global"><div class="flex-vertical-center"><div class="hero-agents-group"><div class="work-platform-logo"><div class="icon-embed-custom-5 w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 320 25" width="100%" xmlns="http://www.w3.org/2000/svg">
+</style></div></section><section class="ivx-partners">
+<div class="ivx-partners__header">
+<span class="ivx-partners__eyebrow">Partners and Collaborators</span>
+<h2 class="ivx-partners__title">Trusted Across the Game</h2>
+<p class="ivx-partners__desc">We work alongside agencies, brands, and football organisations that share our belief in better, data backed representation.</p>
+</div>
+<div class="ivx-partners__grid">
+<div class="ivx-partners__item"><img src="assets/partners/caa-sports.png" alt="CAA Sports" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/invictus.png" alt="Invictus" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/nike.png" alt="Nike" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/adidas.png" alt="Adidas" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/spark.png" alt="Spark" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/nvidia.png" alt="NVIDIA" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/mikvon-stars.png" alt="Mikvon Stars Agency" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/talent-first.png" alt="Talent First Agency" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/soccer-pro.png" alt="Soccer Pro Agency" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/the-football-agents.png" alt="The Football Agents" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/case-western-reserve.png" alt="Case Western Reserve University" loading="lazy"/></div>
+<div class="ivx-partners__item"><img src="assets/partners/pro-football-agency.png" alt="Pro Football Agency" loading="lazy"/></div>
+</div>
+</section><section class="for-mobile"><div class="m_padding-global"><div class="flex-vertical-center"><div class="hero-agents-group"><div class="work-platform-logo"><div class="icon-embed-custom-5 w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 320 25" width="100%" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <style>
       @keyframes wf-stop1-A {

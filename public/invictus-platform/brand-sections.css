@@ -53,3 +53,13 @@ video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9f
 .ivx-hero-collage__item--3{bottom:2%;left:2%;width:58%;transform:rotate(4deg);z-index:3}
 .ivx-hero-collage__item--4{bottom:0;right:4%;width:62%;transform:rotate(-5deg);z-index:4}
 @media(max-width:767px){.ivx-hero-collage{max-width:420px}}
+/* "Partners and Collaborators" section, replacing the ecosystem logo marquee. */
+.ivx-partners{padding:0 40px 128px;max-width:1600px;margin:0 auto}
+.ivx-partners__header{display:flex;flex-direction:column;gap:16px;max-width:50rem;margin:0 auto 64px;text-align:center}
+.ivx-partners__eyebrow{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ls-black)}
+.ivx-partners__title{font-size:4.5rem;line-height:1.2;font-weight:700;color:var(--ls-black)}
+.ivx-partners__desc{font-size:1.125rem;line-height:1.4;color:#4d4d47}
+.ivx-partners__grid{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 48px}
+.ivx-partners__item img{height:72px;width:auto;max-width:220px;object-fit:contain}
+@media(max-width:991px){.ivx-partners__title{font-size:3rem}}
+@media(max-width:767px){.ivx-partners{padding:0 24px 80px}.ivx-partners__title{font-size:2rem}.ivx-partners__grid{gap:24px 32px}.ivx-partners__item img{height:52px;max-width:150px}}
