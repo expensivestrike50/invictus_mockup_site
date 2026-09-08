@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './ProductStory.css';
 
 import scoutingDashboard from '@/assets/story/scouting-dashboard.png';
-import talentMatchDashboard from '@/assets/story/talent-match-dashboard.png';
+import talentMatchDashboard from '@/assets/story/AI_Talent_true_vector_updated.svg';
 import transferWorkflowDashboard from '@/assets/story/transfer-workflow-dashboard.png';
 import recruitmentForecastDashboard from '@/assets/story/recruitment-forecast-dashboard.png';
 import playerInsightsDashboard from '@/assets/story/player-insights-dashboard-cropped.png';
