@@ -45,3 +45,11 @@ p{font-size:1.125rem!important;line-height:1.4!important;font-weight:400!importa
 video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9fc;box-shadow:0 12px 38px #2338560a}
 .hp-tab-layout-end{border-color:#e7ebf2}
 .hp-agents-limitless_card-image,.v4-ani-board-mb{border-radius:12px}
+/* Hero video slot replaced with a collage of transparent-background dashboard SVGs. */
+.ivx-hero-collage{position:relative;width:100%;aspect-ratio:1.28;max-width:640px;margin:0 auto}
+.ivx-hero-collage__item{position:absolute;width:66%;height:auto;display:block;filter:drop-shadow(0 18px 34px rgba(10,15,26,.16))}
+.ivx-hero-collage__item--1{top:0;left:0;width:60%;transform:rotate(-7deg);z-index:1}
+.ivx-hero-collage__item--2{top:4%;right:0;width:66%;transform:rotate(5deg);z-index:2}
+.ivx-hero-collage__item--3{bottom:2%;left:2%;width:58%;transform:rotate(4deg);z-index:3}
+.ivx-hero-collage__item--4{bottom:0;right:4%;width:62%;transform:rotate(-5deg);z-index:4}
+@media(max-width:767px){.ivx-hero-collage{max-width:420px}}
