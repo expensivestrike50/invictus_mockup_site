@@ -42,7 +42,7 @@ p{font-size:1.125rem!important;line-height:1.4!important;font-weight:400!importa
 @media(max-width:767px){.ls-agent-toast{font-size:11px}.ls-check{flex-basis:20px;height:20px;font-size:12px}.apl-acc-comp-light{border-radius:1.25rem}}
 @media(prefers-reduced-motion:reduce){.apl-tab-pane{transition:none}}
 /* Football product-media presentation. Keeps existing placement and motion. */
-video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9fc;box-shadow:0 12px 38px #2338560a}
+video.hp-tab-hero-img,video.hp-agents-video,img.hp-tab-hero-img,img.hp-agents-video{border-radius:1rem;background:#f7f9fc;box-shadow:0 12px 38px #2338560a;width:100%;height:auto;object-fit:contain}
 .hp-tab-layout-end{border-color:#e7ebf2}
 .hp-agents-limitless_card-image,.v4-ani-board-mb{border-radius:12px}
 /* Hero video slot replaced with a collage of transparent-background dashboard SVGs. */
@@ -63,8 +63,3 @@ video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9f
 .ivx-partners__item img{height:72px;width:auto;max-width:220px;object-fit:contain}
 @media(max-width:991px){.ivx-partners__title{font-size:3rem}}
 @media(max-width:767px){.ivx-partners{padding:0 24px 80px}.ivx-partners__title{font-size:2rem}.ivx-partners__grid{gap:24px 32px}.ivx-partners__item img{height:52px;max-width:150px}}
-/* Dashboard SVG showcase, replacing the "Get more done with your AI agents" tabbed section. */
-.ivx-dashboards{padding:0 40px 128px;max-width:1400px;margin:0 auto}
-.ivx-dashboards__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
-.ivx-dashboards__item{width:100%;height:auto;display:block;border-radius:20px;filter:drop-shadow(0 20px 40px rgba(10,15,26,.14))}
-@media(max-width:900px){.ivx-dashboards{padding:0 24px 80px}.ivx-dashboards__grid{grid-template-columns:1fr;gap:28px}}
