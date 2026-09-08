@@ -10,6 +10,7 @@ import InvoiceGenerator from "./pages/InvoiceGenerator";
 import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
 import About from "./pages/About";
+import Platform from "./pages/Platform";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import SignIn from "./pages/SignIn";
@@ -58,6 +59,7 @@ const App = () => (
             
             {/* Public Routes */}
             <Route path="/about" element={<About />} />
+            <Route path="/platform" element={<Platform />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/licenses" element={<Licenses />} />

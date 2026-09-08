@@ -20,8 +20,6 @@ const navLinks = [
   { key: 'nav.contact', href: '/contact' },
 ];
 
-const INVICTUS_PLATFORM_URL = `${import.meta.env.BASE_URL}invictus-platform/index.html`;
-
 const accountLinks = [
   { key: 'nav.signIn', href: '/signin' },
   { key: 'nav.signUp', href: '/signup' },
@@ -138,17 +136,15 @@ const Navbar = () => {
                       className="min-w-[160px] rounded-2xl p-3 flex flex-col gap-3"
                     >
                       <DropdownMenuItem asChild className="p-0 focus:bg-transparent">
-                        <a
-                          href={INVICTUS_PLATFORM_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <Link
+                          to="/platform"
                           className="cursor-pointer w-full no-underline flex items-center gap-2 group/item"
                         >
                           <Plus className="w-4 h-4 text-foreground shrink-0" />
                           <span className="text-foreground text-base font-semibold leading-5">
                             Invictus
                           </span>
-                        </a>
+                        </Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -323,10 +319,8 @@ const Navbar = () => {
                       transition={{ duration: 0.3 }}
                       className="flex flex-col items-center gap-4 mt-4 overflow-hidden"
                     >
-                      <a
-                        href={INVICTUS_PLATFORM_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        to="/platform"
                         onClick={() => setIsMenuOpen(false)}
                         className="no-underline flex items-center gap-2"
                       >
@@ -334,7 +328,7 @@ const Navbar = () => {
                         <span className="text-foreground/80 text-3xl max-md:text-2xl max-xs:text-xl font-medium font-display leading-tight hover:text-foreground transition-colors">
                           Invictus
                         </span>
-                      </a>
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
