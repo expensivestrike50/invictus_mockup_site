@@ -7,7 +7,7 @@ import scoutingDashboard from '@/assets/story/scouting-dashboard.svg';
 import talentMatchDashboard from '@/assets/story/AI_Talent_true_vector_updated.svg';
 import transferWorkflowDashboard from '@/assets/story/transfer-workflow-dashboard.svg';
 import recruitmentForecastDashboard from '@/assets/story/recruitment-forecast-dashboard.svg';
-import playerInsightsDashboard from '@/assets/story/player-insights-dashboard.svg';
+import playerInsightsDashboard from '@/assets/story/player-insights-dashboard-nobg.svg';
 
 interface StoryCardMeta {
   image: string;
