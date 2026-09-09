@@ -66,6 +66,9 @@ img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;
 .ivx-partners__item img{height:72px;width:auto;max-width:220px;object-fit:contain}
 @media(max-width:991px){.ivx-partners__title{font-size:3rem}}
 @media(max-width:767px){.ivx-partners{padding:0 24px 80px}.ivx-partners__title{font-size:2rem}.ivx-partners__grid{gap:24px 32px}.ivx-partners__item img{height:52px;max-width:150px}}
-/* Force the "Work in context" heading onto one line at every desktop width. */
-.hp-agents_h2.is-work-in-context.is-test{font-size:clamp(2rem,4.2vw,4.5rem)!important;white-space:nowrap}
-@media(max-width:600px){.hp-agents_h2.is-work-in-context.is-test{white-space:normal}}
+/* "All activities in one system": two-line heading, pinned to the top-left corner,
+   with real spacing so it never collides with the subtitle beside it. */
+.hp-agents_h-wrapper.is-context{flex-direction:column!important;justify-content:flex-start!important;align-items:flex-start!important;gap:2rem;padding-top:3.5rem}
+.hp-agents_h2.is-work-in-context.is-test{font-size:clamp(2rem,4.2vw,4.5rem)!important;white-space:normal;max-width:13ch;text-align:left}
+.hp-agents_subtitle-wrapper.is-work-in-context.is-test{justify-content:flex-start!important;align-items:flex-start!important;text-align:left;padding-top:0!important}
+.hp-agents_h-subtitle.is-work-in-context{text-align:left!important;margin-bottom:0}
