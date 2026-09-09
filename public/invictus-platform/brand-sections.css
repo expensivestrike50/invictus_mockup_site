@@ -137,6 +137,9 @@ img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:contai
 .ivx-footer__desc{font-size:1rem!important;line-height:1.5;color:#c9c7c0;max-width:28rem;margin:16px 0 24px}
 .ivx-footer__socials{display:flex;align-items:center;gap:12px}
 .ivx-footer__social{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08)}
+.ivx-footer__stores{display:flex;align-items:center;gap:12px;margin-top:20px}
+.ivx-footer__store-badge{display:block;line-height:0}
+.ivx-footer__store-badge svg{width:120px;height:40px;display:block}
 .ivx-footer__social img{width:18px;height:18px;filter:invert(1)}
 .ivx-footer__pages h3,.ivx-footer__cta h3{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin:0 0 24px}
 .ivx-footer__pages nav{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
