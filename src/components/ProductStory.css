@@ -106,6 +106,38 @@
   background-image: radial-gradient(circle, rgba(0, 0, 0, .35) 1px, transparent 1px);
 }
 
+/* Player insights art is taller than the card, so contain it in a slightly
+   smaller, inset box instead of cropping it with object-fit:cover — keeps
+   the floating "AI Player Intelligence" card from being clipped and from
+   overlapping the text column. */
+.product-story .story-card:nth-child(5) .visual {
+  left: 40%;
+  right: 76px;
+  top: 96px;
+  bottom: 88px;
+  inset: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.product-story .story-card:nth-child(5) .visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .1);
+}
+@media (max-width: 1100px) {
+  .product-story .story-card:nth-child(5) .visual {
+    left: 8%;
+    right: 8%;
+    top: 260px;
+    bottom: 32px;
+  }
+}
+
 /* All marketing copy is HTML layered on top of the image. */
 .product-story .overlay {
   position: absolute;
