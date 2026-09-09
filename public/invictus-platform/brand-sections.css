@@ -85,3 +85,18 @@ img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;
 }
 @media(max-width:900px){.hp-agents_h-wrapper.is-context{flex-direction:column!important}}
 .hp-agents_h-subtitle.is-work-in-context{text-align:left!important;margin-bottom:0}
+/* "Full control": one-line heading, black vector icons instead of purple. */
+.hp-agents_h2.is-full-control{max-width:none!important;white-space:nowrap}
+.hp-agents-control_icon{color:var(--ls-black)!important}
+@media(max-width:700px){.hp-agents_h2.is-full-control{white-space:normal}}
+/* "Connect your agency workflows": subtitle wasn't a real <p>, so it skipped the
+   site's global body-copy size/weight - match it explicitly. */
+.hp-agents_h-subtitle.is-workflows:not(.is-tagline){font-size:1.125rem!important;font-weight:400!important;line-height:1.4!important}
+/* "between"/"agents" profile clusters: use the colorful illustrated-character
+   sprite for both instead of mixing in realistic stock photos. */
+.hp-agents_heading-span-icon{background-image:url(assets/2f6074de52e37500.png)!important}
+/* "Every part of your agency, connected": collapse the multicolor card palette
+   to the site's black/beige scheme. */
+.hp-agents_splide-card.is-purple,.hp-agents_splide-card.is-blue,.hp-agents_splide-card.is-pink,.hp-agents_splide-card.is-yellow,.hp-agents_splide-card.is-sales{background-color:var(--ls-beige)!important;color:var(--ls-black)!important}
+.hp-agents_splide-card.is-light-purple{background-color:var(--ls-beige)!important}
+.hp-agents_splide-card.is-black{background-color:var(--ls-black)!important;color:#fff!important}
