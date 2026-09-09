@@ -57,7 +57,7 @@ img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;
 .ivx-hero-collage__item--4{bottom:0;right:8%;width:50%;transform:rotate(-5deg);z-index:4}
 @media(max-width:767px){.ivx-hero-collage{max-width:480px}}
 /* "Partners and Collaborators" section, replacing the ecosystem logo marquee. */
-.ivx-partners{padding:0 40px 128px;max-width:1600px;margin:0 auto}
+.ivx-partners{padding:48px 40px 128px;max-width:1600px;margin:0 auto}
 .ivx-partners__header{display:flex;flex-direction:column;gap:16px;max-width:50rem;margin:0 auto 64px;text-align:center}
 .ivx-partners__eyebrow{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ls-black)}
 .ivx-partners__title{font-size:4.5rem;line-height:1.2;font-weight:700;color:var(--ls-black)}
