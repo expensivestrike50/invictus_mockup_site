@@ -44,7 +44,9 @@ p{font-size:1.125rem!important;line-height:1.4!important;font-weight:400!importa
 /* Football product-media presentation. Keeps existing placement and motion. */
 video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9fc;box-shadow:0 12px 38px #2338560a}
 img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;display:block}
-.hp-tab-layout-end{border-color:#e7ebf2;padding:0!important}
+.hp-tab-layout-end{border-color:#e7ebf2;padding:0!important;background-color:var(--ls-beige)!important}
+/* The video wrapper (originally opaque-video colored) shows through around our transparent SVG art; match the page instead of leaving a white card. */
+.hp-agents-sbs-vid{background-color:var(--ls-beige)!important;border:0!important;box-shadow:none!important}
 .hp-agents-limitless_card-image,.v4-ani-board-mb{border-radius:12px}
 /* Hero video slot replaced with a collage of transparent-background dashboard SVGs. */
 .ivx-hero-collage{position:relative;width:100%;aspect-ratio:1.28;max-width:920px;margin:0 auto}

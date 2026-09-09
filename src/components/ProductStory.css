@@ -111,11 +111,11 @@
    the floating "AI Player Intelligence" card from being clipped and from
    overlapping the text column. */
 .product-story .story-card:nth-child(5) .visual {
+  inset: auto;
   left: 40%;
   right: 76px;
   top: 96px;
   bottom: 88px;
-  inset: auto;
   display: flex;
   align-items: center;
   justify-content: center;
