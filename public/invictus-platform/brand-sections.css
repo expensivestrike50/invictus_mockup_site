@@ -69,8 +69,19 @@ img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;
 /* "All activities in one system": two-line heading pinned to the left, with the
    subtitle pushed to the far right of the same row (top-aligned with the heading's
    first line) so the two never collide. */
-.hp-agents_h-wrapper.is-context{flex-direction:row!important;flex-wrap:nowrap;justify-content:space-between!important;align-items:flex-start!important;gap:3rem;padding-top:3.5rem}
+.hp-agents_h-wrapper.is-context{flex-direction:row!important;flex-wrap:nowrap;justify-content:space-between!important;align-items:flex-start!important;gap:3rem;padding-top:3.5rem;margin-bottom:3rem!important}
 .hp-agents_h2.is-work-in-context.is-test{font-size:clamp(2rem,4.2vw,4.5rem)!important;white-space:normal;max-width:13ch;text-align:left;flex:0 0 auto}
 .hp-agents_subtitle-wrapper.is-work-in-context.is-test{justify-content:flex-start!important;align-items:flex-start!important;text-align:left;padding-top:.5rem!important;flex:0 0 auto;max-width:40ch}
+/* The floating context cards (Integrations, Player dashboard, etc.) are small on
+   desktop by default, making their SVG text hard to read - scale them up ~40%. */
+@media(min-width:768px){
+  .hp-agents-context_floating-item.is-1{width:clamp(19.6rem,2.8rem + 21vw,28rem)!important}
+  .hp-agents-context_floating-item.is-2{width:clamp(18.2rem,1.4rem + 21vw,26.6rem)!important}
+  .hp-agents-context_floating-item.is-3{width:clamp(18.2rem,1.4rem + 21vw,26.6rem)!important}
+  .hp-agents-context_floating-item.is-4{width:clamp(15.4rem,21vw - 1.4rem,23.8rem)!important}
+  .hp-agents-context_floating-item.is-5{width:clamp(14rem,17.5vw,21rem)!important}
+  .hp-agents-context_floating-item.is-6{width:clamp(15.4rem,21vw - 1.4rem,23.8rem)!important}
+  .hp-agents-context_floating-item.is-7{width:clamp(15.4rem,21vw - 1.4rem,23.8rem)!important}
+}
 @media(max-width:900px){.hp-agents_h-wrapper.is-context{flex-direction:column!important}}
 .hp-agents_h-subtitle.is-work-in-context{text-align:left!important;margin-bottom:0}
