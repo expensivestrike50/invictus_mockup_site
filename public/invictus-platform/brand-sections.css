@@ -43,7 +43,7 @@ p{font-size:1.125rem!important;line-height:1.4!important;font-weight:400!importa
 @media(prefers-reduced-motion:reduce){.apl-tab-pane{transition:none}}
 /* Football product-media presentation. Keeps existing placement and motion. */
 video.hp-tab-hero-img,video.hp-agents-video{border-radius:1rem;background:#f7f9fc;box-shadow:0 12px 38px #2338560a}
-img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;display:block}
+img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:contain;display:block}
 .hp-tab-layout-end{border-color:#e7ebf2;padding:0!important;background-color:var(--ls-beige)!important}
 /* The video wrapper (originally opaque-video colored) shows through around our transparent SVG art; match the page instead of leaving a white card. */
 .hp-agents-sbs-vid{background-color:var(--ls-beige)!important;border:0!important;box-shadow:none!important}
@@ -100,3 +100,35 @@ img.hp-tab-hero-img,img.hp-agents-video{width:100%;height:100%;object-fit:cover;
 .hp-agents_splide-card.is-purple,.hp-agents_splide-card.is-blue,.hp-agents_splide-card.is-pink,.hp-agents_splide-card.is-yellow,.hp-agents_splide-card.is-sales{background-color:var(--ls-beige)!important;color:var(--ls-black)!important}
 .hp-agents_splide-card.is-light-purple{background-color:var(--ls-beige)!important}
 .hp-agents_splide-card.is-black{background-color:var(--ls-black)!important;color:#fff!important}
+/* Pricing section, ported from the home page's Pricing/PricingCards components. */
+.ivx-pricing{padding:64px 40px 128px;max-width:1440px;margin:0 auto}
+.ivx-pricing__header{display:flex;flex-direction:column;gap:16px;max-width:48.75rem;margin:0 auto 64px;text-align:center}
+.ivx-pricing__eyebrow{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ls-black)}
+.ivx-pricing__title{font-size:4.5rem;line-height:1.2;font-weight:700;color:var(--ls-black)}
+.ivx-pricing__desc{font-size:1.125rem;line-height:1.4;color:#4d4d47}
+.ivx-pricing__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.ivx-pricing__card{display:flex;flex-direction:column;background:#fff;border:1px solid #e7e2d6;border-radius:30px;padding:16px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.ivx-pricing__card-header{padding:24px;border-radius:24px;background:var(--ls-beige)}
+.ivx-pricing__card-header h3{font-size:1.5rem;font-weight:700;margin:0 0 8px}
+.ivx-pricing__card-header p{font-size:1rem!important;color:#676960;margin:0 0 16px}
+.ivx-pricing__price{display:flex;align-items:baseline;gap:4px}
+.ivx-pricing__amount{font-size:2.5rem;font-weight:700;line-height:1}
+.ivx-pricing__period{font-size:1rem;color:#676960}
+.ivx-pricing__card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.ivx-pricing__btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:14px;margin-bottom:24px;border-radius:999px;background:var(--ls-black);color:#fff!important;font-weight:600;text-decoration:none;text-align:center}
+.ivx-pricing__btn--light{background:#fff;color:var(--ls-black)!important}
+.ivx-pricing__card-body h4{font-size:.875rem;font-weight:600;margin:0 0 16px}
+.ivx-pricing__card-body ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.ivx-pricing__card-body li{display:flex;align-items:center;gap:12px;font-size:1rem;color:#4d4d47}
+.ivx-pricing__card-body li img{width:20px;height:20px;flex:none}
+.ivx-pricing__card-footer{display:flex;align-items:center;gap:8px;padding:0 24px 24px;font-size:1rem;color:#676960}
+.ivx-pricing__card-footer img{width:20px;height:20px}
+.ivx-pricing__card--featured{background:var(--ls-black);color:#fff;border-color:var(--ls-black)}
+.ivx-pricing__card--featured .ivx-pricing__card-header{background:#1a1f2a}
+.ivx-pricing__card--featured .ivx-pricing__card-header p,.ivx-pricing__card--featured .ivx-pricing__period{color:#c9c7c0}
+.ivx-pricing__card--featured .ivx-pricing__card-body h4{color:#fff}
+.ivx-pricing__card--featured .ivx-pricing__card-body li{color:#e9e6dd}
+.ivx-pricing__card--featured .ivx-pricing__card-body li img{filter:invert(1)}
+.ivx-pricing__card--featured .ivx-pricing__card-footer{color:#c9c7c0}
+@media(max-width:991px){.ivx-pricing__title{font-size:3rem}.ivx-pricing__grid{grid-template-columns:1fr}}
+@media(max-width:767px){.ivx-pricing{padding:0 24px 80px}.ivx-pricing__title{font-size:2rem}}
