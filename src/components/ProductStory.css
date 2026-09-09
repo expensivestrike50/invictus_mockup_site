@@ -106,16 +106,17 @@
   background-image: radial-gradient(circle, rgba(0, 0, 0, .35) 1px, transparent 1px);
 }
 
-/* Player insights art is taller than the card, so contain it in a slightly
-   smaller, inset box instead of cropping it with object-fit:cover — keeps
-   the floating "AI Player Intelligence" card from being clipped and from
-   overlapping the text column. */
+/* Player insights art is proportionally taller than the wide card, so
+   object-fit:cover (used by the other slides) would crop the floating "AI
+   Player Intelligence" card near the top. Use contain instead, inside a box
+   sized as large as the other slides' art while still clearing the text
+   column. */
 .product-story .story-card:nth-child(5) .visual {
   inset: auto;
-  left: 40%;
-  right: 76px;
-  top: 96px;
-  bottom: 88px;
+  left: 44%;
+  right: 40px;
+  top: 40px;
+  bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
