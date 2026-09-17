@@ -29,12 +29,18 @@ git clone <YOUR_GIT_URL>
 # Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Copy the example env file (fills in the Supabase project vars).
+cp .env.example .env
+
+# Step 4: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 5: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
+
+The app crashes on a blank page with `Error: supabaseUrl is required` if `.env` is
+missing — make sure Step 3 above has been run.
 
 **Edit a file directly in GitHub**
 
