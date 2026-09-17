@@ -1,79 +1,38 @@
-# Welcome to your Lovable project
+# Invictus mockup site
 
-## Project info
+Football agency CRM marketing/mockup site. This is a local-only dev setup —
+run it on `localhost`, no external editor or deploy target required.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Prerequisites
 
-## How can I edit this code?
+- Node.js & npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Run it on localhost
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository.
+git clone https://github.com/expensivestrike50/invictus_mockup_site.git
+cd invictus_mockup_site
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Copy the example env file (fills in the Supabase project vars).
+# Step 2: Copy the example env file (fills in the Supabase project vars).
 cp .env.example .env
 
-# Step 4: Install the necessary dependencies.
+# Step 3: Install dependencies.
 npm i
 
-# Step 5: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the dev server.
 npm run dev
 ```
 
-The app crashes on a blank page with `Error: supabaseUrl is required` if `.env` is
-missing — make sure Step 3 above has been run.
+The app is served at **http://localhost:8080**.
 
-**Edit a file directly in GitHub**
+If you see a blank page with `Error: supabaseUrl is required` in the browser
+console, `.env` is missing — go back to Step 2.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Tech stack
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
